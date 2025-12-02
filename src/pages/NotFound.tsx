@@ -1,7 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Layout } from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
+import { Home, Search } from "lucide-react";
 
-const NotFound = () => {
+export default function NotFound() {
   const location = useLocation();
 
   useEffect(() => {
@@ -9,16 +12,27 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </a>
+    <Layout>
+      <div className="container flex min-h-[60vh] flex-col items-center justify-center py-16 text-center">
+        <div className="animate-fade-in">
+          <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-secondary">
+            <Search className="h-10 w-10 text-muted-foreground" />
+          </div>
+          <h1 className="text-6xl font-bold text-gradient">404</h1>
+          <p className="mt-4 text-xl text-muted-foreground">
+            Oops! This page doesn't exist.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            The page you're looking for might have been moved or deleted.
+          </p>
+          <Button asChild variant="gradient" size="lg" className="mt-8">
+            <Link to="/">
+              <Home className="h-4 w-4" />
+              Back to Home
+            </Link>
+          </Button>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
-};
-
-export default NotFound;
+}
