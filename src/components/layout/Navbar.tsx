@@ -1,12 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
-import { Grid3X3, Info, Image } from "lucide-react";
+import { Grid3X3, Info, Image, BookOpen, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Home", icon: Image },
-  { to: "/gallery", label: "Presets", icon: Grid3X3 },
+  { to: "/blog", label: "Blog", icon: BookOpen },
   { to: "/about", label: "About", icon: Info },
+  { to: "/contact", label: "Contact", icon: Mail },
 ];
 
 export function Navbar() {
@@ -28,7 +29,7 @@ export function Navbar() {
 
         <nav className="flex items-center gap-1">
           {navLinks.map(({ to, label, icon: Icon }) => {
-            const isActive = location.pathname === to;
+            const isActive = location.pathname === to || (to === "/blog" && location.pathname.startsWith("/blog"));
             return (
               <Link
                 key={to}
