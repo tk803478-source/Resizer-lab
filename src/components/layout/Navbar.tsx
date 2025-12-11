@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import { Image, Grid3X3, Info } from "lucide-react";
+import { Grid3X3, Info, Image } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Home", icon: Image },
@@ -18,9 +19,7 @@ export function Navbar() {
           to="/" 
           className="flex items-center gap-2 font-bold text-xl transition-opacity hover:opacity-80"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-primary">
-            <Image className="h-5 w-5 text-primary-foreground" />
-          </div>
+          <img src={logo} alt="ResizeLab Logo" className="h-9 w-9 rounded-lg" />
           <span className="hidden sm:inline">
             <span className="text-gradient">Resize</span>
             <span className="text-foreground">Lab</span>
