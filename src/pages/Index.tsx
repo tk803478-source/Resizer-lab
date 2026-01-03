@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { usePresetStore } from "@/store/presetStore";
 import {
@@ -17,6 +24,13 @@ import {
   Link2Off,
   Download,
   Wand2,
+  Clock,
+  Globe,
+  Smartphone,
+  UserX,
+  CheckCircle2,
+  Settings2,
+  ArrowDownToLine,
 } from "lucide-react";
 
 // ============= Types =============
@@ -44,10 +58,68 @@ interface ResizedImage {
 }
 
 // ============= Constants =============
-const features = [
+const heroFeatures = [
   { icon: Zap, label: "Lightning Fast", desc: "Browser-based processing" },
   { icon: Shield, label: "100% Private", desc: "No uploads to servers" },
   { icon: Sparkles, label: "High Quality", desc: "Maintains image clarity" },
+];
+
+const mainFeatures = [
+  { icon: UserX, title: "No Signup Required", desc: "Start resizing immediately without creating an account or providing personal information." },
+  { icon: Sparkles, title: "Completely Free", desc: "All features are free to use with no hidden costs, watermarks, or premium upgrades." },
+  { icon: Zap, title: "Fast Processing", desc: "Resize images in milliseconds using your browser's native processing power." },
+  { icon: Smartphone, title: "Works Everywhere", desc: "Fully responsive design works perfectly on desktop, tablet, and mobile devices." },
+  { icon: Shield, title: "Secure & Private", desc: "Your images never leave your device. All processing happens locally in your browser." },
+  { icon: Globe, title: "No Installation", desc: "Access from any modern browser without downloading or installing any software." },
+];
+
+const howItWorks = [
+  { step: 1, icon: Upload, title: "Upload Your Image", desc: "Drag and drop or click to select any PNG, JPG, or WEBP image from your device." },
+  { step: 2, icon: Settings2, title: "Adjust Settings", desc: "Choose your target dimensions, select a preset size, or scale by percentage. Pick your output format." },
+  { step: 3, icon: ArrowDownToLine, title: "Download Result", desc: "Click resize to preview, then download your perfectly resized image instantly." },
+];
+
+const benefits = [
+  { icon: Clock, title: "Saves Time", desc: "No waiting for uploads or server processing. Resize images in seconds." },
+  { icon: Globe, title: "Works Worldwide", desc: "Use from anywhere in the world with just an internet connection." },
+  { icon: UserX, title: "Beginner Friendly", desc: "Simple, intuitive interface that anyone can use without technical knowledge." },
+  { icon: Zap, title: "Lightweight & Fast", desc: "Minimal page load, instant results. No bloated software to slow you down." },
+  { icon: Shield, title: "No Data Collection", desc: "We don't collect, store, or track your images or personal data." },
+];
+
+const faqs = [
+  {
+    question: "Is this image resizer tool completely free?",
+    answer: "Yes, ResizeLab is 100% free to use. There are no hidden fees, premium features, or subscription requirements. You can resize unlimited images without any cost."
+  },
+  {
+    question: "Is my data safe when using this tool?",
+    answer: "Absolutely. Your images are processed entirely in your browser using the HTML5 Canvas API. Your files never leave your device or get uploaded to any server. We have no access to your images whatsoever."
+  },
+  {
+    question: "Does this tool work on mobile devices?",
+    answer: "Yes! ResizeLab is fully responsive and works perfectly on smartphones, tablets, and desktop computers. You can resize images on-the-go from any modern mobile browser."
+  },
+  {
+    question: "Do I need to create an account or sign up?",
+    answer: "No account or signup is required. Simply visit the website and start resizing images immediately. No personal information is needed."
+  },
+  {
+    question: "Are there any usage limits or restrictions?",
+    answer: "There are no artificial limits on how many images you can resize. Since processing happens in your browser, you can resize as many images as you need without restrictions."
+  },
+  {
+    question: "Is this tool browser-based only?",
+    answer: "Yes, ResizeLab runs entirely in your web browser. This means you don't need to download or install any software, and you can use it on any device with a modern browser."
+  },
+  {
+    question: "What image formats are supported?",
+    answer: "ResizeLab supports the most common image formats including JPEG, PNG, and WEBP. You can also convert between these formats while resizing."
+  },
+  {
+    question: "How does browser-based processing work?",
+    answer: "When you upload an image, it stays on your device. The resizing is performed using your browser's built-in Canvas API, which is a secure, standardized technology for image manipulation. The result is generated locally and ready for download."
+  }
 ];
 
 const PRESETS = [
@@ -655,20 +727,20 @@ export default function Index() {
 
   return (
     <Layout>
+      {/* Hero Section */}
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-2xl text-center animate-fade-in">
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Resize Images <span className="text-gradient">Instantly</span>
+              Free Online Image Resizer – <span className="text-gradient">Resize Instantly</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Fast, free, and private. Resize any image directly in your browser
-              with no uploads required.
+              Fast, free, and easy online tools for everyday use. Resize any image directly in your browser with complete privacy.
             </p>
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4 md:gap-8">
-            {features.map(({ icon: Icon, label, desc }, i) => (
+            {heroFeatures.map(({ icon: Icon, label, desc }, i) => (
               <div
                 key={label}
                 className="flex items-center gap-3 animate-fade-in"
@@ -687,6 +759,9 @@ export default function Index() {
         </section>
       </div>
 
+      <AdPlaceholder position="banner" className="container mt-8" />
+
+      {/* Main Tool Section */}
       <section className="container py-8 md:py-12">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
@@ -722,6 +797,167 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Features Section */}
+      <section className="container py-12 md:py-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+              Why Choose <span className="text-gradient">ResizeLab</span>?
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to resize images quickly and securely, without compromises.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {mainFeatures.map(({ icon: Icon, title, desc }, i) => (
+              <div
+                key={title}
+                className="rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-md animate-fade-in"
+                style={{ animationDelay: `${i * 50}ms` }}
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent mb-4">
+                  <Icon className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="container py-12 md:py-16 bg-secondary/30 rounded-3xl mx-4 sm:mx-auto max-w-6xl">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+              How It Works
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Resize your images in three simple steps
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {howItWorks.map(({ step, icon: Icon, title, desc }) => (
+              <div key={step} className="text-center">
+                <div className="relative mx-auto mb-4">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl gradient-primary shadow-glow mx-auto">
+                    <Icon className="h-7 w-7 text-primary-foreground" />
+                  </div>
+                  <span className="absolute -top-2 -right-2 flex h-7 w-7 items-center justify-center rounded-full bg-background border-2 border-primary text-sm font-bold text-primary">
+                    {step}
+                  </span>
+                </div>
+                <h3 className="font-semibold mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="container py-12 md:py-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+              Key Benefits
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Designed to make image resizing effortless for everyone
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {benefits.map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="flex gap-4 p-4 rounded-xl hover:bg-accent/50 transition-colors">
+                <div className="flex-shrink-0">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">{title}</h3>
+                  <p className="text-sm text-muted-foreground">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <AdPlaceholder position="in-article" className="container" />
+
+      {/* SEO Content Section */}
+      <section className="container py-12 md:py-16">
+        <div className="mx-auto max-w-3xl">
+          <article className="prose prose-lg dark:prose-invert max-w-none">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-center mb-8">
+              The Best Free Online Image Resizer
+            </h2>
+            
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                ResizeLab is a powerful, free online image resizer designed for anyone who needs to quickly adjust image dimensions without the hassle of complex software. Whether you're a blogger preparing images for your website, a social media manager optimizing content for different platforms, or simply someone who needs to resize a photo for an email, ResizeLab makes the process effortless.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground mt-8">What Makes ResizeLab Different?</h3>
+              <p>
+                Unlike many online image tools that require you to upload files to remote servers, ResizeLab processes everything directly in your web browser. This approach offers significant advantages: your images remain completely private since they never leave your device, processing is nearly instantaneous with no upload or download wait times, and you can use the tool even with a slow internet connection after the page loads.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground mt-8">Who Should Use This Tool?</h3>
+              <p>
+                ResizeLab is perfect for a wide range of users. Content creators and bloggers can quickly resize images to fit their website layouts. E-commerce sellers can prepare product photos with consistent dimensions. Social media managers can optimize images for different platform requirements. Photographers can create smaller versions of their work for web sharing. Students and professionals can resize images for presentations and documents. Even casual users who just need to make a photo smaller for an email will find ResizeLab intuitive and helpful.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground mt-8">Common Use Cases</h3>
+              <p>
+                The most popular uses for ResizeLab include preparing images for websites and blogs where file size and dimensions matter for page speed, creating properly sized thumbnails for galleries and portfolios, adjusting photos to meet social media platform requirements, reducing image dimensions for faster email delivery, and creating consistent image sizes for online marketplaces and product listings.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground mt-8">Why Choose Browser-Based Processing?</h3>
+              <p>
+                Traditional online image editors require uploading your files to their servers, which raises privacy concerns and creates delays. With ResizeLab's browser-based approach, your original images and resized results exist only on your computer. There's no risk of your photos being stored, analyzed, or accessed by third parties. This makes ResizeLab ideal for resizing sensitive documents, personal photos, or business materials where confidentiality matters.
+              </p>
+
+              <p>
+                The technology behind this is the HTML5 Canvas API, a standard feature in all modern web browsers. This means ResizeLab works reliably across Chrome, Firefox, Safari, Edge, and other popular browsers without requiring any plugins or downloads. Simply visit the website, upload your image, choose your settings, and download your resized result—all within seconds.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="container py-12 md:py-16">
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Everything you need to know about using ResizeLab
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((faq, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="rounded-xl border border-border bg-card px-6 data-[state=open]:border-primary/50"
+              >
+                <AccordionTrigger className="text-left font-semibold hover:no-underline py-4">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-4">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      <AdPlaceholder position="bottom" className="container mb-8" />
     </Layout>
   );
 }
