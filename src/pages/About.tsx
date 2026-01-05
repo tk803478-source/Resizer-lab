@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { 
   Shield, 
@@ -51,6 +53,12 @@ const features = [
 export default function About() {
   return (
     <Layout>
+      <Helmet>
+        <title>About ResizeLab – Free Browser-Based Image Resizer</title>
+        <meta name="description" content="Learn about ResizeLab, a free privacy-focused image resizing tool that runs entirely in your browser. No uploads, no servers, no tracking." />
+        <link rel="canonical" href="https://resizelab.app/about" />
+      </Helmet>
+
       <div className="gradient-hero">
         {/* Hero */}
         <section className="container py-12 md:py-20">
@@ -150,6 +158,61 @@ export default function About() {
             happens locally on your device, ensuring complete privacy and security
             for your files.
           </p>
+        </div>
+      </section>
+
+      {/* Helpful Resources */}
+      <section className="container pb-12 md:pb-16">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center text-2xl font-bold mb-8">
+            Helpful <span className="text-gradient">Resources</span>
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <Link 
+              to="/blog/how-to-resize-images-without-losing-quality"
+              className="rounded-xl border border-border bg-card p-5 hover:border-primary/50 transition-colors"
+            >
+              <h3 className="font-semibold text-sm mb-1">Resize Without Quality Loss</h3>
+              <p className="text-xs text-muted-foreground">Learn the best techniques</p>
+            </Link>
+            <Link 
+              to="/blog/best-image-formats-jpeg-png-webp-compared"
+              className="rounded-xl border border-border bg-card p-5 hover:border-primary/50 transition-colors"
+            >
+              <h3 className="font-semibold text-sm mb-1">JPEG vs PNG vs WEBP</h3>
+              <p className="text-xs text-muted-foreground">Choose the right format</p>
+            </Link>
+            <Link 
+              to="/blog/social-media-image-sizes-guide"
+              className="rounded-xl border border-border bg-card p-5 hover:border-primary/50 transition-colors"
+            >
+              <h3 className="font-semibold text-sm mb-1">Social Media Sizes</h3>
+              <p className="text-xs text-muted-foreground">Complete 2024 guide</p>
+            </Link>
+            <Link 
+              to="/blog/image-compression-guide-reduce-file-size"
+              className="rounded-xl border border-border bg-card p-5 hover:border-primary/50 transition-colors"
+            >
+              <h3 className="font-semibold text-sm mb-1">Compression Guide</h3>
+              <p className="text-xs text-muted-foreground">Reduce file sizes effectively</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="container pb-12 md:pb-16">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-xl font-bold mb-4">Ready to Resize Your Images?</h2>
+          <p className="text-muted-foreground mb-6">
+            Try our free image resizer now. No signup required.
+          </p>
+          <Link 
+            to="/"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg gradient-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
+          >
+            Start Resizing →
+          </Link>
         </div>
       </section>
     </Layout>
