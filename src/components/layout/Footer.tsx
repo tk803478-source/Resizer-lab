@@ -30,10 +30,11 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-3 text-sm">Resources</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><Link to="/guides" className="hover:text-primary transition-colors">Guides & Tutorials</Link></li>
               <li><Link to="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
               <li><Link to="/blog/social-media-image-sizes-guide" className="hover:text-primary transition-colors">Social Media Sizes</Link></li>
               <li><Link to="/blog/image-compression-guide-reduce-file-size" className="hover:text-primary transition-colors">Compression Guide</Link></li>
-              <li><Link to="/blog/best-image-formats-jpeg-png-webp-compared" className="hover:text-primary transition-colors">Image Formats</Link></li>
+              <li><Link to="/blog/seo-benefits-optimized-images" className="hover:text-primary transition-colors">SEO & Images</Link></li>
             </ul>
           </div>
 
