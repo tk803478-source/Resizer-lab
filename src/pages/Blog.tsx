@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { getAllBlogPosts } from "@/data/blogPosts";
@@ -9,6 +10,11 @@ export default function Blog() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Image Resizing Blog – Tips, Guides & Best Practices | ResizeLab</title>
+        <meta name="description" content="Expert guides on image resizing, compression, optimization, and social media image sizes. Learn how to resize images without losing quality." />
+        <link rel="canonical" href="https://resizelab.app/blog" />
+      </Helmet>
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center animate-fade-in">

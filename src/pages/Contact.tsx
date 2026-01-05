@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,6 +31,12 @@ export default function Contact() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Contact Us | ResizeLab</title>
+        <meta name="description" content="Contact ResizeLab for questions, feedback, or suggestions about our free online image resizer tool." />
+        <link rel="canonical" href="https://resizelab.app/contact" />
+      </Helmet>
+
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center animate-fade-in">

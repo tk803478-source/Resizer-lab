@@ -1,9 +1,15 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Shield } from "lucide-react";
 
 export default function Privacy() {
   return (
     <Layout>
+      <Helmet>
+        <title>Privacy Policy | ResizeLab</title>
+        <meta name="description" content="ResizeLab privacy policy. Learn how we protect your data with 100% browser-based processing. Your images never leave your device." />
+        <link rel="canonical" href="https://resizelab.app/privacy" />
+      </Helmet>
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center animate-fade-in">

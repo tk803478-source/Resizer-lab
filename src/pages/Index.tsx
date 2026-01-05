@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -727,6 +729,13 @@ export default function Index() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Free Online Image Resizer – Resize Photos Instantly | ResizeLab</title>
+        <meta name="description" content="Resize images online for free. Fast, private, and easy-to-use browser-based image resizer. No uploads, no signup required. Supports JPEG, PNG, WEBP. Works on mobile and desktop." />
+        <meta name="keywords" content="image resizer, resize image online, free image resizer, photo resizer, resize photos, image compression, resize JPEG, resize PNG, WEBP converter" />
+        <link rel="canonical" href="https://resizelab.app/" />
+      </Helmet>
+
       {/* Hero Section */}
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
@@ -891,36 +900,57 @@ export default function Index() {
         <div className="mx-auto max-w-3xl">
           <article className="prose prose-lg dark:prose-invert max-w-none">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-center mb-8">
-              The Best Free Online Image Resizer
+              The Best Free Online Image Resizer – Fast, Private, and Easy to Use
             </h2>
             
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                ResizeLab is a powerful, free online image resizer designed for anyone who needs to quickly adjust image dimensions without the hassle of complex software. Whether you're a blogger preparing images for your website, a social media manager optimizing content for different platforms, or simply someone who needs to resize a photo for an email, ResizeLab makes the process effortless.
+                ResizeLab is a powerful, free online image resizer designed for anyone who needs to quickly adjust image dimensions without the hassle of complex software or expensive subscriptions. Whether you're a blogger preparing images for your website, a social media manager optimizing content for different platforms, an e-commerce seller creating product photos, or simply someone who needs to resize a photo for an email attachment, ResizeLab makes the entire process effortless and secure.
               </p>
 
-              <h3 className="text-xl font-semibold text-foreground mt-8">What Makes ResizeLab Different?</h3>
+              <h3 className="text-xl font-semibold text-foreground mt-8">What Makes ResizeLab Different from Other Image Resizers?</h3>
               <p>
-                Unlike many online image tools that require you to upload files to remote servers, ResizeLab processes everything directly in your web browser. This approach offers significant advantages: your images remain completely private since they never leave your device, processing is nearly instantaneous with no upload or download wait times, and you can use the tool even with a slow internet connection after the page loads.
+                Unlike many online image tools that require you to upload files to remote servers—potentially compromising your privacy and wasting time on slow uploads—ResizeLab processes everything directly in your web browser using the HTML5 Canvas API. This client-side approach offers significant advantages that make it the preferred choice for privacy-conscious users and professionals alike.
+              </p>
+              <p>
+                Your images remain completely private since they never leave your device. Processing is nearly instantaneous with no upload or download wait times. You can use the tool even with a slow internet connection once the page loads. And there's absolutely no risk of your photos being stored, analyzed, sold, or accessed by third parties. For those interested in understanding the technical aspects of image quality, our guide on <a href="/blog/how-to-resize-images-without-losing-quality" className="text-primary hover:underline">how to resize images without losing quality</a> provides in-depth information.
               </p>
 
-              <h3 className="text-xl font-semibold text-foreground mt-8">Who Should Use This Tool?</h3>
+              <h3 className="text-xl font-semibold text-foreground mt-8">Supported Image Formats: JPEG, PNG, and WEBP</h3>
               <p>
-                ResizeLab is perfect for a wide range of users. Content creators and bloggers can quickly resize images to fit their website layouts. E-commerce sellers can prepare product photos with consistent dimensions. Social media managers can optimize images for different platform requirements. Photographers can create smaller versions of their work for web sharing. Students and professionals can resize images for presentations and documents. Even casual users who just need to make a photo smaller for an email will find ResizeLab intuitive and helpful.
+                ResizeLab supports the three most popular image formats used on the web today: JPEG, PNG, and WEBP. Each format has its optimal use cases—JPEG offers excellent compression for photographs, PNG preserves quality and supports transparency for graphics and logos, while WEBP provides superior compression for modern web applications. Our tool allows you to not only resize images but also convert between these formats seamlessly. Learn more about choosing the right format in our detailed <a href="/blog/best-image-formats-jpeg-png-webp-compared" className="text-primary hover:underline">JPEG vs PNG vs WEBP comparison guide</a>.
               </p>
 
-              <h3 className="text-xl font-semibold text-foreground mt-8">Common Use Cases</h3>
+              <h3 className="text-xl font-semibold text-foreground mt-8">Who Should Use This Free Image Resizing Tool?</h3>
               <p>
-                The most popular uses for ResizeLab include preparing images for websites and blogs where file size and dimensions matter for page speed, creating properly sized thumbnails for galleries and portfolios, adjusting photos to meet social media platform requirements, reducing image dimensions for faster email delivery, and creating consistent image sizes for online marketplaces and product listings.
+                ResizeLab is designed for a wide range of users with diverse needs. <strong>Content creators and bloggers</strong> can quickly resize images to fit their website layouts while maintaining optimal page loading speeds. <strong>E-commerce sellers</strong> can prepare product photos with consistent dimensions required by marketplaces like Amazon, eBay, and Etsy. <strong>Social media managers</strong> can optimize images for different platform requirements—whether it's Instagram's square format, Facebook's cover photo dimensions, or Twitter's header image specifications. Check our comprehensive <a href="/blog/social-media-image-sizes-guide" className="text-primary hover:underline">social media image sizes guide</a> for exact dimensions.
+              </p>
+              <p>
+                <strong>Photographers and designers</strong> can create smaller versions of their work for web sharing, portfolio sites, or client previews. <strong>Students and professionals</strong> can resize images for presentations, documents, and academic submissions. <strong>Website developers</strong> can optimize images for better Core Web Vitals scores and SEO performance. Even casual users who simply need to make a photo smaller for an email attachment will find ResizeLab intuitive, fast, and helpful.
               </p>
 
-              <h3 className="text-xl font-semibold text-foreground mt-8">Why Choose Browser-Based Processing?</h3>
+              <h3 className="text-xl font-semibold text-foreground mt-8">Common Use Cases for Image Resizing</h3>
               <p>
-                Traditional online image editors require uploading your files to their servers, which raises privacy concerns and creates delays. With ResizeLab's browser-based approach, your original images and resized results exist only on your computer. There's no risk of your photos being stored, analyzed, or accessed by third parties. This makes ResizeLab ideal for resizing sensitive documents, personal photos, or business materials where confidentiality matters.
+                The most popular uses for ResizeLab include preparing images for websites and blogs where file size and dimensions directly impact page speed and user experience. Creating properly sized thumbnails for galleries, portfolios, and image grids is another frequent application. Many users rely on our tool for adjusting photos to meet specific social media platform requirements, reducing image dimensions for faster email delivery and avoiding attachment size limits, and creating consistent image sizes for online marketplaces and product listings.
+              </p>
+              <p>
+                Additionally, ResizeLab is invaluable for <a href="/blog/optimize-images-website-speed" className="text-primary hover:underline">optimizing images for website speed</a>—a critical factor for SEO rankings and user satisfaction. Businesses use it to prepare images for digital advertising campaigns, while real estate agents and property managers resize listing photos for MLS systems and property portals.
               </p>
 
+              <h3 className="text-xl font-semibold text-foreground mt-8">Benefits of Browser-Based Image Processing</h3>
               <p>
-                The technology behind this is the HTML5 Canvas API, a standard feature in all modern web browsers. This means ResizeLab works reliably across Chrome, Firefox, Safari, Edge, and other popular browsers without requiring any plugins or downloads. Simply visit the website, upload your image, choose your settings, and download your resized result—all within seconds.
+                Traditional online image editors require uploading your files to their servers, which raises legitimate privacy concerns and creates frustrating delays—especially for large files or slow connections. With ResizeLab's browser-based approach, your original images and resized results exist only on your computer. There's no server-side processing, no data retention policies to worry about, and no risk of your photos being used for AI training or other purposes without your consent.
+              </p>
+              <p>
+                This technology leverages the HTML5 Canvas API, a standard feature in all modern web browsers. ResizeLab works reliably across Chrome, Firefox, Safari, Edge, Brave, and other popular browsers without requiring any plugins, extensions, or software downloads. Simply visit the website, upload your image, choose your settings, and download your resized result—all within seconds, all completely free.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground mt-8">Quality Control: Maintain Image Clarity While Resizing</h3>
+              <p>
+                One of the biggest concerns when resizing images is quality loss. ResizeLab addresses this by using high-quality resampling algorithms and giving you full control over output quality settings. When saving as JPEG or WEBP, you can adjust the quality slider to find the perfect balance between file size and visual fidelity. For a deeper understanding of compression techniques, explore our <a href="/blog/image-compression-guide-reduce-file-size" className="text-primary hover:underline">image compression guide</a> that explains how to reduce file size without sacrificing quality.
+              </p>
+              <p>
+                The tool also features an aspect ratio lock, ensuring your images don't get stretched or distorted during resizing. Quick preset sizes and percentage-based scaling make it easy to achieve consistent results across multiple images. Whether you need a specific pixel dimension, a percentage reduction, or a standard web size, ResizeLab has you covered.
               </p>
             </div>
           </article>

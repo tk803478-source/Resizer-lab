@@ -146,7 +146,7 @@ export default function BlogPost() {
 }
 
 function formatContent(content: string): string {
-  return content
+  let formatted = content
     .replace(/^# (.*$)/gim, '<h1>$1</h1>')
     .replace(/^## (.*$)/gim, '<h2>$1</h2>')
     .replace(/^### (.*$)/gim, '<h3>$1</h3>')
@@ -160,4 +160,17 @@ function formatContent(content: string): string {
       const cells = match.split('|').filter(c => c.trim());
       return '<tr>' + cells.map(c => `<td class="border border-border px-3 py-2">${c.trim()}</td>`).join('') + '</tr>';
     });
+
+  // Add internal link to tool
+  formatted += `
+    <div class="mt-10 p-6 rounded-xl bg-accent/50 border border-border text-center">
+      <p class="text-foreground font-semibold mb-2">Ready to resize your images?</p>
+      <p class="text-sm text-muted-foreground mb-4">Try our free online image resizer – no signup required, 100% private.</p>
+      <a href="/" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity">
+        Resize Images Now →
+      </a>
+    </div>
+  `;
+
+  return formatted;
 }

@@ -1,9 +1,15 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { FileText } from "lucide-react";
 
 export default function Terms() {
   return (
     <Layout>
+      <Helmet>
+        <title>Terms of Service | ResizeLab</title>
+        <meta name="description" content="ResizeLab terms of service. Read our terms and conditions for using our free online image resizing tool." />
+        <link rel="canonical" href="https://resizelab.app/terms" />
+      </Helmet>
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center animate-fade-in">
