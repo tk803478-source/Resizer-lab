@@ -1,10 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { Grid3X3, Info, Image, BookOpen, Mail } from "lucide-react";
+import { Info, Image, BookOpen, Mail, FileText, Wand2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Home", icon: Image },
+  { to: "/#tool", label: "Image Resizer", icon: Wand2 },
+  { to: "/guides", label: "Guides", icon: FileText },
   { to: "/blog", label: "Blog", icon: BookOpen },
   { to: "/about", label: "About", icon: Info },
   { to: "/contact", label: "Contact", icon: Mail },
