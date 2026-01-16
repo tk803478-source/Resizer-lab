@@ -21,7 +21,7 @@ export default function BlogPost() {
   return (
     <Layout>
       <Helmet>
-        <title>{post.title} | ResizeLab Blog</title>
+        <title>{post.title} | Resizer Lab Blog</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(', ')} />
         <meta property="og:title" content={post.title} />
@@ -107,7 +107,7 @@ export default function BlogPost() {
             <AdPlaceholder position="sidebar" />
 
             <div className="rounded-xl border border-border bg-card p-6 sticky top-24">
-              <h3 className="font-semibold mb-3">Try ResizeLab</h3>
+              <h3 className="font-semibold mb-3">Try Resizer Lab</h3>
               <p className="text-sm text-muted-foreground mb-4">
                 Put this knowledge into practice. Resize images instantly in your browser.
               </p>

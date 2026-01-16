@@ -24,8 +24,8 @@ export function Navbar() {
         >
           <img src={logo} alt="ResizeLab Logo" className="h-9 w-9 rounded-lg" />
           <span className="hidden sm:inline">
-            <span className="text-gradient">Resize</span>
-            <span className="text-foreground">Lab</span>
+            <span className="text-gradient">Resizer</span>
+            <span className="text-foreground"> Lab</span>
           </span>
         </Link>
 

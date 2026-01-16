@@ -6,8 +6,8 @@ export default function Privacy() {
   return (
     <Layout>
       <Helmet>
-        <title>Privacy Policy | ResizeLab</title>
-        <meta name="description" content="ResizeLab privacy policy. Learn how we protect your data with 100% browser-based processing. Your images never leave your device." />
+        <title>Privacy Policy | Resizer Lab</title>
+        <meta name="description" content="Resizer Lab privacy policy. Learn how we protect your data with 100% browser-based processing. Your images never leave your device." />
         <link rel="canonical" href="https://resizelab.app/privacy" />
       </Helmet>
       <div className="gradient-hero">
@@ -30,12 +30,12 @@ export default function Privacy() {
         <div className="mx-auto max-w-3xl prose prose-lg dark:prose-invert">
           <h2>Introduction</h2>
           <p>
-            At ResizeLab, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our image resizing service.
+            At Resizer Lab, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our image resizing service.
           </p>
 
           <h2>Information We Don't Collect</h2>
           <p>
-            ResizeLab is designed with privacy as a core principle. Here's what makes us different:
+            Resizer Lab is designed with privacy as a core principle. Here's what makes us different:
           </p>
           <ul>
             <li><strong>Your Images</strong>: All image processing happens directly in your browser using the HTML5 Canvas API. Your images are never uploaded to our servers.</li>

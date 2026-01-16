@@ -9,8 +9,8 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="font-bold text-lg">
-              <span className="text-gradient">Resize</span>
-              <span className="text-foreground">Lab</span>
+              <span className="text-gradient">Resizer</span>
+              <span className="text-foreground"> Lab</span>
             </Link>
             <p className="mt-2 text-sm text-muted-foreground">
               Free online image resizer. Fast, private, and easy to use.
@@ -51,7 +51,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} ResizeLab. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Resizer Lab. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
             Built with{" "}
             <span className="inline-flex items-center gap-1 font-semibold text-primary">

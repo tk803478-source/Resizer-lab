@@ -54,8 +54,8 @@ export default function About() {
   return (
     <Layout>
       <Helmet>
-        <title>About ResizeLab – Free Browser-Based Image Resizer</title>
-        <meta name="description" content="Learn about ResizeLab, a free privacy-focused image resizing tool that runs entirely in your browser. No uploads, no servers, no tracking." />
+        <title>About Resizer Lab – Free Browser-Based Image Resizer</title>
+        <meta name="description" content="Learn about Resizer Lab, a free privacy-focused image resizing tool that runs entirely in your browser. No uploads, no servers, no tracking." />
         <link rel="canonical" href="https://resizelab.app/about" />
       </Helmet>
 
@@ -67,10 +67,10 @@ export default function About() {
               <Image className="h-8 w-8 text-primary-foreground" />
             </div>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              About <span className="text-gradient">ResizeLab</span>
+              About <span className="text-gradient">Resizer Lab</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              ResizeLab is a free, privacy-focused image resizing tool that runs
+              Resizer Lab is a free, privacy-focused image resizing tool that runs
               entirely in your browser. No uploads, no servers, no tracking—just
               fast, simple image resizing.
             </p>
@@ -82,7 +82,7 @@ export default function About() {
       <section className="container py-12 md:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center text-2xl font-bold mb-12">
-            Why Choose <span className="text-gradient">ResizeLab</span>?
+            Why Choose <span className="text-gradient">Resizer Lab</span>?
           </h2>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -154,7 +154,7 @@ export default function About() {
           <Lock className="mx-auto h-10 w-10 mb-4" />
           <h3 className="text-2xl font-bold">Your Privacy, Our Priority</h3>
           <p className="mt-3 text-primary-foreground/90 max-w-xl mx-auto">
-            ResizeLab never uploads your images to any server. All processing
+            Resizer Lab never uploads your images to any server. All processing
             happens locally on your device, ensuring complete privacy and security
             for your files.
           </p>
