@@ -92,7 +92,7 @@ const benefits = [
 const faqs = [
   {
     question: "Is this image resizer tool completely free?",
-    answer: "Yes, ResizeLab is 100% free to use. There are no hidden fees, premium features, or subscription requirements. You can resize unlimited images without any cost."
+    answer: "Yes, Resizer Lab is 100% free to use. There are no hidden fees, premium features, or subscription requirements. You can resize unlimited images without any cost."
   },
   {
     question: "Is my data safe when using this tool?",
@@ -100,7 +100,7 @@ const faqs = [
   },
   {
     question: "Does this tool work on mobile devices?",
-    answer: "Yes! ResizeLab is fully responsive and works perfectly on smartphones, tablets, and desktop computers. You can resize images on-the-go from any modern mobile browser."
+    answer: "Yes! Resizer Lab is fully responsive and works perfectly on smartphones, tablets, and desktop computers. You can resize images on-the-go from any modern mobile browser."
   },
   {
     question: "Do I need to create an account or sign up?",
@@ -112,11 +112,11 @@ const faqs = [
   },
   {
     question: "Is this tool browser-based only?",
-    answer: "Yes, ResizeLab runs entirely in your web browser. This means you don't need to download or install any software, and you can use it on any device with a modern browser."
+    answer: "Yes, Resizer Lab runs entirely in your web browser. This means you don't need to download or install any software, and you can use it on any device with a modern browser."
   },
   {
     question: "What image formats are supported?",
-    answer: "ResizeLab supports the most common image formats including JPEG, PNG, and WEBP. You can also convert between these formats while resizing."
+    answer: "Resizer Lab supports the most common image formats including JPEG, PNG, and WEBP. You can also convert between these formats while resizing."
   },
   {
     question: "How does browser-based processing work?",
@@ -730,7 +730,7 @@ export default function Index() {
   return (
     <Layout>
       <Helmet>
-        <title>Free Online Image Resizer – Resize Photos Instantly | ResizeLab</title>
+        <title>Free Online Image Resizer – Resize Photos Instantly | Resizer Lab</title>
         <meta name="description" content="Resize images online for free. Fast, private, and easy-to-use browser-based image resizer. No uploads, no signup required. Supports JPEG, PNG, WEBP. Works on mobile and desktop." />
         <meta name="keywords" content="image resizer, resize image online, free image resizer, photo resizer, resize photos, image compression, resize JPEG, resize PNG, WEBP converter" />
         <link rel="canonical" href="https://resizelab.app/" />
