@@ -50,7 +50,7 @@ export default function Guides() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Resizing Guides & Tutorials | ResizeLab</title>
+        <title>Image Resizing Guides & Tutorials | Resizer Lab</title>
         <meta name="description" content="Comprehensive guides on image resizing, optimization, compression, and web performance. Learn best practices for websites, social media, and e-commerce." />
         <meta name="keywords" content="image resizing guide, image optimization tutorial, photo compression guide, web image best practices" />
         <link rel="canonical" href="https://resizelab.app/guides" />

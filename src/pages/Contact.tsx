@@ -32,8 +32,8 @@ export default function Contact() {
   return (
     <Layout>
       <Helmet>
-        <title>Contact Us | ResizeLab</title>
-        <meta name="description" content="Contact ResizeLab for questions, feedback, or suggestions about our free online image resizer tool." />
+        <title>Contact Us | Resizer Lab</title>
+        <meta name="description" content="Contact Resizer Lab for questions, feedback, or suggestions about our free online image resizer tool." />
         <link rel="canonical" href="https://resizelab.app/contact" />
       </Helmet>
 
@@ -140,8 +140,8 @@ export default function Contact() {
             <h3 className="font-semibold mb-3">Frequently Asked Questions</h3>
             <div className="space-y-4 text-sm">
               <div>
-                <p className="font-medium">Is ResizeLab really free?</p>
-                <p className="text-muted-foreground">Yes! ResizeLab is completely free to use with no hidden costs.</p>
+                <p className="font-medium">Is Resizer Lab really free?</p>
+                <p className="text-muted-foreground">Yes! Resizer Lab is completely free to use with no hidden costs.</p>
               </div>
               <div>
                 <p className="font-medium">Are my images stored on your servers?</p>

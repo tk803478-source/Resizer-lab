@@ -6,8 +6,8 @@ export default function Terms() {
   return (
     <Layout>
       <Helmet>
-        <title>Terms of Service | ResizeLab</title>
-        <meta name="description" content="ResizeLab terms of service. Read our terms and conditions for using our free online image resizing tool." />
+        <title>Terms of Service | Resizer Lab</title>
+        <meta name="description" content="Resizer Lab terms of service. Read our terms and conditions for using our free online image resizing tool." />
         <link rel="canonical" href="https://resizelab.app/terms" />
       </Helmet>
       <div className="gradient-hero">
@@ -30,12 +30,12 @@ export default function Terms() {
         <div className="mx-auto max-w-3xl prose prose-lg dark:prose-invert">
           <h2>Acceptance of Terms</h2>
           <p>
-            By accessing and using ResizeLab ("the Service"), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our service.
+            By accessing and using Resizer Lab ("the Service"), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our service.
           </p>
 
           <h2>Description of Service</h2>
           <p>
-            ResizeLab provides a free, browser-based image resizing tool. The service allows users to:
+            Resizer Lab provides a free, browser-based image resizing tool. The service allows users to:
           </p>
           <ul>
             <li>Upload images from their device</li>
@@ -49,7 +49,7 @@ export default function Terms() {
 
           <h2>User Responsibilities</h2>
           <p>
-            When using ResizeLab, you agree to:
+            When using Resizer Lab, you agree to:
           </p>
           <ul>
             <li>Use the service only for lawful purposes</li>
@@ -64,12 +64,12 @@ export default function Terms() {
             <strong>Your Images</strong>: You retain all rights to your images. Since processing happens in your browser, we never have access to or claim any rights over your content.
           </p>
           <p>
-            <strong>Our Service</strong>: The ResizeLab website, design, code, and content are protected by intellectual property laws. You may not copy, modify, or distribute our service without permission.
+            <strong>Our Service</strong>: The Resizer Lab website, design, code, and content are protected by intellectual property laws. You may not copy, modify, or distribute our service without permission.
           </p>
 
           <h2>Disclaimer of Warranties</h2>
           <p>
-            ResizeLab is provided "as is" without warranties of any kind, either express or implied. We do not guarantee that:
+            Resizer Lab is provided "as is" without warranties of any kind, either express or implied. We do not guarantee that:
           </p>
           <ul>
             <li>The service will be uninterrupted or error-free</li>
@@ -79,7 +79,7 @@ export default function Terms() {
 
           <h2>Limitation of Liability</h2>
           <p>
-            To the maximum extent permitted by law, ResizeLab and its creators shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the service.
+            To the maximum extent permitted by law, Resizer Lab and its creators shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the service.
           </p>
 
           <h2>Modifications to Service</h2>
@@ -89,7 +89,7 @@ export default function Terms() {
 
           <h2>Advertisements</h2>
           <p>
-            ResizeLab may display advertisements to support the free service. These ads are provided by third-party services and are subject to their own terms and privacy policies.
+            Resizer Lab may display advertisements to support the free service. These ads are provided by third-party services and are subject to their own terms and privacy policies.
           </p>
 
           <h2>Governing Law</h2>

@@ -11,7 +11,7 @@ export default function Blog() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Resizing Blog – Tips, Guides & Best Practices | ResizeLab</title>
+        <title>Image Resizing Blog – Tips, Guides & Best Practices | Resizer Lab</title>
         <meta name="description" content="Expert guides on image resizing, compression, optimization, and social media image sizes. Learn how to resize images without losing quality." />
         <link rel="canonical" href="https://resizelab.app/blog" />
       </Helmet>
