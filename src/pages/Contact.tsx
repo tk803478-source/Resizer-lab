@@ -48,9 +48,18 @@ export default function Contact() {
   return (
     <Layout>
       <Helmet>
-        <title>Contact Us | Resizer Lab</title>
-        <meta name="description" content="Contact Resizer Lab for questions, feedback, or suggestions about our free online image resizer tool. We're here to help!" />
+        <title>Contact Us – Support & Feedback | Resizer Lab</title>
+        <meta name="description" content="Get in touch with Resizer Lab. Questions about our free image resizer? We're here to help with support, feedback, or suggestions." />
         <link rel="canonical" href="https://resizelab.app/contact" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Resizer Lab",
+            "url": "https://resizelab.app/contact",
+            "description": "Contact page for Resizer Lab support and inquiries."
+          })}
+        </script>
       </Helmet>
 
       <div className="gradient-hero">

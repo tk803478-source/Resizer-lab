@@ -82,9 +82,18 @@ export default function About() {
   return (
     <Layout>
       <Helmet>
-        <title>About Resizer Lab – Free Browser-Based Image Resizer</title>
-        <meta name="description" content="Learn about Resizer Lab, a free privacy-focused image resizing tool that runs entirely in your browser. No uploads, no servers, no tracking." />
+        <title>About Us – Browser-Based Image Resizer | Resizer Lab</title>
+        <meta name="description" content="Learn about Resizer Lab, the free privacy-first image resizer. All processing happens in your browser – no uploads, no servers." />
         <link rel="canonical" href="https://resizelab.app/about" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Resizer Lab",
+            "url": "https://resizelab.app",
+            "description": "Free browser-based image resizing tool focused on privacy and simplicity."
+          })}
+        </script>
       </Helmet>
 
       <div className="gradient-hero">

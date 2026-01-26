@@ -7,8 +7,8 @@ export default function Privacy() {
   return (
     <Layout>
       <Helmet>
-        <title>Privacy Policy | Resizer Lab</title>
-        <meta name="description" content="Resizer Lab privacy policy. Learn how we protect your data with 100% browser-based processing. Your images never leave your device." />
+        <title>Privacy Policy – Your Data Stays Private | Resizer Lab</title>
+        <meta name="description" content="Resizer Lab privacy policy. 100% browser-based processing means your images never leave your device. Zero data collection." />
         <link rel="canonical" href="https://resizelab.app/privacy" />
       </Helmet>
       <div className="gradient-hero">
@@ -188,7 +188,10 @@ export default function Privacy() {
               If you have any questions, concerns, or suggestions about this Privacy Policy or our privacy practices, please don't hesitate to reach out. We value your feedback and are committed to addressing any privacy-related inquiries promptly and thoroughly.
             </p>
             <p>
-              You can contact us through our <Link to="/contact" className="text-primary hover:underline">Contact page</Link>, and we will respond to your inquiry as quickly as possible.
+              You can contact us through our <Link to="/contact" className="text-primary hover:underline">Contact page</Link>, and we will respond to your inquiry as quickly as possible. For more information about how our tool works, visit our <Link to="/about" className="text-primary hover:underline">About page</Link> or explore our <Link to="/guides" className="text-primary hover:underline">comprehensive guides</Link> on image optimization.
+            </p>
+            <p>
+              Ready to resize images with complete privacy? <Link to="/" className="text-primary hover:underline">Try our free image resizer</Link> – no signup required.
             </p>
           </div>
 

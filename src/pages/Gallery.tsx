@@ -74,10 +74,10 @@ export default function Gallery() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Size Presets - Quick Resize Options | Resizer Lab</title>
-        <meta name="description" content="Quickly resize your images using our preset size options. Choose from Full HD (1080px), HD Ready (720px), Medium (512px), or Small (256px) for instant, optimized results." />
+        <title>Image Size Presets – Quick Resize to 1080p, 720p, 512px | Resizer Lab</title>
+        <meta name="description" content="Quickly resize images with preset sizes. Choose Full HD (1080px), HD (720px), Medium (512px), or Small (256px) for instant results." />
         <link rel="canonical" href="https://resizelab.app/gallery" />
-        <meta name="keywords" content="image presets, quick resize, image dimensions, preset sizes, 1080p resize, 720p image, thumbnail size" />
+        <meta name="keywords" content="image presets, quick resize, image dimensions, 1080p resize, 720p image, thumbnail size, preset sizes" />
       </Helmet>
 
       <div className="gradient-hero">
@@ -237,7 +237,10 @@ export default function Gallery() {
 
             <h3>Maintaining Aspect Ratio</h3>
             <p>
-              All our preset sizes maintain your image's original aspect ratio. This prevents distortion and ensures your images look natural after resizing. If you need to change the aspect ratio (for example, to create a square image from a rectangular one), you can use our custom dimension options on the main resizer tool.
+              All our preset sizes maintain your image's original aspect ratio. This prevents distortion and ensures your images look natural after resizing. If you need to change the aspect ratio (for example, to create a square image from a rectangular one), you can use our custom dimension options on the <Link to="/" className="text-primary hover:underline">main resizer tool</Link>.
+            </p>
+            <p>
+              For a deeper understanding of aspect ratios and how they affect your images, check out our comprehensive guide on <Link to="/blog/understanding-aspect-ratios-images" className="text-primary hover:underline">understanding aspect ratios</Link>. You can also learn more about <Link to="/blog/social-media-image-sizes-guide" className="text-primary hover:underline">social media image sizes</Link> to ensure your content looks perfect on every platform.
             </p>
           </div>
         </div>

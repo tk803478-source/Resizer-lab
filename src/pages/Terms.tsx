@@ -7,8 +7,8 @@ export default function Terms() {
   return (
     <Layout>
       <Helmet>
-        <title>Terms of Service | Resizer Lab</title>
-        <meta name="description" content="Resizer Lab terms of service. Read our terms and conditions for using our free online image resizing tool." />
+        <title>Terms of Service – Usage Guidelines | Resizer Lab</title>
+        <meta name="description" content="Resizer Lab terms of service. Read our terms and conditions for using our free online image resizing tool. Fair use policy." />
         <link rel="canonical" href="https://resizelab.app/terms" />
       </Helmet>
       <div className="gradient-hero">
@@ -202,7 +202,10 @@ export default function Terms() {
               If you have any questions, concerns, or feedback about these Terms of Service or your use of Resizer Lab, we encourage you to reach out to us. We value user feedback and are committed to providing clear, helpful responses to all inquiries.
             </p>
             <p>
-              You can contact us through our <Link to="/contact" className="text-primary hover:underline">Contact page</Link>. We will make every effort to respond to your inquiry promptly and address any concerns you may have.
+              You can contact us through our <Link to="/contact" className="text-primary hover:underline">Contact page</Link>. We will make every effort to respond to your inquiry promptly and address any concerns you may have. For information on how we handle your data, please review our <Link to="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
+            </p>
+            <p>
+              Learn more about our tool and team on our <Link to="/about" className="text-primary hover:underline">About page</Link>, or explore our <Link to="/blog" className="text-primary hover:underline">blog</Link> for tips on image optimization.
             </p>
           </div>
 
