@@ -730,10 +730,28 @@ export default function Index() {
   return (
     <Layout>
       <Helmet>
-        <title>Free Online Image Resizer – Resize Photos Instantly | Resizer Lab</title>
-        <meta name="description" content="Resize images online for free. Fast, private, and easy-to-use browser-based image resizer. No uploads, no signup required. Supports JPEG, PNG, WEBP. Works on mobile and desktop." />
-        <meta name="keywords" content="image resizer, resize image online, free image resizer, photo resizer, resize photos, image compression, resize JPEG, resize PNG, WEBP converter" />
+        <title>Free Image Resizer Online – Resize Photos Instantly | Resizer Lab</title>
+        <meta name="description" content="Resize images free online in seconds. Fast, private browser-based tool with no uploads. Supports JPEG, PNG, WEBP. No signup needed." />
+        <meta name="keywords" content="free image resizer, resize image online, photo resizer, resize photos, compress images, JPEG resizer, PNG resizer, WEBP converter" />
         <link rel="canonical" href="https://resizelab.app/" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Resizer Lab",
+            "description": "Free online image resizer tool. Resize photos instantly in your browser with complete privacy.",
+            "url": "https://resizelab.app",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Any",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "featureList": ["Image resizing", "Format conversion", "Quality adjustment", "Browser-based processing"],
+            "browserRequirements": "Requires a modern web browser with JavaScript enabled"
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}

@@ -21,13 +21,36 @@ export default function BlogPost() {
   return (
     <Layout>
       <Helmet>
-        <title>{post.title} | Resizer Lab Blog</title>
+        <title>{post.title} | Resizer Lab</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(', ')} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.date} />
         <link rel="canonical" href={`https://resizelab.app/blog/${post.slug}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.metaDescription,
+            "datePublished": post.date,
+            "author": {
+              "@type": "Organization",
+              "name": "Resizer Lab"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Resizer Lab",
+              "url": "https://resizelab.app"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://resizelab.app/blog/${post.slug}`
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="gradient-hero">

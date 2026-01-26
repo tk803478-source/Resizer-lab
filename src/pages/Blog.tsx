@@ -11,9 +11,23 @@ export default function Blog() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Resizing Blog – Tips, Guides & Best Practices | Resizer Lab</title>
-        <meta name="description" content="Expert guides on image resizing, compression, optimization, and social media image sizes. Learn how to resize images without losing quality." />
+        <title>Image Optimization Blog – Tips, Guides & Best Practices | Resizer Lab</title>
+        <meta name="description" content="Expert guides on image resizing, compression, and optimization. Learn to resize images without quality loss for web, social media, and e-commerce." />
         <link rel="canonical" href="https://resizelab.app/blog" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Resizer Lab Blog",
+            "description": "Expert guides on image resizing, compression, optimization, and social media image sizes.",
+            "url": "https://resizelab.app/blog",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Resizer Lab",
+              "url": "https://resizelab.app"
+            }
+          })}
+        </script>
       </Helmet>
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
