@@ -36,6 +36,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import heroIllustration from "@/assets/hero-illustration.png";
+import heroBg from "@/assets/hero-bg.png";
 
 // ============= Types =============
 interface ImageData {
@@ -757,8 +758,19 @@ export default function Index() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="w-full bg-hero">
-        <div className="container py-12 md:py-20 lg:py-24">
+      <section 
+        className="w-full bg-hero relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Background overlay for better text readability */}
+        <div className="absolute inset-0 bg-hero/80 backdrop-blur-[2px]" />
+        
+        <div className="container py-12 md:py-20 lg:py-24 relative z-10">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
             {/* Left Side - Content */}
             <div className="flex flex-col space-y-6 animate-fade-in">
