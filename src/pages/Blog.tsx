@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+
 import { getAllBlogPosts } from "@/data/blogPosts";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight, BookOpen, TrendingUp, Image, Zap, Shield } from "lucide-react";
@@ -44,8 +44,6 @@ export default function Blog() {
           </div>
         </section>
       </div>
-
-      <AdPlaceholder position="banner" className="container mt-8" />
 
       <section className="container py-12">
         <div className="grid gap-8 lg:grid-cols-3">
@@ -129,7 +127,6 @@ export default function Blog() {
           </div>
 
           <aside className="space-y-6">
-            <AdPlaceholder position="sidebar" />
             
             <div className="rounded-xl border border-border bg-card p-6">
               <h3 className="font-semibold mb-4">Popular Topics</h3>
@@ -242,8 +239,6 @@ export default function Blog() {
           </div>
         </div>
       </section>
-
-      <AdPlaceholder position="bottom" className="container mb-8" />
     </Layout>
   );
 }

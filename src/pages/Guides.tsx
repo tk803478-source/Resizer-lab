@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+
 import { getAllBlogPosts } from "@/data/blogPosts";
 import { Link } from "react-router-dom";
 import { FileText, ArrowRight, Image, BookOpen, Zap, Shield, Target, TrendingUp, CheckCircle2 } from "lucide-react";
@@ -111,8 +111,6 @@ export default function Guides() {
           </div>
         </section>
       </div>
-
-      <AdPlaceholder position="banner" className="container mt-8" />
 
       <section className="container py-12">
         {/* Quick Tool CTA */}
@@ -298,8 +296,6 @@ export default function Guides() {
           </div>
         </div>
       </section>
-
-      <AdPlaceholder position="bottom" className="container mb-8" />
     </Layout>
   );
 }
