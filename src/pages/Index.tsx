@@ -33,7 +33,9 @@ import {
   CheckCircle2,
   Settings2,
   ArrowDownToLine,
+  ArrowRight,
 } from "lucide-react";
+import heroIllustration from "@/assets/hero-illustration.png";
 
 // ============= Types =============
 interface ImageData {
@@ -755,41 +757,72 @@ export default function Index() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="gradient-hero">
-        <section className="container py-12 md:py-16">
-          <div className="mx-auto max-w-2xl text-center animate-fade-in">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Free Online Image Resizer – <span className="text-gradient">Resize Instantly</span>
-            </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Fast, free, and easy online tools for everyday use. Resize any image directly in your browser with complete privacy.
-            </p>
-          </div>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-4 md:gap-8">
-            {heroFeatures.map(({ icon: Icon, label, desc }, i) => (
-              <div
-                key={label}
-                className="flex items-center gap-3 animate-fade-in"
-                style={{ animationDelay: `${i * 100}ms` }}
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-                  <Icon className="h-5 w-5 text-primary" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-semibold">{label}</p>
-                  <p className="text-xs text-muted-foreground">{desc}</p>
-                </div>
+      <section className="w-full bg-hero">
+        <div className="container py-12 md:py-20 lg:py-24">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+            {/* Left Side - Content */}
+            <div className="flex flex-col space-y-6 animate-fade-in">
+              <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-tight">
+                Resize Images Instantly{" "}
+                <span className="text-hero-accent">Without Losing Quality</span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+                Resize, compress, and optimize images online in seconds. Fast, secure, and free image resizer for web, social media, and professional use. No signup required.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <Button 
+                  size="xl" 
+                  className="bg-hero-cta text-hero-cta-foreground hover:bg-hero-cta/90 shadow-lg"
+                  onClick={() => {
+                    const toolSection = document.getElementById('resize-tool');
+                    if (toolSection) {
+                      toolSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  Resize Image Now
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
               </div>
-            ))}
+              
+              {/* Feature badges */}
+              <div className="flex flex-wrap gap-4 pt-4">
+                {heroFeatures.map(({ icon: Icon, label, desc }, i) => (
+                  <div
+                    key={label}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/50 border border-border animate-fade-in"
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  >
+                    <Icon className="h-4 w-4 text-hero-accent" />
+                    <span className="text-sm font-medium text-foreground">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Side - Hero Illustration */}
+            <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '200ms' }}>
+              <div className="relative w-full max-w-lg lg:max-w-xl">
+                <img 
+                  src={heroIllustration} 
+                  alt="Image resizing illustration showing before and after comparison on a laptop screen" 
+                  className="w-full h-auto rounded-2xl"
+                  loading="eager"
+                  width={1024}
+                  height={768}
+                />
+                {/* Decorative accent */}
+                <div className="absolute -z-10 inset-0 bg-hero-accent/10 blur-3xl rounded-full transform scale-75 translate-x-4 translate-y-4" />
+              </div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <AdPlaceholder position="banner" className="container mt-8" />
 
       {/* Main Tool Section */}
-      <section className="container py-8 md:py-12">
+      <section id="resize-tool" className="container py-8 md:py-12 scroll-mt-4">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
             <div className="space-y-6 animate-slide-up">
