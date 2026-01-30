@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+
 import {
   Accordion,
   AccordionContent,
@@ -819,8 +819,6 @@ export default function Index() {
         </div>
       </section>
 
-      <AdPlaceholder position="banner" className="container mt-8" />
-
       {/* Main Tool Section */}
       <section id="resize-tool" className="container py-8 md:py-12 scroll-mt-4">
         <div className="mx-auto max-w-5xl">
@@ -944,8 +942,6 @@ export default function Index() {
         </div>
       </section>
 
-      <AdPlaceholder position="in-article" className="container" />
-
       {/* SEO Content Section */}
       <section className="container py-12 md:py-16">
         <div className="mx-auto max-w-3xl">
@@ -1062,8 +1058,6 @@ export default function Index() {
           </Accordion>
         </div>
       </section>
-
-      <AdPlaceholder position="bottom" className="container mb-8" />
     </Layout>
   );
 }
