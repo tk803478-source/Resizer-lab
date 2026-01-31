@@ -730,6 +730,21 @@ export default function Index() {
     }
   }, [selectedPreset, originalImage, clearPreset]);
 
+  // Load native banner ad script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://pl28559934.effectivegatecpm.com/3ec4c179c81289f3b19d4dc6a5ccf170/invoke.js';
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <Layout>
       <Helmet>
@@ -756,6 +771,13 @@ export default function Index() {
           })}
         </script>
       </Helmet>
+
+      {/* Native Banner Ad */}
+      <div className="w-full bg-background py-2">
+        <div className="container">
+          <div id="container-3ec4c179c81289f3b19d4dc6a5ccf170"></div>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section 
