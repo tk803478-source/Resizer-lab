@@ -13,12 +13,15 @@ import {
   Eye,
   TrendingUp,
   Clock,
+  AlertTriangle,
+  RefreshCw,
 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function AdminDashboard() {
-  const { data: stats, isLoading: statsLoading } = useDashboardStats();
-  const { data: settings } = useSiteSettings();
+  const { data: stats, isLoading: statsLoading, error: statsError, refetch: refetchStats } = useDashboardStats();
+  const { data: settings, error: settingsError, refetch: refetchSettings } = useSiteSettings();
 
   const statCards = [
     {
@@ -59,6 +62,13 @@ export default function AdminDashboard() {
     { label: "Update SEO", icon: TrendingUp, href: "/admin/seo" },
   ];
 
+  const hasError = statsError || settingsError;
+
+  const handleRetry = () => {
+    if (statsError) refetchStats();
+    if (settingsError) refetchSettings();
+  };
+
   return (
     <AdminLayout>
       <div className="space-y-8">
@@ -69,6 +79,23 @@ export default function AdminDashboard() {
             Welcome to your admin panel. Manage your entire website from here.
           </p>
         </div>
+
+        {/* Error Alert */}
+        {hasError && (
+          <Alert variant="destructive">
+            <AlertTriangle className="h-4 w-4" />
+            <AlertTitle>Error loading data</AlertTitle>
+            <AlertDescription className="flex items-center justify-between">
+              <span>
+                {statsError?.message || settingsError?.message || "Failed to load dashboard data. Please try again."}
+              </span>
+              <Button variant="outline" size="sm" onClick={handleRetry}>
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Retry
+              </Button>
+            </AlertDescription>
+          </Alert>
+        )}
 
         {/* Stats Grid */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
