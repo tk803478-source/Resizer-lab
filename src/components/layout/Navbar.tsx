@@ -5,7 +5,7 @@ import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Home", icon: Image },
-  { to: "/#tool", label: "Image Resizer", icon: Wand2 },
+  { to: "/image-resizer", label: "Image Resizer", icon: Wand2 },
   { to: "/guides", label: "Guides", icon: FileText },
   { to: "/blog", label: "Blog", icon: BookOpen },
   { to: "/about", label: "About", icon: Info },

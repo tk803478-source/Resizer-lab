@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { AdminRoute } from "@/components/admin/AdminRoute";
 import Index from "./pages/Index";
+import ImageResizer from "./pages/ImageResizer";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -40,6 +41,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/image-resizer" element={<ImageResizer />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/guides" element={<Guides />} />
               <Route path="/about" element={<About />} />
