@@ -33,10 +33,7 @@ import {
   CheckCircle2,
   Settings2,
   ArrowDownToLine,
-  ArrowRight,
 } from "lucide-react";
-import heroIllustration from "@/assets/hero-illustration.png";
-import heroBg from "@/assets/hero-bg.png";
 
 // ============= Types =============
 interface ImageData {
@@ -63,10 +60,11 @@ interface ResizedImage {
 }
 
 // ============= Constants =============
-const heroFeatures = [
-  { icon: Zap, label: "Lightning Fast", desc: "Browser-based processing" },
-  { icon: Shield, label: "100% Private", desc: "No uploads to servers" },
-  { icon: Sparkles, label: "High Quality", desc: "Maintains image clarity" },
+const trustBadges = [
+  { icon: Sparkles, label: "Free to use" },
+  { icon: UserX, label: "No signup required" },
+  { icon: Shield, label: "Secure processing" },
+  { icon: ImageIcon, label: "Supports JPG, PNG, WebP" },
 ];
 
 const mainFeatures = [
@@ -810,33 +808,36 @@ export default function Index() {
       </div>
 
       {/* Hero Section */}
-      <section 
-        className="w-full bg-hero relative overflow-hidden"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        {/* Background overlay for better text readability */}
-        <div className="absolute inset-0 bg-hero/80 backdrop-blur-[2px]" />
-        
-        <div className="container py-12 md:py-20 lg:py-24 relative z-10">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+      <section className="w-full relative overflow-hidden bg-gradient-to-b from-background via-accent/20 to-background">
+        {/* Abstract background shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[100px]" />
+          <div className="absolute top-1/2 -left-40 w-[400px] h-[400px] rounded-full bg-hero-accent/8 blur-[80px]" />
+          <div className="absolute bottom-0 right-1/3 w-[300px] h-[300px] rounded-full bg-primary/3 blur-[60px]" />
+        </div>
+
+        <div className="container py-16 md:py-24 lg:py-28 relative z-10">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Left Side - Content */}
-            <div className="flex flex-col space-y-6 animate-fade-in">
-              <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-tight">
+            <div className="flex flex-col space-y-7 animate-fade-in">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 w-fit">
+                <Zap className="h-3.5 w-3.5 text-primary" />
+                <span className="text-xs font-semibold text-primary uppercase tracking-wider">Free Online Tool</span>
+              </div>
+
+              <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-[3.5rem] md:leading-[1.1]">
                 Resize Images Instantly{" "}
-                <span className="text-hero-accent">Without Losing Quality</span>
+                <span className="text-gradient">Without Losing Quality</span>
               </h1>
+
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                Resize, compress, and optimize images online in seconds. Fast, secure, and free image resizer for web, social media, and professional use. No signup required.
+                Free, fast, and secure image resizer. Optimize your images for websites, social media, and professional use in seconds.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Button 
-                  size="xl" 
-                  className="bg-hero-cta text-hero-cta-foreground hover:bg-hero-cta/90 shadow-lg"
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-1">
+                <Button
+                  size="xl"
+                  variant="hero"
                   onClick={() => {
                     const toolSection = document.getElementById('resize-tool');
                     if (toolSection) {
@@ -844,39 +845,90 @@ export default function Index() {
                     }
                   }}
                 >
-                  Resize Image Now
-                  <ArrowRight className="h-5 w-5" />
+                  <Upload className="h-5 w-5" />
+                  Upload Image
+                </Button>
+                <Button
+                  size="xl"
+                  variant="outline"
+                  onClick={async () => {
+                    try {
+                      const res = await fetch('/placeholder.svg');
+                      const blob = await res.blob();
+                      const file = new File([blob], 'sample-image.png', { type: blob.type });
+                      setImage(file);
+                      const toolSection = document.getElementById('resize-tool');
+                      if (toolSection) {
+                        toolSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    } catch (e) {
+                      console.error('Failed to load sample image', e);
+                    }
+                  }}
+                >
+                  <ImageIcon className="h-5 w-5" />
+                  Try Sample Image
                 </Button>
               </div>
-              
-              {/* Feature badges */}
-              <div className="flex flex-wrap gap-4 pt-4">
-                {heroFeatures.map(({ icon: Icon, label, desc }, i) => (
+
+              {/* Trust badges */}
+              <div className="flex flex-wrap gap-3 pt-3">
+                {trustBadges.map(({ icon: Icon, label }, i) => (
                   <div
                     key={label}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/50 border border-border animate-fade-in"
-                    style={{ animationDelay: `${i * 100}ms` }}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border shadow-sm animate-fade-in"
+                    style={{ animationDelay: `${i * 80}ms` }}
                   >
-                    <Icon className="h-4 w-4 text-hero-accent" />
-                    <span className="text-sm font-medium text-foreground">{label}</span>
+                    <Icon className="h-3.5 w-3.5 text-primary" />
+                    <span className="text-xs font-medium text-muted-foreground">{label}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right Side - Hero Illustration */}
+            {/* Right Side - Floating Image Cards Mockup */}
             <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '200ms' }}>
-              <div className="relative w-full max-w-lg lg:max-w-xl">
-                <img 
-                  src={heroIllustration} 
-                  alt="Image resizing illustration showing before and after comparison on a laptop screen" 
-                  className="w-full h-auto rounded-2xl"
-                  loading="eager"
-                  width={1024}
-                  height={768}
-                />
-                {/* Decorative accent */}
-                <div className="absolute -z-10 inset-0 bg-hero-accent/10 blur-3xl rounded-full transform scale-75 translate-x-4 translate-y-4" />
+              <div className="relative w-full max-w-md lg:max-w-lg">
+                {/* Main mockup card */}
+                <div className="relative rounded-2xl border border-border bg-card shadow-lg p-4 space-y-4">
+                  <div className="flex items-center gap-3 pb-2 border-b border-border">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-destructive/60" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
+                      <div className="w-3 h-3 rounded-full bg-green-400/60" />
+                    </div>
+                    <span className="text-xs text-muted-foreground font-medium">ResizerLab</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="aspect-square rounded-xl bg-gradient-to-br from-primary/20 to-accent flex items-center justify-center border border-border">
+                      <ImageIcon className="h-10 w-10 text-primary/40" />
+                    </div>
+                    <div className="aspect-square rounded-xl bg-gradient-to-br from-accent to-primary/10 flex items-center justify-center border border-primary/20 ring-2 ring-primary/20">
+                      <ImageIcon className="h-8 w-8 text-primary/60" />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 flex-1 rounded-full bg-primary/20">
+                      <div className="h-2 w-3/4 rounded-full gradient-primary" />
+                    </div>
+                    <span className="text-xs font-semibold text-primary">75%</span>
+                  </div>
+                </div>
+
+                {/* Floating badge - top right */}
+                <div className="absolute -top-4 -right-4 px-3 py-2 rounded-xl bg-card border border-border shadow-lg flex items-center gap-2 animate-fade-in" style={{ animationDelay: '400ms' }}>
+                  <Zap className="h-4 w-4 text-primary" />
+                  <span className="text-xs font-semibold text-foreground">Instant</span>
+                </div>
+
+                {/* Floating badge - bottom left */}
+                <div className="absolute -bottom-3 -left-3 px-3 py-2 rounded-xl bg-card border border-border shadow-lg flex items-center gap-2 animate-fade-in" style={{ animationDelay: '500ms' }}>
+                  <Shield className="h-4 w-4 text-primary" />
+                  <span className="text-xs font-semibold text-foreground">100% Private</span>
+                </div>
+
+                {/* Glow effect */}
+                <div className="absolute -z-10 inset-0 bg-primary/10 blur-[60px] rounded-full transform scale-90" />
               </div>
             </div>
           </div>
