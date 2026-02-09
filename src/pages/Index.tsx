@@ -68,12 +68,12 @@ const trustBadges = [
 ];
 
 const mainFeatures = [
+  { icon: Sparkles, title: "Resize Without Losing Quality", desc: "Advanced resampling algorithms preserve image clarity and detail at any resolution." },
+  { icon: Zap, title: "Fast Processing", desc: "Resize images in milliseconds using your browser's native processing power. No server delays." },
+  { icon: ImageIcon, title: "Supports JPG, PNG, WebP", desc: "Work with all popular image formats. Convert between formats while resizing." },
+  { icon: Shield, title: "Free and Secure", desc: "100% free with no hidden costs. Your images never leave your device—total privacy guaranteed." },
   { icon: UserX, title: "No Signup Required", desc: "Start resizing immediately without creating an account or providing personal information." },
-  { icon: Sparkles, title: "Completely Free", desc: "All features are free to use with no hidden costs, watermarks, or premium upgrades." },
-  { icon: Zap, title: "Fast Processing", desc: "Resize images in milliseconds using your browser's native processing power." },
-  { icon: Smartphone, title: "Works Everywhere", desc: "Fully responsive design works perfectly on desktop, tablet, and mobile devices." },
-  { icon: Shield, title: "Secure & Private", desc: "Your images never leave your device. All processing happens locally in your browser." },
-  { icon: Globe, title: "No Installation", desc: "Access from any modern browser without downloading or installing any software." },
+  { icon: Smartphone, title: "Works on Mobile and Desktop", desc: "Fully responsive design works perfectly on smartphones, tablets, and desktop computers." },
 ];
 
 const howItWorks = [
@@ -92,37 +92,25 @@ const benefits = [
 
 const faqs = [
   {
-    question: "Is this image resizer tool completely free?",
-    answer: "Yes, Resizer Lab is 100% free to use. There are no hidden fees, premium features, or subscription requirements. You can resize unlimited images without any cost."
+    question: "How do I resize an image online?",
+    answer: "Simply upload your image to ResizerLab by dragging and dropping or clicking the upload button. Choose your desired dimensions using presets, percentage scaling, or custom width and height values. Click 'Resize Image' to preview the result, then download your resized image instantly."
   },
   {
-    question: "Is my data safe when using this tool?",
-    answer: "Absolutely. Your images are processed entirely in your browser using the HTML5 Canvas API. Your files never leave your device or get uploaded to any server. We have no access to your images whatsoever."
+    question: "Is ResizerLab free to use?",
+    answer: "Yes, ResizerLab is 100% free to use with no hidden fees, premium tiers, or subscription requirements. You can resize unlimited images without creating an account or providing any personal information."
   },
   {
-    question: "Does this tool work on mobile devices?",
-    answer: "Yes! Resizer Lab is fully responsive and works perfectly on smartphones, tablets, and desktop computers. You can resize images on-the-go from any modern mobile browser."
-  },
-  {
-    question: "Do I need to create an account or sign up?",
-    answer: "No account or signup is required. Simply visit the website and start resizing images immediately. No personal information is needed."
-  },
-  {
-    question: "Are there any usage limits or restrictions?",
-    answer: "There are no artificial limits on how many images you can resize. Since processing happens in your browser, you can resize as many images as you need without restrictions."
-  },
-  {
-    question: "Is this tool browser-based only?",
-    answer: "Yes, Resizer Lab runs entirely in your web browser. This means you don't need to download or install any software, and you can use it on any device with a modern browser."
+    question: "Does resizing reduce image quality?",
+    answer: "ResizerLab uses advanced resampling algorithms to preserve image clarity during resizing. You have full control over output quality settings for JPEG and WebP formats, allowing you to find the perfect balance between file size and visual fidelity."
   },
   {
     question: "What image formats are supported?",
-    answer: "Resizer Lab supports the most common image formats including JPEG, PNG, and WEBP. You can also convert between these formats while resizing."
+    answer: "ResizerLab supports the three most popular web image formats: JPEG, PNG, and WebP. You can also convert between these formats while resizing, making it easy to optimize images for any use case."
   },
   {
-    question: "How does browser-based processing work?",
-    answer: "When you upload an image, it stays on your device. The resizing is performed using your browser's built-in Canvas API, which is a secure, standardized technology for image manipulation. The result is generated locally and ready for download."
-  }
+    question: "Is my image secure?",
+    answer: "Absolutely. Your images are processed entirely in your browser using the HTML5 Canvas API. Files never leave your device or get uploaded to any server. ResizerLab has zero access to your images, ensuring complete privacy and security."
+  },
 ];
 
 const PRESETS = [
@@ -771,16 +759,16 @@ export default function Index() {
   return (
     <Layout>
       <Helmet>
-        <title>Free Image Resizer Online – Resize Photos Instantly | Resizer Lab</title>
-        <meta name="description" content="Resize images free online in seconds. Fast, private browser-based tool with no uploads. Supports JPEG, PNG, WEBP. No signup needed." />
-        <meta name="keywords" content="free image resizer, resize image online, photo resizer, resize photos, compress images, JPEG resizer, PNG resizer, WEBP converter" />
+        <title>Free Image Resizer Tool – Resize Images Online | ResizerLab</title>
+        <meta name="description" content="Resize images online for free without losing quality. Fast, secure, and easy-to-use image resizer supporting JPG, PNG, and WebP." />
+        <meta name="keywords" content="image resizer, resize image online, free image resizer, resize images without losing quality, online image resize tool" />
         <link rel="canonical" href="https://resizelab.app/" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            "name": "Resizer Lab",
-            "description": "Free online image resizer tool. Resize photos instantly in your browser with complete privacy.",
+            "name": "ResizerLab",
+            "description": "Free online image resizer tool. Resize images without losing quality, directly in your browser.",
             "url": "https://resizelab.app",
             "applicationCategory": "MultimediaApplication",
             "operatingSystem": "Any",
@@ -791,6 +779,20 @@ export default function Index() {
             },
             "featureList": ["Image resizing", "Format conversion", "Quality adjustment", "Browser-based processing"],
             "browserRequirements": "Requires a modern web browser with JavaScript enabled"
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
           })}
         </script>
       </Helmet>
@@ -826,8 +828,8 @@ export default function Index() {
               </div>
 
               <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-[3.5rem] md:leading-[1.1]">
-                Resize Images Instantly{" "}
-                <span className="text-gradient">Without Losing Quality</span>
+                Free Image Resizer Tool –{" "}
+                <span className="text-gradient">Resize Images Online Without Losing Quality</span>
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
@@ -977,7 +979,7 @@ export default function Index() {
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              Why Choose <span className="text-gradient">ResizeLab</span>?
+              Features of Our <span className="text-gradient">Image Resizer Tool</span>
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
               Everything you need to resize images quickly and securely, without compromises.
@@ -1006,7 +1008,7 @@ export default function Index() {
         <div className="mx-auto max-w-4xl px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              How It Works
+              How to Resize Images Online
             </h2>
             <p className="mt-3 text-muted-foreground">
               Resize your images in three simple steps
@@ -1036,7 +1038,7 @@ export default function Index() {
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              Key Benefits
+              Why Use <span className="text-gradient">ResizerLab</span> Image Resizer
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
               Designed to make image resizing effortless for everyone
@@ -1063,7 +1065,7 @@ export default function Index() {
         <div className="mx-auto max-w-3xl">
           <article className="prose prose-lg dark:prose-invert max-w-none">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-center mb-8">
-              The Best Free Online Image Resizer – Fast, Private, and Easy to Use
+              Resize Images Online Easily and for Free
             </h2>
             
             <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -1072,6 +1074,9 @@ export default function Index() {
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mt-8">What Is Image Resizing and Why Does It Matter?</h3>
+              <p>
+                Image resizing is the process of changing the width and height of a digital image without removing any content. It is essential for web performance, social media optimization, and professional workflows. Using a free image resizer like ResizerLab allows you to resize images without losing quality, ensuring your visuals look sharp on every platform.
+              </p>
               <p>
                 Image resizing is the process of changing the dimensions (width and height) of a digital image. This is different from cropping, which removes parts of an image. When you resize, you're scaling the entire image up or down while maintaining its content. Proper image sizing is essential for web performance, social media optimization, email compatibility, and professional presentations.
               </p>
@@ -1087,7 +1092,7 @@ export default function Index() {
                 Your images remain completely private since they never leave your device. Processing is nearly instantaneous with no upload or download wait times. You can use the tool even with a slow internet connection once the page loads. And there's absolutely no risk of your photos being stored, analyzed, sold, or accessed by third parties. For those interested in understanding the technical aspects of image quality, our guide on <Link to="/blog/how-to-resize-images-without-losing-quality" className="text-primary hover:underline">how to resize images without losing quality</Link> provides in-depth information.
               </p>
 
-              <h3 className="text-xl font-semibold text-foreground mt-8">Supported Image Formats: JPEG, PNG, and WEBP</h3>
+              <h3 className="text-xl font-semibold text-foreground mt-8">Supported Image Formats</h3>
               <p>
                 ResizeLab supports the three most popular image formats used on the web today: JPEG, PNG, and WEBP. Each format has its optimal use cases that you should understand to make the best choices for your projects.
               </p>
@@ -1152,6 +1157,9 @@ export default function Index() {
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
               Frequently Asked Questions
             </h2>
+            <p className="mt-3 text-muted-foreground">
+              Common questions about our online image resize tool
+            </p>
             <p className="mt-3 text-muted-foreground">
               Everything you need to know about using ResizeLab
             </p>
