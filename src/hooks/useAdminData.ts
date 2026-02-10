@@ -409,22 +409,29 @@ export function useDashboardStats() {
   return useQuery({
     queryKey: ["admin-dashboard-stats"],
     queryFn: async () => {
-      const [pages, blogPosts, messages, analytics] = await Promise.all([
+      const results = await Promise.allSettled([
         supabase.from("pages").select("id", { count: "exact", head: true }),
         supabase.from("blog_posts").select("id", { count: "exact", head: true }),
-        supabase.from("contact_messages").select("id, is_read", { count: "exact" }),
+        supabase.from("contact_messages").select("id, is_read"),
         supabase.from("analytics").select("event_type").eq("event_type", "tool_usage"),
       ]);
 
-      const unreadMessages = messages.data?.filter((m) => !m.is_read).length || 0;
+      const pages = results[0].status === "fulfilled" ? results[0].value : null;
+      const blogPosts = results[1].status === "fulfilled" ? results[1].value : null;
+      const messages = results[2].status === "fulfilled" ? results[2].value : null;
+      const analytics = results[3].status === "fulfilled" ? results[3].value : null;
+
+      const unreadMessages = messages?.data?.filter((m: any) => !m.is_read).length || 0;
 
       return {
-        totalPages: pages.count || 0,
-        totalBlogPosts: blogPosts.count || 0,
-        totalMessages: messages.count || 0,
+        totalPages: pages?.count || 0,
+        totalBlogPosts: blogPosts?.count || 0,
+        totalMessages: messages?.data?.length || 0,
         unreadMessages,
-        toolUsageCount: analytics.data?.length || 0,
+        toolUsageCount: analytics?.data?.length || 0,
       };
     },
+    retry: 2,
+    retryDelay: 1000,
   });
 }
