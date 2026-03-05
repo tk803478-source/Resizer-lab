@@ -1,14 +1,23 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-
-import { getBlogPost, getAllBlogPosts } from "@/data/blogPosts";
-import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+import { usePublicBlogPost, usePublicBlogPosts } from "@/hooks/usePublicBlogPosts";
+import { Calendar, Clock, ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
-  const post = slug ? getBlogPost(slug) : undefined;
-  const allPosts = getAllBlogPosts();
+  const { data: post, isLoading } = usePublicBlogPost(slug || "");
+  const { data: allPosts = [] } = usePublicBlogPosts();
+
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="flex justify-center py-32">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </div>
+      </Layout>
+    );
+  }
 
   if (!post) {
     return <Navigate to="/blog" replace />;
@@ -21,21 +30,21 @@ export default function BlogPost() {
   return (
     <Layout>
       <Helmet>
-        <title>{post.title} | Resizer Lab</title>
-        <meta name="description" content={post.metaDescription} />
-        <meta name="keywords" content={post.keywords.join(', ')} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.metaDescription} />
+        <title>{post.meta_title || post.title} | Resizer Lab</title>
+        <meta name="description" content={post.meta_description || post.excerpt || ''} />
+        {post.keywords && <meta name="keywords" content={post.keywords.join(', ')} />}
+        <meta property="og:title" content={post.meta_title || post.title} />
+        <meta property="og:description" content={post.meta_description || post.excerpt || ''} />
         <meta property="og:type" content="article" />
-        <meta property="article:published_time" content={post.date} />
+        <meta property="article:published_time" content={post.created_at} />
         <link rel="canonical" href={`https://resizelab.app/blog/${post.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": post.title,
-            "description": post.metaDescription,
-            "datePublished": post.date,
+            "description": post.meta_description || post.excerpt,
+            "datePublished": post.created_at,
             "author": {
               "@type": "Organization",
               "name": "Resizer Lab"
@@ -68,16 +77,18 @@ export default function BlogPost() {
             <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                {new Date(post.date).toLocaleDateString('en-US', { 
+                {new Date(post.created_at).toLocaleDateString('en-US', { 
                   year: 'numeric', 
                   month: 'long', 
                   day: 'numeric' 
                 })}
               </span>
-              <span className="flex items-center gap-1">
-                <Clock className="h-4 w-4" />
-                {post.readTime}
-              </span>
+              {post.read_time && (
+                <span className="flex items-center gap-1">
+                  <Clock className="h-4 w-4" />
+                  {post.read_time}
+                </span>
+              )}
             </div>
           </div>
         </section>
@@ -123,7 +134,6 @@ export default function BlogPost() {
           </div>
 
           <aside className="space-y-6">
-
             <div className="rounded-xl border border-border bg-card p-6 sticky top-24">
               <h3 className="font-semibold mb-3">Try Resizer Lab</h3>
               <p className="text-sm text-muted-foreground mb-4">
@@ -177,7 +187,6 @@ function formatContent(content: string): string {
       return '<tr>' + cells.map(c => `<td class="border border-border px-3 py-2">${c.trim()}</td>`).join('') + '</tr>';
     });
 
-  // Add internal link to tool
   formatted += `
     <div class="mt-10 p-6 rounded-xl bg-accent/50 border border-border text-center">
       <p class="text-foreground font-semibold mb-2">Ready to resize your images?</p>

@@ -1,12 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
-
-import { getAllBlogPosts } from "@/data/blogPosts";
+import { usePublicBlogPosts } from "@/hooks/usePublicBlogPosts";
 import { Link } from "react-router-dom";
-import { Calendar, Clock, ArrowRight, BookOpen, TrendingUp, Image, Zap, Shield } from "lucide-react";
+import { Calendar, Clock, ArrowRight, BookOpen, TrendingUp, Image, Zap, Shield, Loader2 } from "lucide-react";
 
 export default function Blog() {
-  const posts = getAllBlogPosts();
+  const { data: posts = [], isLoading } = usePublicBlogPosts();
 
   return (
     <Layout>
@@ -46,6 +45,15 @@ export default function Blog() {
       </div>
 
       <section className="container py-12">
+        {isLoading ? (
+          <div className="flex justify-center py-16">
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          </div>
+        ) : posts.length === 0 ? (
+          <div className="text-center py-16 text-muted-foreground">
+            No blog posts published yet. Check back soon!
+          </div>
+        ) : (
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             {/* Featured Article Section */}
@@ -71,16 +79,18 @@ export default function Blog() {
                       <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1">
                           <Calendar className="h-4 w-4" />
-                          {new Date(post.date).toLocaleDateString('en-US', { 
+                          {new Date(post.created_at).toLocaleDateString('en-US', { 
                             year: 'numeric', 
                             month: 'short', 
                             day: 'numeric' 
                           })}
                         </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="h-4 w-4" />
-                          {post.readTime}
-                        </span>
+                        {post.read_time && (
+                          <span className="flex items-center gap-1">
+                            <Clock className="h-4 w-4" />
+                            {post.read_time}
+                          </span>
+                        )}
                       </div>
                       <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
                         Read more <ArrowRight className="h-4 w-4" />
@@ -92,6 +102,7 @@ export default function Blog() {
             </div>
 
             {/* All Articles Section */}
+            {posts.length > 3 && (
             <div>
               <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
                 <BookOpen className="h-5 w-5 text-primary" />
@@ -113,9 +124,9 @@ export default function Blog() {
                           {post.excerpt}
                         </p>
                         <div className="mt-2 flex items-center gap-3 text-xs text-muted-foreground">
-                          <span>{post.readTime}</span>
+                          {post.read_time && <span>{post.read_time}</span>}
                           <span>•</span>
-                          <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                          <span>{new Date(post.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
                         </div>
                       </div>
                       <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
@@ -124,6 +135,7 @@ export default function Blog() {
                 ))}
               </div>
             </div>
+            )}
           </div>
 
           <aside className="space-y-6">
@@ -185,6 +197,7 @@ export default function Blog() {
             </div>
           </aside>
         </div>
+        )}
       </section>
 
       {/* Blog Introduction Content */}
