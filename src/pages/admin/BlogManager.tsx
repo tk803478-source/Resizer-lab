@@ -2,18 +2,7 @@ import { useState } from "react";
 import { AdminLayout } from "@/components/admin/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Switch } from "@/components/ui/switch";
 import { useBlogPosts, useUpsertBlogPost, useDeleteBlogPost } from "@/hooks/useAdminData";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -25,24 +14,17 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Plus, Edit, Trash2, Eye, EyeOff, BookOpen, Calendar, Clock } from "lucide-react";
+import { Plus, Edit, Trash2, Eye, EyeOff, BookOpen, Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { RichTextEditor } from "@/components/admin/RichTextEditor";
+import { BlogPostSettings, type BlogPostFormData } from "@/components/admin/BlogPostSettings";
+import { BlogPreview } from "@/components/admin/BlogPreview";
+import { useQueryClient } from "@tanstack/react-query";
+import { useToast } from "@/hooks/use-toast";
 
-interface BlogForm {
-  id?: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  meta_title: string;
-  meta_description: string;
-  keywords: string[];
-  read_time: string;
-  is_published: boolean;
-}
-
-const defaultPost: BlogForm = {
+const defaultPost: BlogPostFormData = {
   slug: "",
   title: "",
   excerpt: "",
@@ -52,24 +34,46 @@ const defaultPost: BlogForm = {
   keywords: [],
   read_time: "5 min read",
   is_published: false,
+  featured_image: "",
+  author_name: "Resizer Lab",
+  category: "",
+  tags: [],
+  publish_date: new Date().toISOString(),
 };
 
 export default function BlogManager() {
   const { data: posts, isLoading } = useBlogPosts();
   const upsertPost = useUpsertBlogPost();
   const deletePost = useDeleteBlogPost();
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [editingPost, setEditingPost] = useState<BlogForm>(defaultPost);
+  const queryClient = useQueryClient();
+  const { toast } = useToast();
+  const [editingPost, setEditingPost] = useState<BlogPostFormData | null>(null);
   const [keywordsInput, setKeywordsInput] = useState("");
+  const [tagsInput, setTagsInput] = useState("");
+  const [activeTab, setActiveTab] = useState("write");
 
-  const handleSave = async () => {
-    await upsertPost.mutateAsync({
+  const handleSave = async (publish?: boolean) => {
+    if (!editingPost) return;
+    const postData = {
       ...editingPost,
+      is_published: publish !== undefined ? publish : editingPost.is_published,
       keywords: keywordsInput.split(",").map((k) => k.trim()).filter(Boolean),
-    });
-    setIsDialogOpen(false);
-    setEditingPost(defaultPost);
-    setKeywordsInput("");
+      tags: tagsInput.split(",").map((t) => t.trim()).filter(Boolean),
+    };
+    try {
+      await upsertPost.mutateAsync(postData);
+      queryClient.invalidateQueries({ queryKey: ["public-blog-posts"] });
+      queryClient.invalidateQueries({ queryKey: ["public-blog-post"] });
+      toast({
+        title: publish ? "Post published!" : "Post saved!",
+        description: publish
+          ? "Your post is now live on the blog."
+          : "Your draft has been saved.",
+      });
+      setEditingPost(null);
+    } catch {
+      toast({ variant: "destructive", title: "Error saving post" });
+    }
   };
 
   const handleEdit = (post: any) => {
@@ -84,176 +88,105 @@ export default function BlogManager() {
       keywords: post.keywords || [],
       read_time: post.read_time || "5 min read",
       is_published: post.is_published,
+      featured_image: post.featured_image || "",
+      author_name: post.author_name || "Resizer Lab",
+      category: post.category || "",
+      tags: post.tags || [],
+      publish_date: post.publish_date || post.created_at,
     });
     setKeywordsInput((post.keywords || []).join(", "));
-    setIsDialogOpen(true);
+    setTagsInput((post.tags || []).join(", "));
+    setActiveTab("write");
   };
 
   const handleDelete = async (id: string) => {
     await deletePost.mutateAsync(id);
   };
 
-  const handleNew = () => {
-    setEditingPost(defaultPost);
-    setKeywordsInput("");
-    setIsDialogOpen(true);
-  };
+  // Editor view
+  if (editingPost) {
+    return (
+      <AdminLayout>
+        <div className="space-y-4">
+          {/* Top bar */}
+          <div className="flex items-center justify-between gap-4 flex-wrap">
+            <Button variant="ghost" onClick={() => setEditingPost(null)}>
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Posts
+            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                onClick={() => handleSave(false)}
+                disabled={upsertPost.isPending || !editingPost.slug || !editingPost.title}
+              >
+                {upsertPost.isPending ? "Saving..." : "Save Draft"}
+              </Button>
+              <Button
+                onClick={() => handleSave(true)}
+                disabled={upsertPost.isPending || !editingPost.slug || !editingPost.title}
+              >
+                {upsertPost.isPending ? "Publishing..." : "Publish Post"}
+              </Button>
+            </div>
+          </div>
 
+          <Tabs value={activeTab} onValueChange={setActiveTab}>
+            <TabsList>
+              <TabsTrigger value="write">Write</TabsTrigger>
+              <TabsTrigger value="settings">Settings & SEO</TabsTrigger>
+              <TabsTrigger value="preview">Preview</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="write" className="mt-4">
+              <RichTextEditor
+                content={editingPost.content}
+                onChange={(html) => setEditingPost({ ...editingPost, content: html })}
+              />
+            </TabsContent>
+
+            <TabsContent value="settings" className="mt-4">
+              <Card>
+                <CardContent className="pt-6">
+                  <BlogPostSettings
+                    form={editingPost}
+                    onChange={setEditingPost}
+                    keywordsInput={keywordsInput}
+                    onKeywordsChange={setKeywordsInput}
+                    tagsInput={tagsInput}
+                    onTagsChange={setTagsInput}
+                  />
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="preview" className="mt-4">
+              <BlogPreview
+                post={{
+                  ...editingPost,
+                  tags: tagsInput.split(",").map((t) => t.trim()).filter(Boolean),
+                }}
+              />
+            </TabsContent>
+          </Tabs>
+        </div>
+      </AdminLayout>
+    );
+  }
+
+  // List view
   return (
     <AdminLayout>
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-foreground">Blog Manager</h1>
-            <p className="text-muted-foreground mt-1">
-              Create and manage blog posts
-            </p>
+            <p className="text-muted-foreground mt-1">Create and manage blog posts</p>
           </div>
-          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-            <DialogTrigger asChild>
-              <Button onClick={handleNew}>
-                <Plus className="h-4 w-4 mr-2" />
-                Add Post
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
-              <DialogHeader>
-                <DialogTitle>
-                  {editingPost.id ? "Edit Blog Post" : "Create New Blog Post"}
-                </DialogTitle>
-              </DialogHeader>
-              <div className="space-y-4 py-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="slug">Slug (URL path)</Label>
-                    <Input
-                      id="slug"
-                      value={editingPost.slug}
-                      onChange={(e) =>
-                        setEditingPost({ ...editingPost, slug: e.target.value })
-                      }
-                      placeholder="how-to-resize-images"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="read_time">Read Time</Label>
-                    <Input
-                      id="read_time"
-                      value={editingPost.read_time}
-                      onChange={(e) =>
-                        setEditingPost({ ...editingPost, read_time: e.target.value })
-                      }
-                      placeholder="5 min read"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="title">Title</Label>
-                  <Input
-                    id="title"
-                    value={editingPost.title}
-                    onChange={(e) =>
-                      setEditingPost({ ...editingPost, title: e.target.value })
-                    }
-                    placeholder="How to Resize Images Without Losing Quality"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="excerpt">Excerpt</Label>
-                  <Textarea
-                    id="excerpt"
-                    value={editingPost.excerpt}
-                    onChange={(e) =>
-                      setEditingPost({ ...editingPost, excerpt: e.target.value })
-                    }
-                    placeholder="A brief summary of the post..."
-                    rows={2}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="content">Content (Markdown)</Label>
-                  <Textarea
-                    id="content"
-                    value={editingPost.content}
-                    onChange={(e) =>
-                      setEditingPost({ ...editingPost, content: e.target.value })
-                    }
-                    placeholder="# Your blog content here...&#10;&#10;Write in Markdown format."
-                    rows={12}
-                    className="font-mono text-sm"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="meta_title">Meta Title (SEO)</Label>
-                    <Input
-                      id="meta_title"
-                      value={editingPost.meta_title}
-                      onChange={(e) =>
-                        setEditingPost({ ...editingPost, meta_title: e.target.value })
-                      }
-                      placeholder="SEO title"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="keywords">Keywords (comma-separated)</Label>
-                    <Input
-                      id="keywords"
-                      value={keywordsInput}
-                      onChange={(e) => setKeywordsInput(e.target.value)}
-                      placeholder="resize, image, quality"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="meta_description">Meta Description (SEO)</Label>
-                  <Textarea
-                    id="meta_description"
-                    value={editingPost.meta_description}
-                    onChange={(e) =>
-                      setEditingPost({
-                        ...editingPost,
-                        meta_description: e.target.value,
-                      })
-                    }
-                    placeholder="SEO description..."
-                    rows={2}
-                  />
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Switch
-                    id="is_published"
-                    checked={editingPost.is_published}
-                    onCheckedChange={(checked) =>
-                      setEditingPost({ ...editingPost, is_published: checked })
-                    }
-                  />
-                  <Label htmlFor="is_published">Published</Label>
-                </div>
-
-                <div className="flex justify-end gap-2 pt-4">
-                  <Button
-                    variant="outline"
-                    onClick={() => setIsDialogOpen(false)}
-                  >
-                    Cancel
-                  </Button>
-                  <Button
-                    onClick={handleSave}
-                    disabled={upsertPost.isPending || !editingPost.slug || !editingPost.title || !editingPost.content}
-                  >
-                    {upsertPost.isPending ? "Saving..." : "Save Post"}
-                  </Button>
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
+          <Button onClick={() => setEditingPost({ ...defaultPost })}>
+            <Plus className="h-4 w-4 mr-2" />
+            New Post
+          </Button>
         </div>
 
         <Card>
@@ -272,7 +205,7 @@ export default function BlogManager() {
               </div>
             ) : posts?.length === 0 ? (
               <p className="text-center text-muted-foreground py-8">
-                No blog posts yet. Click "Add Post" to create one.
+                No blog posts yet. Click "New Post" to create one.
               </p>
             ) : (
               <div className="space-y-3">
@@ -308,11 +241,7 @@ export default function BlogManager() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2 ml-4">
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => handleEdit(post)}
-                      >
+                      <Button variant="ghost" size="icon" onClick={() => handleEdit(post)}>
                         <Edit className="h-4 w-4" />
                       </Button>
                       <AlertDialog>
@@ -325,8 +254,7 @@ export default function BlogManager() {
                           <AlertDialogHeader>
                             <AlertDialogTitle>Delete Post?</AlertDialogTitle>
                             <AlertDialogDescription>
-                              This will permanently delete "{post.title}". This
-                              action cannot be undone.
+                              This will permanently delete "{post.title}". This action cannot be undone.
                             </AlertDialogDescription>
                           </AlertDialogHeader>
                           <AlertDialogFooter>
