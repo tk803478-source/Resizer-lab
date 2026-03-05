@@ -13,6 +13,11 @@ export interface PublicBlogPost {
   read_time: string | null;
   content: string;
   is_published: boolean;
+  featured_image: string | null;
+  author_name: string | null;
+  category: string | null;
+  tags: string[] | null;
+  publish_date: string | null;
 }
 
 export function usePublicBlogPosts() {

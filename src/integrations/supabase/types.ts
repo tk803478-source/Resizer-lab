@@ -37,44 +37,59 @@ export type Database = {
       }
       blog_posts: {
         Row: {
+          author_name: string | null
+          category: string | null
           content: string
           created_at: string
           excerpt: string | null
+          featured_image: string | null
           id: string
           is_published: boolean
           keywords: string[] | null
           meta_description: string | null
           meta_title: string | null
+          publish_date: string | null
           read_time: string | null
           slug: string
+          tags: string[] | null
           title: string
           updated_at: string
         }
         Insert: {
+          author_name?: string | null
+          category?: string | null
           content: string
           created_at?: string
           excerpt?: string | null
+          featured_image?: string | null
           id?: string
           is_published?: boolean
           keywords?: string[] | null
           meta_description?: string | null
           meta_title?: string | null
+          publish_date?: string | null
           read_time?: string | null
           slug: string
+          tags?: string[] | null
           title: string
           updated_at?: string
         }
         Update: {
+          author_name?: string | null
+          category?: string | null
           content?: string
           created_at?: string
           excerpt?: string | null
+          featured_image?: string | null
           id?: string
           is_published?: boolean
           keywords?: string[] | null
           meta_description?: string | null
           meta_title?: string | null
+          publish_date?: string | null
           read_time?: string | null
           slug?: string
+          tags?: string[] | null
           title?: string
           updated_at?: string
         }

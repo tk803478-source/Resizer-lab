@@ -62,6 +62,12 @@ export default function BlogPost() {
         </script>
       </Helmet>
 
+      {post.featured_image && (
+        <div className="w-full h-64 md:h-96 overflow-hidden">
+          <img src={post.featured_image} alt={post.title} className="w-full h-full object-cover" />
+        </div>
+      )}
+
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-3xl animate-fade-in">
@@ -71,13 +77,21 @@ export default function BlogPost() {
             >
               <ArrowLeft className="h-4 w-4" /> Back to Blog
             </Link>
+            {post.category && (
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2 block">
+                {post.category}
+              </span>
+            )}
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
               {post.title}
             </h1>
-            <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+              {post.author_name && (
+                <span>{post.author_name}</span>
+              )}
               <span className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                {new Date(post.created_at).toLocaleDateString('en-US', { 
+                {new Date(post.publish_date || post.created_at).toLocaleDateString('en-US', { 
                   year: 'numeric', 
                   month: 'long', 
                   day: 'numeric' 
@@ -90,6 +104,13 @@ export default function BlogPost() {
                 </span>
               )}
             </div>
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-4">
+                {post.tags.map(tag => (
+                  <span key={tag} className="px-2 py-1 text-xs bg-accent rounded-full text-accent-foreground">{tag}</span>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       </div>
@@ -99,7 +120,7 @@ export default function BlogPost() {
           <div className="lg:col-span-2">
             <div 
               className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h2:mt-8 prose-h3:text-xl prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-strong:text-foreground prose-a:text-primary"
-              dangerouslySetInnerHTML={{ __html: formatContent(post.content) }}
+              dangerouslySetInnerHTML={{ __html: isHtmlContent(post.content) ? post.content : formatContent(post.content) }}
             />
 
             {/* Navigation */}
@@ -169,6 +190,10 @@ export default function BlogPost() {
       </article>
     </Layout>
   );
+}
+
+function isHtmlContent(content: string): boolean {
+  return /<[a-z][\s\S]*>/i.test(content);
 }
 
 function formatContent(content: string): string {
