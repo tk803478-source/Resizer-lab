@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
+import { DynamicBlogSection } from "@/components/blog/DynamicBlogSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -1148,6 +1149,16 @@ export default function Index() {
             </div>
           </article>
         </div>
+      </section>
+
+      {/* Dynamic Blog Section - Homepage */}
+      <section className="container py-12 md:py-16">
+        <DynamicBlogSection
+          location="homepage"
+          limit={3}
+          title="Latest from the Blog"
+          showViewAll={true}
+        />
       </section>
 
       {/* FAQ Section */}
