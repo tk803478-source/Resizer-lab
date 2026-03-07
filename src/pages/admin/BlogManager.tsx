@@ -20,6 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RichTextEditor } from "@/components/admin/RichTextEditor";
 import { BlogPostSettings, type BlogPostFormData } from "@/components/admin/BlogPostSettings";
+import { BlogDisplaySettings } from "@/components/admin/BlogDisplaySettings";
 import { BlogPreview } from "@/components/admin/BlogPreview";
 import { useQueryClient } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
@@ -141,6 +142,7 @@ export default function BlogManager() {
             <TabsList>
               <TabsTrigger value="write">Write</TabsTrigger>
               <TabsTrigger value="settings">Settings & SEO</TabsTrigger>
+              <TabsTrigger value="display">Display Locations</TabsTrigger>
               <TabsTrigger value="preview">Preview</TabsTrigger>
             </TabsList>
 
