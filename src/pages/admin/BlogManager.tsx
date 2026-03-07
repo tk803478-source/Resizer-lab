@@ -189,6 +189,7 @@ export default function BlogManager() {
               </Card>
             </TabsContent>
 
+            <TabsContent value="preview" className="mt-4">
               <BlogPreview
                 post={{
                   ...editingPost,
