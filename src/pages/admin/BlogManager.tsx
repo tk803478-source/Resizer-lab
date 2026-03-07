@@ -14,7 +14,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Plus, Edit, Trash2, Eye, EyeOff, BookOpen, Calendar, Clock, ArrowLeft } from "lucide-react";
+import { Plus, Edit, Trash2, Eye, EyeOff, BookOpen, Calendar, Clock, ArrowLeft, Star } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
