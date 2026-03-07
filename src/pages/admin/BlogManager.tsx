@@ -14,12 +14,13 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Plus, Edit, Trash2, Eye, EyeOff, BookOpen, Calendar, Clock, ArrowLeft } from "lucide-react";
+import { Plus, Edit, Trash2, Eye, EyeOff, BookOpen, Calendar, Clock, ArrowLeft, Star } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RichTextEditor } from "@/components/admin/RichTextEditor";
 import { BlogPostSettings, type BlogPostFormData } from "@/components/admin/BlogPostSettings";
+import { BlogDisplaySettings } from "@/components/admin/BlogDisplaySettings";
 import { BlogPreview } from "@/components/admin/BlogPreview";
 import { useQueryClient } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
@@ -39,6 +40,9 @@ const defaultPost: BlogPostFormData = {
   category: "",
   tags: [],
   publish_date: new Date().toISOString(),
+  display_locations: ["blog_page"],
+  is_featured: false,
+  linked_pages: [],
 };
 
 export default function BlogManager() {
@@ -93,6 +97,9 @@ export default function BlogManager() {
       category: post.category || "",
       tags: post.tags || [],
       publish_date: post.publish_date || post.created_at,
+      display_locations: post.display_locations || ["blog_page"],
+      is_featured: post.is_featured || false,
+      linked_pages: post.linked_pages || [],
     });
     setKeywordsInput((post.keywords || []).join(", "));
     setTagsInput((post.tags || []).join(", "));
@@ -135,6 +142,7 @@ export default function BlogManager() {
             <TabsList>
               <TabsTrigger value="write">Write</TabsTrigger>
               <TabsTrigger value="settings">Settings & SEO</TabsTrigger>
+              <TabsTrigger value="display">Display Locations</TabsTrigger>
               <TabsTrigger value="preview">Preview</TabsTrigger>
             </TabsList>
 
@@ -155,6 +163,27 @@ export default function BlogManager() {
                     onKeywordsChange={setKeywordsInput}
                     tagsInput={tagsInput}
                     onTagsChange={setTagsInput}
+                  />
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="display" className="mt-4">
+              <Card>
+                <CardContent className="pt-6">
+                  <BlogDisplaySettings
+                    displayLocations={editingPost.display_locations}
+                    onDisplayLocationsChange={(locations) =>
+                      setEditingPost({ ...editingPost, display_locations: locations })
+                    }
+                    isFeatured={editingPost.is_featured}
+                    onFeaturedChange={(featured) =>
+                      setEditingPost({ ...editingPost, is_featured: featured })
+                    }
+                    linkedPages={editingPost.linked_pages}
+                    onLinkedPagesChange={(pages) =>
+                      setEditingPost({ ...editingPost, linked_pages: pages })
+                    }
                   />
                 </CardContent>
               </Card>

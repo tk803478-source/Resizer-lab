@@ -24,6 +24,9 @@ export interface BlogPostFormData {
   category: string;
   tags: string[];
   publish_date: string;
+  display_locations: string[];
+  is_featured: boolean;
+  linked_pages: string[];
 }
 
 interface BlogPostSettingsProps {

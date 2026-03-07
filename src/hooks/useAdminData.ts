@@ -172,6 +172,8 @@ export function useUpsertBlogPost() {
       queryClient.invalidateQueries({ queryKey: ["admin-blog-posts"] });
       queryClient.invalidateQueries({ queryKey: ["public-blog-posts"] });
       queryClient.invalidateQueries({ queryKey: ["public-blog-post"] });
+      queryClient.invalidateQueries({ queryKey: ["blogs-by-location"] });
+      queryClient.invalidateQueries({ queryKey: ["blogs-by-linked-page"] });
       toast({ title: "Blog post saved successfully" });
     },
     onError: (error: Error) => {

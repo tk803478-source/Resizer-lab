@@ -41,11 +41,14 @@ export type Database = {
           category: string | null
           content: string
           created_at: string
+          display_locations: string[]
           excerpt: string | null
           featured_image: string | null
           id: string
+          is_featured: boolean
           is_published: boolean
           keywords: string[] | null
+          linked_pages: string[]
           meta_description: string | null
           meta_title: string | null
           publish_date: string | null
@@ -60,11 +63,14 @@ export type Database = {
           category?: string | null
           content: string
           created_at?: string
+          display_locations?: string[]
           excerpt?: string | null
           featured_image?: string | null
           id?: string
+          is_featured?: boolean
           is_published?: boolean
           keywords?: string[] | null
+          linked_pages?: string[]
           meta_description?: string | null
           meta_title?: string | null
           publish_date?: string | null
@@ -79,11 +85,14 @@ export type Database = {
           category?: string | null
           content?: string
           created_at?: string
+          display_locations?: string[]
           excerpt?: string | null
           featured_image?: string | null
           id?: string
+          is_featured?: boolean
           is_published?: boolean
           keywords?: string[] | null
+          linked_pages?: string[]
           meta_description?: string | null
           meta_title?: string | null
           publish_date?: string | null
