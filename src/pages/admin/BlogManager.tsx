@@ -39,6 +39,9 @@ const defaultPost: BlogPostFormData = {
   category: "",
   tags: [],
   publish_date: new Date().toISOString(),
+  display_locations: ["blog_page"],
+  is_featured: false,
+  linked_pages: [],
 };
 
 export default function BlogManager() {
@@ -93,6 +96,9 @@ export default function BlogManager() {
       category: post.category || "",
       tags: post.tags || [],
       publish_date: post.publish_date || post.created_at,
+      display_locations: post.display_locations || ["blog_page"],
+      is_featured: post.is_featured || false,
+      linked_pages: post.linked_pages || [],
     });
     setKeywordsInput((post.keywords || []).join(", "));
     setTagsInput((post.tags || []).join(", "));
