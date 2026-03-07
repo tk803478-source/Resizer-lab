@@ -168,7 +168,27 @@ export default function BlogManager() {
               </Card>
             </TabsContent>
 
-            <TabsContent value="preview" className="mt-4">
+            <TabsContent value="display" className="mt-4">
+              <Card>
+                <CardContent className="pt-6">
+                  <BlogDisplaySettings
+                    displayLocations={editingPost.display_locations}
+                    onDisplayLocationsChange={(locations) =>
+                      setEditingPost({ ...editingPost, display_locations: locations })
+                    }
+                    isFeatured={editingPost.is_featured}
+                    onFeaturedChange={(featured) =>
+                      setEditingPost({ ...editingPost, is_featured: featured })
+                    }
+                    linkedPages={editingPost.linked_pages}
+                    onLinkedPagesChange={(pages) =>
+                      setEditingPost({ ...editingPost, linked_pages: pages })
+                    }
+                  />
+                </CardContent>
+              </Card>
+            </TabsContent>
+
               <BlogPreview
                 post={{
                   ...editingPost,
