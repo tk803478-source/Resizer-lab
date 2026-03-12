@@ -119,7 +119,7 @@ export default function BlogPost() {
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <div 
-              className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h2:mt-8 prose-h3:text-xl prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-strong:text-foreground prose-a:text-primary"
+              className="blog-content prose prose-lg max-w-none dark:prose-invert"
               dangerouslySetInnerHTML={{ __html: isHtmlContent(post.content) ? post.content : formatContent(post.content) }}
             />
 
