@@ -50,15 +50,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center text-sm text-muted-foreground">
+        <div className="border-t border-border/50 pt-6 text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Resizer Lab. All rights reserved.</p>
-          <p className="flex items-center gap-1.5">
-            Built with{" "}
-            <span className="inline-flex items-center gap-1 font-semibold text-primary">
-              Lovable
-              <Heart className="h-4 w-4 fill-primary text-primary" />
-            </span>
-          </p>
         </div>
       </div>
     </footer>
