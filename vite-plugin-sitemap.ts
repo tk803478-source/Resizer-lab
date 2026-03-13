@@ -41,7 +41,7 @@ export function sitemapPlugin(): Plugin {
             }
           );
           if (res.ok) {
-            const posts = await res.json();
+            const posts: any[] = await res.json();
             blogEntries = posts.map((p: any) => ({
               slug: p.slug,
               lastmod: (p.updated_at || p.created_at || today).split("T")[0],
