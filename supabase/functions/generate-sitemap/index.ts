@@ -14,55 +14,72 @@ const staticPages = [
   { loc: "/terms", changefreq: "yearly", priority: "0.5" },
 ];
 
+type BlogSitemapPost = {
+  slug: string;
+  updated_at: string | null;
+  created_at: string | null;
+};
+
+const getDateOnly = (date: string | null | undefined, fallback: string) =>
+  date ? new Date(date).toISOString().split("T")[0] : fallback;
+
+const escapeXml = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+
 Deno.serve(async () => {
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    const { data: posts } = await supabase
+    const { data: posts, error } = await supabase
       .from("blog_posts")
       .select("slug, updated_at, created_at")
-      .eq("is_published", true);
+      .eq("is_published", true)
+      .order("updated_at", { ascending: false });
+
+    if (error) {
+      throw error;
+    }
 
     const today = new Date().toISOString().split("T")[0];
 
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
     for (const page of staticPages) {
-      xml += `
-  <url>
-    <loc>${SITE_URL}${page.loc}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`;
+      xml += `\n  <url>\n    <loc>${escapeXml(`${SITE_URL}${page.loc}`)}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${page.changefreq}</changefreq>\n    <priority>${page.priority}</priority>\n  </url>`;
     }
 
-    if (posts) {
-      for (const post of posts) {
-        const lastmod = (post.updated_at || post.created_at || today).split("T")[0];
-        xml += `
-  <url>
-    <loc>${SITE_URL}/blog/${post.slug}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>`;
+    const uniquePosts = new Map<string, BlogSitemapPost>();
+    for (const post of (posts ?? []) as BlogSitemapPost[]) {
+      const slug = (post.slug || "").trim();
+      if (!slug) continue;
+      if (!uniquePosts.has(slug)) {
+        uniquePosts.set(slug, post);
       }
     }
 
-    xml += `
-</urlset>`;
+    for (const post of uniquePosts.values()) {
+      const encodedSlug = encodeURIComponent(post.slug.trim());
+      const lastmod = getDateOnly(post.updated_at ?? post.created_at, today);
+      xml += `\n  <url>\n    <loc>${escapeXml(`${SITE_URL}/blog/${encodedSlug}`)}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>`;
+    }
+
+    xml += "\n</urlset>";
 
     return new Response(xml, {
       headers: {
-        "Content-Type": "application/xml",
-        "Cache-Control": "public, max-age=3600",
+        "Content-Type": "application/xml; charset=utf-8",
+        "Cache-Control": "public, max-age=900",
       },
     });
   } catch (error) {
-    return new Response(`Error generating sitemap: ${error.message}`, { status: 500 });
+    const message = error instanceof Error ? error.message : "Unknown error";
+    return new Response(`Error generating sitemap: ${message}`, { status: 500 });
   }
 });
