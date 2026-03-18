@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import DOMPurify from "dompurify";
 import { Layout } from "@/components/layout/Layout";
 import { usePublicBlogPost, usePublicBlogPosts } from "@/hooks/usePublicBlogPosts";
 import { Calendar, Clock, ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
