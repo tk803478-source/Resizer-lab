@@ -121,7 +121,7 @@ export default function BlogPost() {
           <div className="lg:col-span-2">
             <div 
               className="blog-content prose prose-lg max-w-none dark:prose-invert"
-              dangerouslySetInnerHTML={{ __html: isHtmlContent(post.content) ? post.content : formatContent(post.content) }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(isHtmlContent(post.content) ? post.content : formatContent(post.content)) }}
             />
 
             {/* Navigation */}
