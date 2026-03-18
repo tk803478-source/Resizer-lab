@@ -93,7 +93,7 @@ export default function Guides() {
         <title>Image Optimization Guides & Tutorials | Resizer Lab</title>
         <meta name="description" content="Learn image resizing, compression, and optimization. Guides for websites, social media, and e-commerce. Free tutorials for all skill levels." />
         <meta name="keywords" content="image resizing guide, image optimization tutorial, photo compression guide, web image best practices" />
-        <link rel="canonical" href="https://resizelab.app/guides" />
+        <link rel="canonical" href="https://resizerlab.lovable.app/guides" />
       </Helmet>
 
       <div className="gradient-hero">

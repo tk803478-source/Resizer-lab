@@ -38,7 +38,7 @@ export default function BlogPost() {
         <meta property="og:description" content={post.meta_description || post.excerpt || ''} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.created_at} />
-        <link rel="canonical" href={`https://resizelab.app/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://resizerlab.lovable.app/blog/${post.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -53,11 +53,11 @@ export default function BlogPost() {
             "publisher": {
               "@type": "Organization",
               "name": "Resizer Lab",
-              "url": "https://resizelab.app"
+              "url": "https://resizerlab.lovable.app"
             },
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://resizelab.app/blog/${post.slug}`
+              "@id": `https://resizerlab.lovable.app/blog/${post.slug}`
             }
           })}
         </script>

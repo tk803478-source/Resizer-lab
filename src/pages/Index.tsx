@@ -763,14 +763,14 @@ export default function Index() {
         <title>Free Image Resizer Tool – Resize Images Online | ResizerLab</title>
         <meta name="description" content="Resize images online for free without losing quality. Fast, secure, and easy-to-use image resizer supporting JPG, PNG, and WebP." />
         <meta name="keywords" content="image resizer, resize image online, free image resizer, resize images without losing quality, online image resize tool" />
-        <link rel="canonical" href="https://resizelab.app/" />
+        <link rel="canonical" href="https://resizerlab.lovable.app/" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
             "name": "ResizerLab",
             "description": "Free online image resizer tool. Resize images without losing quality, directly in your browser.",
-            "url": "https://resizelab.app",
+            "url": "https://resizerlab.lovable.app",
             "applicationCategory": "MultimediaApplication",
             "operatingSystem": "Any",
             "offers": {
