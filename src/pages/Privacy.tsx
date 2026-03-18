@@ -9,7 +9,7 @@ export default function Privacy() {
       <Helmet>
         <title>Privacy Policy – Your Data Stays Private | Resizer Lab</title>
         <meta name="description" content="Resizer Lab privacy policy. 100% browser-based processing means your images never leave your device. Zero data collection." />
-        <link rel="canonical" href="https://resizelab.app/privacy" />
+        <link rel="canonical" href="https://resizerlab.lovable.app/privacy" />
       </Helmet>
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">

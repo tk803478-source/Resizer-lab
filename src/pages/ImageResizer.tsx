@@ -440,7 +440,7 @@ export default function ImageResizer() {
           name="description"
           content="Interactive image resizer with visual drag controls. Resize images by dragging handles, use presets, or enter custom dimensions. Free, fast, and private."
         />
-        <link rel="canonical" href="https://resizelab.app/image-resizer" />
+        <link rel="canonical" href="https://resizerlab.lovable.app/image-resizer" />
       </Helmet>
 
       {/* Hero Header */}

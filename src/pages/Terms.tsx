@@ -9,7 +9,7 @@ export default function Terms() {
       <Helmet>
         <title>Terms of Service – Usage Guidelines | Resizer Lab</title>
         <meta name="description" content="Resizer Lab terms of service. Read our terms and conditions for using our free online image resizing tool. Fair use policy." />
-        <link rel="canonical" href="https://resizelab.app/terms" />
+        <link rel="canonical" href="https://resizerlab.lovable.app/terms" />
       </Helmet>
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">

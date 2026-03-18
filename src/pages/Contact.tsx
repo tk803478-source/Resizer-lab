@@ -50,13 +50,13 @@ export default function Contact() {
       <Helmet>
         <title>Contact Us – Support & Feedback | Resizer Lab</title>
         <meta name="description" content="Get in touch with Resizer Lab. Questions about our free image resizer? We're here to help with support, feedback, or suggestions." />
-        <link rel="canonical" href="https://resizelab.app/contact" />
+        <link rel="canonical" href="https://resizerlab.lovable.app/contact" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
             "name": "Contact Resizer Lab",
-            "url": "https://resizelab.app/contact",
+            "url": "https://resizerlab.lovable.app/contact",
             "description": "Contact page for Resizer Lab support and inquiries."
           })}
         </script>

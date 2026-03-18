@@ -76,7 +76,7 @@ export default function Gallery() {
       <Helmet>
         <title>Image Size Presets – Quick Resize to 1080p, 720p, 512px | Resizer Lab</title>
         <meta name="description" content="Quickly resize images with preset sizes. Choose Full HD (1080px), HD (720px), Medium (512px), or Small (256px) for instant results." />
-        <link rel="canonical" href="https://resizelab.app/gallery" />
+        <link rel="canonical" href="https://resizerlab.lovable.app/gallery" />
         <meta name="keywords" content="image presets, quick resize, image dimensions, 1080p resize, 720p image, thumbnail size, preset sizes" />
       </Helmet>
 
