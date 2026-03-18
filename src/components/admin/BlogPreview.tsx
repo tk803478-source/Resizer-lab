@@ -1,4 +1,5 @@
 import { BlogPostFormData } from "./BlogPostSettings";
+import DOMPurify from "dompurify";
 import { Calendar, Clock, User } from "lucide-react";
 
 interface BlogPreviewProps {
@@ -71,7 +72,7 @@ export function BlogPreview({ post }: BlogPreviewProps) {
         {/* Content */}
         <div
           className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-semibold prose-p:text-muted-foreground prose-a:text-primary"
-          dangerouslySetInnerHTML={{ __html: post.content || "<p>Start writing...</p>" }}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content || "<p>Start writing...</p>") }}
         />
       </div>
     </div>

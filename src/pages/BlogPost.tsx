@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import DOMPurify from "dompurify";
 import { Layout } from "@/components/layout/Layout";
 import { usePublicBlogPost, usePublicBlogPosts } from "@/hooks/usePublicBlogPosts";
 import { Calendar, Clock, ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
@@ -120,7 +121,7 @@ export default function BlogPost() {
           <div className="lg:col-span-2">
             <div 
               className="blog-content prose prose-lg max-w-none dark:prose-invert"
-              dangerouslySetInnerHTML={{ __html: isHtmlContent(post.content) ? post.content : formatContent(post.content) }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(isHtmlContent(post.content) ? post.content : formatContent(post.content)) }}
             />
 
             {/* Navigation */}
