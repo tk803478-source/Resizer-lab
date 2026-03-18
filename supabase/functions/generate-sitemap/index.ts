@@ -1,6 +1,6 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const SITE_URL = "https://resizelab.app";
+const SITE_URL = "resizerlab.lovable.app";
 
 const staticPages = [
   { loc: "/", changefreq: "weekly", priority: "1.0" },
