@@ -1,5 +1,5 @@
 # Resizer Lab - Free Online Image Resizer
-# https://resizelab.app
+# https://resizerlab.lovable.app
 
 User-agent: *
 Allow: /
@@ -10,4 +10,4 @@ Disallow: /admin/
 Disallow: /admin/*
 
 # Sitemap location
-Sitemap: https://resizelab.app/sitemap.xml
+Sitemap: https://resizerlab.lovable.app/sitemap.xml
