@@ -6,7 +6,7 @@ import LinkExtension from "@tiptap/extension-link";
 import ImageExtension from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
 import Youtube from "@tiptap/extension-youtube";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -59,6 +59,9 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
   const [isUploading, setIsUploading] = useState(false);
   const { toast } = useToast();
 
+  // Track whether changes are coming from the editor itself
+  const isInternalUpdate = useRef(false);
+
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -84,6 +87,7 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
     ],
     content,
     onUpdate: ({ editor }) => {
+      isInternalUpdate.current = true;
       onChange(editor.getHTML());
     },
     editorProps: {
@@ -94,8 +98,12 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
     },
   });
 
-  // Sync editor content when the content prop changes (e.g. switching posts)
+  // Sync editor content only for external changes (e.g. switching posts)
   useEffect(() => {
+    if (isInternalUpdate.current) {
+      isInternalUpdate.current = false;
+      return;
+    }
     if (editor && content !== editor.getHTML()) {
       editor.commands.setContent(content || "");
     }
