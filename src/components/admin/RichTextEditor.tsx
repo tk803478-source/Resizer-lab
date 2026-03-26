@@ -59,13 +59,14 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
   const [isUploading, setIsUploading] = useState(false);
   const { toast } = useToast();
 
-  // Track whether changes are coming from the editor itself
   const isInternalUpdate = useRef(false);
 
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
         heading: { levels: [1, 2, 3, 4] },
+        link: false,
+        underline: false,
       }),
       Underline,
       TextAlign.configure({
@@ -98,12 +99,12 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
     },
   });
 
-  // Sync editor content only for external changes (e.g. switching posts)
   useEffect(() => {
     if (isInternalUpdate.current) {
       isInternalUpdate.current = false;
       return;
     }
+
     if (editor && content !== editor.getHTML()) {
       editor.commands.setContent(content || "");
     }
@@ -192,6 +193,7 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
       variant={isActive ? "secondary" : "ghost"}
       size="icon"
       className="h-8 w-8"
+      onMouseDown={(event) => event.preventDefault()}
       onClick={onClick}
       title={title}
     >
