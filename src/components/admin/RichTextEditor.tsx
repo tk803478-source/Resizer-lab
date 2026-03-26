@@ -94,7 +94,13 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
     },
   });
 
-  const handleImageUpload = useCallback(
+  // Sync editor content when the content prop changes (e.g. switching posts)
+  useEffect(() => {
+    if (editor && content !== editor.getHTML()) {
+      editor.commands.setContent(content || "");
+    }
+  }, [content, editor]);
+
     async (file: File) => {
       if (!editor) return;
       setIsUploading(true);
