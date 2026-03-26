@@ -101,6 +101,7 @@ export function RichTextEditor({ content, onChange }: RichTextEditorProps) {
     }
   }, [content, editor]);
 
+  const handleImageUpload = useCallback(
     async (file: File) => {
       if (!editor) return;
       setIsUploading(true);
