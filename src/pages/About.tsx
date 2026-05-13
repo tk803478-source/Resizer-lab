@@ -85,6 +85,11 @@ export default function About() {
         <title>About Us – Browser-Based Image Resizer | Resizer Lab</title>
         <meta name="description" content="Learn about Resizer Lab, the free privacy-first image resizer. All processing happens in your browser – no uploads, no servers." />
         <link rel="canonical" href="https://resizerlab.lovable.app/about" />
+        <meta property="og:title" content="About Us – Browser-Based Image Resizer | Resizer Lab" />
+        <meta property="og:description" content="Learn about Resizer Lab, the free privacy-first image resizer. All processing happens in your browser – no uploads, no servers." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/about" />
+        <meta name="twitter:title" content="About Us – Browser-Based Image Resizer | Resizer Lab" />
+        <meta name="twitter:description" content="The free privacy-first image resizer. All processing happens in your browser – no uploads." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

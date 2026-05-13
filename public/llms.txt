@@ -1,0 +1,20 @@
+# Resizer Lab
+
+> Free, browser-based image resizer. Resize, compress, and convert JPG, PNG, and WebP images without uploads — all processing happens locally in your browser for full privacy.
+
+Resizer Lab is a privacy-first online image tool. There are no accounts, no uploads, and no server-side processing. The site also publishes long-form guides and tutorials on image optimization, formats, and best practices for web, social media, and e-commerce.
+
+## Pages
+
+- [Home / Image Resizer](/): Drag-and-drop image resizer with presets, percentage scaling, and JPG/PNG/WebP output.
+- [Interactive Image Resizer](/image-resizer): Visual resize editor with draggable handles, presets, and custom dimensions.
+- [Image Size Presets](/gallery): Quick-pick preset sizes (256, 512, 720, 1080) with use-case guidance.
+- [Guides](/guides): Tutorials and learning paths for image optimization, compression, and platform sizing.
+- [Blog](/blog): Articles on image resizing, compression, formats, SEO, and social media sizing.
+- [About](/about): What Resizer Lab is and how the privacy-first architecture works.
+- [Contact](/contact): Support and feedback.
+
+## Optional
+
+- [Privacy Policy](/privacy)
+- [Terms of Service](/terms)
