@@ -74,10 +74,33 @@ export default function Gallery() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Size Presets – Quick Resize to 1080p, 720p, 512px | Resizer Lab</title>
+        <title>Image Size Presets – Quick Resize | Resizer Lab</title>
         <meta name="description" content="Quickly resize images with preset sizes. Choose Full HD (1080px), HD (720px), Medium (512px), or Small (256px) for instant results." />
         <link rel="canonical" href="https://resizerlab.lovable.app/gallery" />
         <meta name="keywords" content="image presets, quick resize, image dimensions, 1080p resize, 720p image, thumbnail size, preset sizes" />
+        <meta property="og:title" content="Image Size Presets – Quick Resize | Resizer Lab" />
+        <meta property="og:description" content="Quickly resize images with preset sizes: Full HD, HD, Medium, and Small. Click a preset to apply it in the resizer." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/gallery" />
+        <meta name="twitter:title" content="Image Size Presets – Quick Resize | Resizer Lab" />
+        <meta name="twitter:description" content="Quickly resize images with preset sizes: Full HD, HD, Medium, and Small." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Image Size Presets",
+            "url": "https://resizerlab.lovable.app/gallery",
+            "description": "Curated image size presets for quick resizing.",
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": presets.map((p, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "name": `${p.label} (${p.size}px)`,
+                "description": p.description
+              }))
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="gradient-hero">
@@ -88,7 +111,7 @@ export default function Gallery() {
               <Image className="h-7 w-7 text-primary-foreground" />
             </div>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Preset <span className="text-gradient">Sizes</span>
+              Image Size <span className="text-gradient">Presets</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
               Skip the guesswork and resize your images instantly with our carefully optimized preset dimensions. Each preset is designed for specific use cases to help you get the perfect result every time.

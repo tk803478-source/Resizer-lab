@@ -435,12 +435,31 @@ export default function ImageResizer() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Resizer Tool – Resize Photos with Drag Controls | Resizer Lab</title>
+        <title>Image Resizer with Drag Controls | Resizer Lab</title>
         <meta
           name="description"
           content="Interactive image resizer with visual drag controls. Resize images by dragging handles, use presets, or enter custom dimensions. Free, fast, and private."
         />
         <link rel="canonical" href="https://resizerlab.lovable.app/image-resizer" />
+        <meta property="og:title" content="Image Resizer with Drag Controls | Resizer Lab" />
+        <meta property="og:description" content="Resize images by dragging handles, using presets, or entering custom dimensions. 100% browser-based, free, and private." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/image-resizer" />
+        <meta name="twitter:title" content="Image Resizer with Drag Controls | Resizer Lab" />
+        <meta name="twitter:description" content="Resize images by dragging handles, using presets, or entering custom dimensions. 100% browser-based and private." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Resizer Lab Image Resizer",
+            "url": "https://resizerlab.lovable.app/image-resizer",
+            "description": "Interactive browser-based image resizer with drag handles, presets, and custom dimensions. Supports JPG, PNG, and WebP.",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Any",
+            "browserRequirements": "Requires a modern web browser with HTML5 Canvas support.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "publisher": { "@type": "Organization", "name": "Resizer Lab", "url": "https://resizerlab.lovable.app" }
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Header */}
@@ -588,10 +607,11 @@ export default function ImageResizer() {
                         </div>
                         <div className="grid grid-cols-2 gap-3">
                           <div className="space-y-1.5">
-                            <Label className="text-xs text-muted-foreground">
+                            <Label htmlFor="resizer-width" className="text-xs text-muted-foreground">
                               Width (px)
                             </Label>
                             <Input
+                              id="resizer-width"
                               type="number"
                               value={width}
                               onChange={(e) => handleWidthChange(e.target.value)}
@@ -600,10 +620,11 @@ export default function ImageResizer() {
                             />
                           </div>
                           <div className="space-y-1.5">
-                            <Label className="text-xs text-muted-foreground">
+                            <Label htmlFor="resizer-height" className="text-xs text-muted-foreground">
                               Height (px)
                             </Label>
                             <Input
+                              id="resizer-height"
                               type="number"
                               value={height}
                               onChange={(e) =>

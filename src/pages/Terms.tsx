@@ -10,6 +10,11 @@ export default function Terms() {
         <title>Terms of Service – Usage Guidelines | Resizer Lab</title>
         <meta name="description" content="Resizer Lab terms of service. Read our terms and conditions for using our free online image resizing tool. Fair use policy." />
         <link rel="canonical" href="https://resizerlab.lovable.app/terms" />
+        <meta property="og:title" content="Terms of Service – Usage Guidelines | Resizer Lab" />
+        <meta property="og:description" content="Read the terms and conditions for using Resizer Lab's free online image resizing tool. Fair use policy and user rights." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/terms" />
+        <meta name="twitter:title" content="Terms of Service – Usage Guidelines | Resizer Lab" />
+        <meta name="twitter:description" content="Read the terms and conditions for using Resizer Lab's free online image resizing tool." />
       </Helmet>
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
@@ -30,6 +35,7 @@ export default function Terms() {
       {/* Key Points Highlights */}
       <section className="container py-12">
         <div className="mx-auto max-w-4xl">
+          <h2 className="sr-only">Key Terms Highlights</h2>
           <div className="grid gap-6 md:grid-cols-3 mb-12">
             <div className="rounded-xl border border-border bg-card p-6 text-center">
               <Scale className="mx-auto h-10 w-10 text-primary mb-4" />

@@ -406,7 +406,7 @@ function ImagePreview({
         <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-secondary/50">
           <img
             src={original.url}
-            alt="Original"
+            alt="Original image preview before resizing"
             className="h-full w-full object-contain"
           />
         </div>
@@ -430,7 +430,7 @@ function ImagePreview({
           {resized ? (
             <img
               src={resized.url}
-              alt="Resized"
+              alt="Resized image preview after applying new dimensions"
               className="h-full w-full object-contain animate-scale-in"
             />
           ) : (
@@ -574,8 +574,9 @@ function ResizeControls({
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1.5">
-            <Label className="text-xs text-muted-foreground">Width (px)</Label>
+            <Label htmlFor="home-resize-width" className="text-xs text-muted-foreground">Width (px)</Label>
             <Input
+              id="home-resize-width"
               type="number"
               value={width}
               onChange={(e) => handleWidthChange(e.target.value)}
@@ -584,8 +585,9 @@ function ResizeControls({
             />
           </div>
           <div className="space-y-1.5">
-            <Label className="text-xs text-muted-foreground">Height (px)</Label>
+            <Label htmlFor="home-resize-height" className="text-xs text-muted-foreground">Height (px)</Label>
             <Input
+              id="home-resize-height"
               type="number"
               value={height}
               onChange={(e) => handleHeightChange(e.target.value)}
@@ -764,6 +766,9 @@ export default function Index() {
         <meta name="description" content="Resize images online for free without losing quality. Fast, secure, and easy-to-use image resizer supporting JPG, PNG, and WebP." />
         <meta name="keywords" content="image resizer, resize image online, free image resizer, resize images without losing quality, online image resize tool" />
         <link rel="canonical" href="https://resizerlab.lovable.app/" />
+        <meta property="og:title" content="Free Image Resizer Tool – Resize Images Online | ResizerLab" />
+        <meta property="og:description" content="Resize images online for free without losing quality. Fast, secure, and easy-to-use image resizer supporting JPG, PNG, and WebP." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
