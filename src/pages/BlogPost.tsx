@@ -37,7 +37,10 @@ export default function BlogPost() {
         <meta property="og:title" content={post.meta_title || post.title} />
         <meta property="og:description" content={post.meta_description || post.excerpt || ''} />
         <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://resizerlab.lovable.app/blog/${post.slug}`} />
         <meta property="article:published_time" content={post.created_at} />
+        <meta name="twitter:title" content={post.meta_title || post.title} />
+        <meta name="twitter:description" content={post.meta_description || post.excerpt || ''} />
         <link rel="canonical" href={`https://resizerlab.lovable.app/blog/${post.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify({

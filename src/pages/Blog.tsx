@@ -10,9 +10,14 @@ export default function Blog() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Optimization Blog – Tips, Guides & Best Practices | Resizer Lab</title>
+        <title>Image Optimization Blog – Tips & Guides | Resizer Lab</title>
         <meta name="description" content="Expert guides on image resizing, compression, and optimization. Learn to resize images without quality loss for web, social media, and e-commerce." />
         <link rel="canonical" href="https://resizerlab.lovable.app/blog" />
+        <meta property="og:title" content="Image Optimization Blog – Tips & Guides | Resizer Lab" />
+        <meta property="og:description" content="Expert guides on image resizing, compression, and optimization for web, social media, and e-commerce." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/blog" />
+        <meta name="twitter:title" content="Image Optimization Blog – Tips & Guides | Resizer Lab" />
+        <meta name="twitter:description" content="Expert guides on image resizing, compression, and optimization." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

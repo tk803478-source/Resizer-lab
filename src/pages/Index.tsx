@@ -406,7 +406,7 @@ function ImagePreview({
         <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-secondary/50">
           <img
             src={original.url}
-            alt="Original"
+            alt="Original image preview before resizing"
             className="h-full w-full object-contain"
           />
         </div>
@@ -430,7 +430,7 @@ function ImagePreview({
           {resized ? (
             <img
               src={resized.url}
-              alt="Resized"
+              alt="Resized image preview after applying new dimensions"
               className="h-full w-full object-contain animate-scale-in"
             />
           ) : (
@@ -574,8 +574,9 @@ function ResizeControls({
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1.5">
-            <Label className="text-xs text-muted-foreground">Width (px)</Label>
+            <Label htmlFor="home-resize-width" className="text-xs text-muted-foreground">Width (px)</Label>
             <Input
+              id="home-resize-width"
               type="number"
               value={width}
               onChange={(e) => handleWidthChange(e.target.value)}
@@ -584,8 +585,9 @@ function ResizeControls({
             />
           </div>
           <div className="space-y-1.5">
-            <Label className="text-xs text-muted-foreground">Height (px)</Label>
+            <Label htmlFor="home-resize-height" className="text-xs text-muted-foreground">Height (px)</Label>
             <Input
+              id="home-resize-height"
               type="number"
               value={height}
               onChange={(e) => handleHeightChange(e.target.value)}

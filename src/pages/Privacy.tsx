@@ -10,6 +10,11 @@ export default function Privacy() {
         <title>Privacy Policy – Your Data Stays Private | Resizer Lab</title>
         <meta name="description" content="Resizer Lab privacy policy. 100% browser-based processing means your images never leave your device. Zero data collection." />
         <link rel="canonical" href="https://resizerlab.lovable.app/privacy" />
+        <meta property="og:title" content="Privacy Policy – Your Data Stays Private | Resizer Lab" />
+        <meta property="og:description" content="Resizer Lab privacy policy. 100% browser-based processing means your images never leave your device." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/privacy" />
+        <meta name="twitter:title" content="Privacy Policy – Your Data Stays Private | Resizer Lab" />
+        <meta name="twitter:description" content="Resizer Lab privacy policy. 100% browser-based processing means your images never leave your device." />
       </Helmet>
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
@@ -30,6 +35,7 @@ export default function Privacy() {
       {/* Privacy Highlights */}
       <section className="container py-12">
         <div className="mx-auto max-w-4xl">
+          <h2 className="sr-only">Privacy Highlights</h2>
           <div className="grid gap-6 md:grid-cols-3 mb-12">
             <div className="rounded-xl border border-border bg-card p-6 text-center">
               <Lock className="mx-auto h-10 w-10 text-primary mb-4" />

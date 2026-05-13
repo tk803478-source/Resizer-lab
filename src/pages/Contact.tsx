@@ -49,6 +49,11 @@ export default function Contact() {
     <Layout>
       <Helmet>
         <title>Contact Us – Support & Feedback | Resizer Lab</title>
+        <meta property="og:title" content="Contact Us – Support & Feedback | Resizer Lab" />
+        <meta property="og:description" content="Get in touch with the Resizer Lab team. Send questions, feedback, or suggestions about our free image resizing tool." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/contact" />
+        <meta name="twitter:title" content="Contact Us – Support & Feedback | Resizer Lab" />
+        <meta name="twitter:description" content="Get in touch with the Resizer Lab team. Send questions, feedback, or suggestions." />
         <meta name="description" content="Get in touch with Resizer Lab. Questions about our free image resizer? We're here to help with support, feedback, or suggestions." />
         <link rel="canonical" href="https://resizerlab.lovable.app/contact" />
         <script type="application/ld+json">
@@ -81,6 +86,7 @@ export default function Contact() {
       <section className="container py-12">
         <div className="mx-auto max-w-4xl">
           {/* Contact Info Cards */}
+          <h2 className="sr-only">How to Reach Us</h2>
           <div className="grid gap-6 md:grid-cols-3 mb-12">
             <div className="rounded-xl border border-border bg-card p-6 text-center">
               <Mail className="mx-auto h-10 w-10 text-primary mb-4" />

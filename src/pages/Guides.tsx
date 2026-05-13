@@ -94,6 +94,30 @@ export default function Guides() {
         <meta name="description" content="Learn image resizing, compression, and optimization. Guides for websites, social media, and e-commerce. Free tutorials for all skill levels." />
         <meta name="keywords" content="image resizing guide, image optimization tutorial, photo compression guide, web image best practices" />
         <link rel="canonical" href="https://resizerlab.lovable.app/guides" />
+        <meta property="og:title" content="Image Optimization Guides & Tutorials | Resizer Lab" />
+        <meta property="og:description" content="Learn image resizing, compression, and optimization with guides for websites, social media, and e-commerce." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/guides" />
+        <meta name="twitter:title" content="Image Optimization Guides & Tutorials | Resizer Lab" />
+        <meta name="twitter:description" content="Free tutorials on image resizing, compression, and optimization for all skill levels." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Image Optimization Guides & Tutorials",
+            "url": "https://resizerlab.lovable.app/guides",
+            "description": "Comprehensive guides on image resizing, compression, and optimization.",
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": categories.flatMap((c, ci) =>
+                c.articles.map((slug, ai) => ({
+                  "@type": "ListItem",
+                  "position": ci * 10 + ai + 1,
+                  "url": `https://resizerlab.lovable.app/blog/${slug}`
+                }))
+              )
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="gradient-hero">
