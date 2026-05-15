@@ -11,7 +11,6 @@ import {
   MessageSquare,
   Palette,
   Search,
-  Megaphone,
   Wrench,
   LogOut,
   ChevronLeft,
@@ -27,7 +26,7 @@ const navItems = [
   { icon: Wrench, label: "Tool Content", href: "/admin/tool-content" },
   { icon: Search, label: "SEO Manager", href: "/admin/seo" },
   { icon: Palette, label: "Design & UI", href: "/admin/design" },
-  { icon: Megaphone, label: "Ads Control", href: "/admin/ads" },
+  
   { icon: Image, label: "Media Library", href: "/admin/media" },
   { icon: MessageSquare, label: "Messages", href: "/admin/messages" },
   { icon: Settings, label: "Settings", href: "/admin/settings" },
