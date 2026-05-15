@@ -182,16 +182,6 @@ export default function AdminDashboard() {
                 </span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">AdSense Ready</span>
-                <span
-                  className={`font-medium ${
-                    settings?.ads?.adsenseReady ? "text-green-500" : "text-orange-500"
-                  }`}
-                >
-                  {settings?.ads?.adsenseReady ? "Yes" : "Not yet"}
-                </span>
-              </div>
-              <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Animations</span>
                 <span className="font-medium">
                   {settings?.design?.animationsEnabled ? "Enabled" : "Disabled"}

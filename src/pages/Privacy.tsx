@@ -136,7 +136,7 @@ export default function Privacy() {
             </p>
             <ul>
               <li><strong>Google Analytics</strong>: For anonymous usage statistics and understanding aggregate user behavior patterns</li>
-              <li><strong>Google AdSense</strong>: For displaying relevant advertisements that help support our free service</li>
+              
               <li><strong>Content Delivery Networks (CDNs)</strong>: For fast, reliable delivery of our website assets worldwide</li>
             </ul>
             <p>
