@@ -25,7 +25,7 @@ import BlogManager from "./pages/admin/BlogManager";
 import ToolContentManager from "./pages/admin/ToolContentManager";
 import SEOManager from "./pages/admin/SEOManager";
 import DesignManager from "./pages/admin/DesignManager";
-import AdsManager from "./pages/admin/AdsManager";
+
 import MediaManager from "./pages/admin/MediaManager";
 import MessagesManager from "./pages/admin/MessagesManager";
 import SettingsManager from "./pages/admin/SettingsManager";
@@ -61,7 +61,7 @@ const App = () => (
               <Route path="/admin/tool-content" element={<AdminRoute><ToolContentManager /></AdminRoute>} />
               <Route path="/admin/seo" element={<AdminRoute><SEOManager /></AdminRoute>} />
               <Route path="/admin/design" element={<AdminRoute><DesignManager /></AdminRoute>} />
-              <Route path="/admin/ads" element={<AdminRoute><AdsManager /></AdminRoute>} />
+              
               <Route path="/admin/media" element={<AdminRoute><MediaManager /></AdminRoute>} />
               <Route path="/admin/messages" element={<AdminRoute><MessagesManager /></AdminRoute>} />
               <Route path="/admin/settings" element={<AdminRoute><SettingsManager /></AdminRoute>} />
