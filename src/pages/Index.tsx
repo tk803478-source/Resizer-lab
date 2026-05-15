@@ -719,45 +719,6 @@ export default function Index() {
     }
   }, [selectedPreset, originalImage, clearPreset]);
 
-  // Load native banner ad script
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://pl28559934.effectivegatecpm.com/3ec4c179c81289f3b19d4dc6a5ccf170/invoke.js';
-    script.async = true;
-    script.setAttribute('data-cfasync', 'false');
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
-  // Load iframe banner ad script
-  useEffect(() => {
-    (window as any).atOptions = {
-      'key': '954149f733f6d757596ec60626eeaf57',
-      'format': 'iframe',
-      'height': 90,
-      'width': 728,
-      'params': {}
-    };
-
-    const script = document.createElement('script');
-    script.src = 'https://www.highperformanceformat.com/954149f733f6d757596ec60626eeaf57/invoke.js';
-    
-    const container = document.getElementById('iframe-ad-container');
-    if (container) {
-      container.appendChild(script);
-    }
-
-    return () => {
-      if (container && container.contains(script)) {
-        container.removeChild(script);
-      }
-    };
-  }, []);
 
   return (
     <Layout>
@@ -803,17 +764,6 @@ export default function Index() {
         </script>
       </Helmet>
 
-      {/* Native Banner Ad */}
-      <div className="w-full bg-background py-2">
-        <div className="container">
-          <div id="container-3ec4c179c81289f3b19d4dc6a5ccf170"></div>
-        </div>
-      </div>
-
-      {/* Iframe Banner Ad */}
-      <div className="w-full bg-background py-2 flex justify-center">
-        <div id="iframe-ad-container"></div>
-      </div>
 
       {/* Hero Section */}
       <section className="w-full relative overflow-hidden bg-gradient-to-b from-background via-accent/20 to-background">
