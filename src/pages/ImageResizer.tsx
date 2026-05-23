@@ -114,40 +114,85 @@ function useImageResizer() {
       setIsProcessing(true);
 
       try {
-        const img = new Image();
-        img.src = originalImage.url;
+        // Prefer createImageBitmap for faster, GPU-accelerated decoding
+        let source: ImageBitmap | HTMLImageElement;
+        try {
+          source = await createImageBitmap(originalImage.file, {
+            imageOrientation: "from-image",
+          });
+        } catch {
+          const img = new Image();
+          img.src = originalImage.url;
+          await new Promise((resolve, reject) => {
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+          source = img;
+        }
 
-        await new Promise((resolve) => {
-          img.onload = resolve;
-        });
+        const srcW = "naturalWidth" in source ? source.naturalWidth : source.width;
+        const srcH = "naturalHeight" in source ? source.naturalHeight : source.height;
 
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
+        // Multi-pass progressive downscaling (Lanczos-like quality via halving)
+        // Major quality boost when shrinking by >2x — avoids aliasing/moiré.
+        const targetW = Math.max(1, Math.round(options.width));
+        const targetH = Math.max(1, Math.round(options.height));
 
-        if (!ctx) throw new Error("Could not get canvas context");
+        const drawTo = (
+          src: CanvasImageSource,
+          sw: number,
+          sh: number,
+          dw: number,
+          dh: number
+        ) => {
+          const c = document.createElement("canvas");
+          c.width = dw;
+          c.height = dh;
+          const cx = c.getContext("2d", { alpha: options.format !== "jpeg" });
+          if (!cx) throw new Error("Canvas 2D context unavailable");
+          cx.imageSmoothingEnabled = true;
+          cx.imageSmoothingQuality = "high";
+          if (options.format === "jpeg") {
+            // White matte to avoid black transparent fringes in JPEG
+            cx.fillStyle = "#ffffff";
+            cx.fillRect(0, 0, dw, dh);
+          }
+          cx.drawImage(src, 0, 0, sw, sh, 0, 0, dw, dh);
+          return c;
+        };
 
-        canvas.width = options.width;
-        canvas.height = options.height;
+        let currentW = srcW;
+        let currentH = srcH;
+        let currentCanvas: HTMLCanvasElement | null = null;
+        let currentSource: CanvasImageSource = source;
 
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = "high";
+        // Halve repeatedly until within 2x of target
+        while (currentW > targetW * 2 && currentH > targetH * 2) {
+          const nextW = Math.max(targetW, Math.floor(currentW / 2));
+          const nextH = Math.max(targetH, Math.floor(currentH / 2));
+          currentCanvas = drawTo(currentSource, currentW, currentH, nextW, nextH);
+          currentW = nextW;
+          currentH = nextH;
+          currentSource = currentCanvas;
+        }
 
-        ctx.drawImage(img, 0, 0, options.width, options.height);
+        const finalCanvas = drawTo(currentSource, currentW, currentH, targetW, targetH);
 
         const mimeType = `image/${options.format}`;
         const quality =
           options.format === "png" ? undefined : options.quality / 100;
 
         const blob = await new Promise<Blob>((resolve, reject) => {
-          canvas.toBlob(
-            (blob) => {
-              if (blob) resolve(blob);
-              else reject(new Error("Failed to create blob"));
-            },
+          finalCanvas.toBlob(
+            (b) => (b ? resolve(b) : reject(new Error("Failed to create blob"))),
             mimeType,
             quality
           );
         });
+
+        if ("close" in source && typeof (source as ImageBitmap).close === "function") {
+          (source as ImageBitmap).close();
+        }
 
         if (resizedImage?.url) {
           URL.revokeObjectURL(resizedImage.url);
@@ -156,8 +201,8 @@ function useImageResizer() {
         setResizedImage({
           url: URL.createObjectURL(blob),
           blob,
-          width: options.width,
-          height: options.height,
+          width: targetW,
+          height: targetH,
         });
       } catch (error) {
         console.error("Error resizing image:", error);
@@ -167,6 +212,7 @@ function useImageResizer() {
     },
     [originalImage, resizedImage]
   );
+
 
   const downloadImage = useCallback(
     (format: string) => {
