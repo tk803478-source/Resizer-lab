@@ -10,6 +10,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import ImageResizer from "./pages/ImageResizer";
 import ImageGenerator from "./pages/ImageGenerator";
+import BackgroundRemover from "./pages/BackgroundRemover";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -46,6 +47,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/image-resizer" element={<ImageResizer />} />
               <Route path="/image-generator" element={<ImageGenerator />} />
+              <Route path="/background-remover" element={<BackgroundRemover />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/guides" element={<Guides />} />
               <Route path="/about" element={<About />} />
