@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { Info, Image, BookOpen, Mail, FileText, Wand2 } from "lucide-react";
+import { Info, Image, BookOpen, Mail, FileText, Wand2, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Home", icon: Image },
   { to: "/image-resizer", label: "Image Resizer", icon: Wand2 },
+  { to: "/image-generator", label: "AI Generator", icon: Sparkles },
   { to: "/guides", label: "Guides", icon: FileText },
   { to: "/blog", label: "Blog", icon: BookOpen },
   { to: "/about", label: "About", icon: Info },

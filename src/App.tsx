@@ -9,6 +9,7 @@ import { AdminRoute } from "@/components/admin/AdminRoute";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import ImageResizer from "./pages/ImageResizer";
+import ImageGenerator from "./pages/ImageGenerator";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -44,6 +45,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/image-resizer" element={<ImageResizer />} />
+              <Route path="/image-generator" element={<ImageGenerator />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/guides" element={<Guides />} />
               <Route path="/about" element={<About />} />
