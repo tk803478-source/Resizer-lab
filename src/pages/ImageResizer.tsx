@@ -481,17 +481,18 @@ export default function ImageResizer() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Resizer with Drag Controls | Resizer Lab</title>
+        <title>Custom Size Image Resizer – Resize Image to Exact Size with Drag Controls | Resizer Lab</title>
         <meta
           name="description"
-          content="Interactive image resizer with visual drag controls. Resize images by dragging handles, use presets, or enter custom dimensions. Free, fast, and private."
+          content="Custom size image resizer with drag handles. Resize image to exact size, custom size, passport size, Instagram size, reel size, banner size, or logo size. Free & private."
         />
+        <meta name="keywords" content="image resizer custom size, custom size image resizer, resize image custom size, resize image to exact size, resize image to specific size, how to resize an image to a specific size, resize image to passport size, resize image to instagram size, resize image to reel size, resize image to banner size, resize image to logo size, resize image to letter size, resize image to legal size, resize image to larger size, resize image to smaller size, batch resize images to specific size, resize image size without losing quality" />
         <link rel="canonical" href="https://resizerlab.lovable.app/image-resizer" />
-        <meta property="og:title" content="Image Resizer with Drag Controls | Resizer Lab" />
-        <meta property="og:description" content="Resize images by dragging handles, using presets, or entering custom dimensions. 100% browser-based, free, and private." />
+        <meta property="og:title" content="Custom Size Image Resizer – Resize Image to Exact Size with Drag Controls | Resizer Lab" />
+        <meta property="og:description" content="Resize image to exact size, custom size, or preset (passport, Instagram, reel, banner, logo) with drag handles. 100% browser-based." />
         <meta property="og:url" content="https://resizerlab.lovable.app/image-resizer" />
-        <meta name="twitter:title" content="Image Resizer with Drag Controls | Resizer Lab" />
-        <meta name="twitter:description" content="Resize images by dragging handles, using presets, or entering custom dimensions. 100% browser-based and private." />
+        <meta name="twitter:title" content="Custom Size Image Resizer – Resize Image to Exact Size | Resizer Lab" />
+        <meta name="twitter:description" content="Resize image to exact size, custom size, or preset (passport, Instagram, reel, banner, logo). Browser-based & private." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -517,13 +518,11 @@ export default function ImageResizer() {
               Interactive Resizer
             </div>
             <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-              Resize Images with{" "}
-              <span className="text-gradient">Drag Controls</span>
+              Custom Size Image Resizer –{" "}
+              <span className="text-gradient">Resize Image to Exact Size</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Use our interactive resize box with draggable handles for precise
-              control. See exactly how your resized image will look before
-              downloading.
+              Resize image to a specific size, custom size, or preset (passport, Instagram, reel, banner, logo, letter, legal) using draggable handles. See exactly how your resized image will look before downloading.
             </p>
           </div>
         </div>

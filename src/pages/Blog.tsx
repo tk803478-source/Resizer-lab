@@ -10,13 +10,14 @@ export default function Blog() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Optimization Blog – Tips & Guides | Resizer Lab</title>
-        <meta name="description" content="Expert guides on image resizing, compression, and optimization. Learn to resize images without quality loss for web, social media, and e-commerce." />
+        <title>Image Resizing Blog – How to Resize Image Size in KB, Passport, Instagram & Custom Size | Resizer Lab</title>
+        <meta name="description" content="Blog on how to resize image size — resize image to passport size, Instagram size, reel size, banner size, logo size, or resize image size in KB without losing quality." />
+        <meta name="keywords" content="how to resize image size, resize the image size, resize image by size, resize image to size, resize image size in kb, resize image size online, resize image to passport size, resize image to instagram size, resize image to reel size, resize image to banner size, resize image to logo size, resize image to letter size, resize image to legal size, resize image to smaller size, resize image to larger size, resize image to exact size, resize image to specific size, resize image size without losing quality, resize images without losing quality, resize image file size, image file size resizer, batch resize images to specific size" />
         <link rel="canonical" href="https://resizerlab.lovable.app/blog" />
-        <meta property="og:title" content="Image Optimization Blog – Tips & Guides | Resizer Lab" />
-        <meta property="og:description" content="Expert guides on image resizing, compression, and optimization for web, social media, and e-commerce." />
+        <meta property="og:title" content="Image Resizing Blog – Resize Image Size in KB, Passport, Instagram & Custom Size | Resizer Lab" />
+        <meta property="og:description" content="How to resize image size — passport, Instagram, reel, banner, logo, letter, legal, or resize image size in KB without losing quality." />
         <meta property="og:url" content="https://resizerlab.lovable.app/blog" />
-        <meta name="twitter:title" content="Image Optimization Blog – Tips & Guides | Resizer Lab" />
+        <meta name="twitter:title" content="Image Resizing Blog – Resize Image Size Online | Resizer Lab" />
         <meta name="twitter:description" content="Expert guides on image resizing, compression, and optimization." />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -148,7 +149,7 @@ export default function Blog() {
             <div className="rounded-xl border border-border bg-card p-6">
               <h3 className="font-semibold mb-4">Popular Topics</h3>
               <div className="flex flex-wrap gap-2">
-                {['Image Resizing', 'Compression', 'WEBP', 'Social Media', 'SEO', 'Web Performance', 'JPEG', 'PNG', 'Optimization', 'E-commerce'].map(tag => (
+                {['Resize Image Size', 'Resize in KB', 'Passport Size', 'Instagram Size', 'Reel Size', 'Banner Size', 'Logo Size', 'Custom Size', 'Letter Size', 'Legal Size', 'Without Losing Quality', 'Batch Resize', 'Image File Size', 'WEBP', 'JPEG', 'PNG', 'SEO', 'Compression', 'E-commerce', 'Social Media'].map(tag => (
                   <span key={tag} className="px-3 py-1 text-sm bg-accent rounded-full text-accent-foreground">
                     {tag}
                   </span>

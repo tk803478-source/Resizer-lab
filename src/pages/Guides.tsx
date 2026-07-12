@@ -90,15 +90,15 @@ export default function Guides() {
   return (
     <Layout>
       <Helmet>
-        <title>Image Optimization Guides & Tutorials | Resizer Lab</title>
-        <meta name="description" content="Learn image resizing, compression, and optimization. Guides for websites, social media, and e-commerce. Free tutorials for all skill levels." />
-        <meta name="keywords" content="image resizing guide, image optimization tutorial, photo compression guide, web image best practices" />
+        <title>How to Resize Image Size – Guides for Passport, Instagram, KB & Custom Size | Resizer Lab</title>
+        <meta name="description" content="Step-by-step guides on how to resize the image size online — resize image to passport size, Instagram size, reel size, banner size, logo size, or resize image size in KB without losing quality." />
+        <meta name="keywords" content="how to resize image size, how to resize an image to a specific size, how to resize image to custom size, how to resize image to passport size, how to resize image to instagram size, how to resize image to banner size, how to resize image to smaller size, how to resize image to exact size, how to resize image file size, how to resize jpeg image file size, resize image size in kb, resize image size without losing quality, resize image to file size, batch resize images to specific size, how to resize image in canva to specific size, gimp resize image to specific size, photoshop resize image to specific size, cv2 resize image to specific size" />
         <link rel="canonical" href="https://resizerlab.lovable.app/guides" />
-        <meta property="og:title" content="Image Optimization Guides & Tutorials | Resizer Lab" />
-        <meta property="og:description" content="Learn image resizing, compression, and optimization with guides for websites, social media, and e-commerce." />
+        <meta property="og:title" content="How to Resize Image Size – Guides for Passport, Instagram, KB & Custom Size | Resizer Lab" />
+        <meta property="og:description" content="Guides on how to resize image to a specific size — passport, Instagram, reel, banner, logo — plus resize image size in KB without losing quality." />
         <meta property="og:url" content="https://resizerlab.lovable.app/guides" />
-        <meta name="twitter:title" content="Image Optimization Guides & Tutorials | Resizer Lab" />
-        <meta name="twitter:description" content="Free tutorials on image resizing, compression, and optimization for all skill levels." />
+        <meta name="twitter:title" content="How to Resize Image Size – Guides for Passport, Instagram, KB & Custom Size | Resizer Lab" />
+        <meta name="twitter:description" content="Guides on how to resize image to a specific size — passport, Instagram, reel, banner, logo, and resize image size in KB." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -127,10 +127,10 @@ export default function Guides() {
               <FileText className="h-8 w-8 text-primary-foreground" />
             </div>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Image Resizing <span className="text-gradient">Guides</span>
+              How to Resize Image Size – <span className="text-gradient">Guides & Tutorials</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive tutorials and best practices for image optimization, resizing, and web performance. From beginner basics to advanced techniques, we've got you covered.
+              Learn how to resize an image to a specific size, resize image to passport size, Instagram size, reel size, banner size, or resize image size in KB without losing quality. Step-by-step tutorials for every skill level.
             </p>
           </div>
         </section>

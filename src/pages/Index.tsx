@@ -723,12 +723,12 @@ export default function Index() {
   return (
     <Layout>
       <Helmet>
-        <title>Free Image Resizer Tool – Resize Images Online | ResizerLab</title>
-        <meta name="description" content="Resize images online for free without losing quality. Fast, secure, and easy-to-use image resizer supporting JPG, PNG, and WebP." />
-        <meta name="keywords" content="image resizer, resize image online, free image resizer, resize images without losing quality, online image resize tool" />
+        <title>Free Image Resizer – Resize Image Size Online in KB, Pixels & Custom Sizes | ResizerLab</title>
+        <meta name="description" content="Free online image size resizer – resize the image size to any custom size, KB, or preset (passport, Instagram, reel, banner, logo, letter, legal). Resize images without losing quality." />
+        <meta name="keywords" content="resize the image size, resize image by size, resize image to size, resize image size in kb, resize image size online, how to resize image size, resize image file size, image file size resizer, resize image to file size, online image size resizer, image resizer custom size, resize image custom size, resize image to passport size, resize image to instagram size, resize image to instagram story size, resize image to reel size, resize image to banner size, resize image to logo size, resize image to letter size, resize image to legal size, resize image to larger size, resize image to smaller size, resize image to exact size, resize image to specific size, batch resize images to specific size, resize image size without losing quality, resize images without losing quality" />
         <link rel="canonical" href="https://resizerlab.lovable.app/" />
-        <meta property="og:title" content="Free Image Resizer Tool – Resize Images Online | ResizerLab" />
-        <meta property="og:description" content="Resize images online for free without losing quality. Fast, secure, and easy-to-use image resizer supporting JPG, PNG, and WebP." />
+        <meta property="og:title" content="Free Image Resizer – Resize Image Size Online in KB, Pixels & Custom Sizes | ResizerLab" />
+        <meta property="og:description" content="Resize the image size online for free – custom size, KB, passport, Instagram, reel, banner, logo. No signup, no uploads, no quality loss." />
         <meta property="og:url" content="https://resizerlab.lovable.app/" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -784,12 +784,12 @@ export default function Index() {
               </div>
 
               <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-[3.5rem] md:leading-[1.1]">
-                Free Image Resizer Tool –{" "}
-                <span className="text-gradient">Resize Images Online Without Losing Quality</span>
+                Resize the Image Size Online –{" "}
+                <span className="text-gradient">Custom Size, KB & Preset Image Resizer</span>
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                Free, fast, and secure image resizer. Optimize your images for websites, social media, and professional use in seconds.
+                Free online image size resizer. Resize image by size in KB or pixels, to a custom size, or to a preset — passport, Instagram, reel, banner, logo, letter, or legal — without losing quality.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-1">
@@ -1097,9 +1097,35 @@ export default function Index() {
                 The tool also features an aspect ratio lock, ensuring your images don't get stretched or distorted during resizing. Quick preset sizes and percentage-based scaling make it easy to achieve consistent results across multiple images. Whether you need a specific pixel dimension, a percentage reduction, or a standard web size, ResizeLab has you covered. For more advanced users, our guide on <Link to="/blog/understanding-aspect-ratios-images" className="text-primary hover:underline">understanding aspect ratios</Link> provides valuable insights for photography and design work.
               </p>
 
+              <h3 className="text-xl font-semibold text-foreground mt-8">Resize Image to Any Size — Presets, Custom Size & KB</h3>
+              <p>
+                ResizerLab is a full custom size image resizer. You can resize the image size to an exact pixel dimension, use a percentage to make an image to smaller size or to larger size, or lock the KB target and let the tool compress until the resize image size in KB matches. Whether you want to resize image to file size for email limits, resize image to exact size for a print job, or resize image to specific size for a job portal, everything runs in the browser.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground mt-8">Popular Resize Presets</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Resize image to passport size</strong> — quickly generate the correct 35×45 mm / 600×600 px passport photos online.</li>
+                <li><strong>Resize image to Instagram size</strong> — 1080×1080 square posts, 1080×1350 portraits, and resize image to Instagram story size (1080×1920) or resize image to Instagram post size in seconds.</li>
+                <li><strong>Resize image to reel size</strong> — 1080×1920 vertical for Instagram Reels, TikTok, and YouTube Shorts.</li>
+                <li><strong>Resize image to banner size</strong> — hero banners, YouTube channel art, and web banners with a single click.</li>
+                <li><strong>Resize image to logo size</strong> — 512×512 or 1024×1024 logo exports for brand kits and app icons.</li>
+                <li><strong>Resize image to letter size</strong> and <strong>resize image to legal size</strong> — US Letter (8.5×11") and Legal (8.5×14") document-ready dimensions.</li>
+                <li><strong>Batch resize images to specific size</strong> — apply the same target dimensions across a folder of images.</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-foreground mt-8">Resize Image Size in KB Without Losing Quality</h3>
+              <p>
+                Need to hit an upload cap — 100 KB, 200 KB, 500 KB, 1 MB? Our image file size resizer lets you resize image to file size targets by combining smart resampling with adjustable JPEG and WebP quality. The result: resize image size without losing quality that the human eye can detect. If you've ever asked "how to resize jpeg image file size" or "does resizing an image reduce file size?", the answer is yes — and you can control exactly how much.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground mt-8">How to Resize an Image to a Specific Size</h3>
+              <p>
+                Wondering how to resize image to a specific size, how to resize image to custom size, or how to resize image to smaller size without a bulky app? Upload your file, type the exact width and height (or pick a preset), toggle aspect-ratio lock, choose your format, and download. It's the same workflow people search for as "how to resize image in Canva to specific size", "gimp resize image to specific size", "photoshop resize image to specific size", or "cv2 resize image to specific size" — but here it runs online, in your browser, with zero setup.
+              </p>
+
               <h3 className="text-xl font-semibold text-foreground mt-8">Start Resizing Images Today</h3>
               <p>
-                Whether you need to optimize product photos for your online store, prepare images for your blog, or simply make a picture smaller for sharing, ResizeLab provides everything you need in a simple, free, and privacy-focused package. No signup required, no limitations, no hidden costs—just fast, high-quality image resizing that works exactly the way you need it to.
+                Whether you need to optimize product photos for your online store, prepare images for your blog, or simply make a picture smaller for sharing, ResizerLab provides everything you need in a simple, free, and privacy-focused package. No signup required, no limitations, no hidden costs — just fast, high-quality image resizing that works exactly the way you need it to.
               </p>
             </div>
           </article>
