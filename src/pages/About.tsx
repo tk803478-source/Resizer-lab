@@ -82,14 +82,15 @@ export default function About() {
   return (
     <Layout>
       <Helmet>
-        <title>About Us – Browser-Based Image Resizer | Resizer Lab</title>
-        <meta name="description" content="Learn about Resizer Lab, the free privacy-first image resizer. All processing happens in your browser – no uploads, no servers." />
+        <title>About – Free Online Image Size Resizer (Custom Size, KB, Passport, Instagram) | Resizer Lab</title>
+        <meta name="description" content="Resizer Lab is a free online image size resizer. Resize the image size to a custom size, KB, passport size, Instagram size, reel size, banner size, or logo size — all in your browser." />
+        <meta name="keywords" content="online image size resizer, image resizer custom size, custom size image resizer, resize image custom size, resize the image size, resize image by size, resize image to size, resize image size online, resize image size in kb, resize image file size, image file size resizer" />
         <link rel="canonical" href="https://resizerlab.lovable.app/about" />
-        <meta property="og:title" content="About Us – Browser-Based Image Resizer | Resizer Lab" />
-        <meta property="og:description" content="Learn about Resizer Lab, the free privacy-first image resizer. All processing happens in your browser – no uploads, no servers." />
+        <meta property="og:title" content="About – Free Online Image Size Resizer | Resizer Lab" />
+        <meta property="og:description" content="Free online image size resizer — resize image to custom size, KB, passport, Instagram, reel, banner, or logo. All processing in your browser." />
         <meta property="og:url" content="https://resizerlab.lovable.app/about" />
-        <meta name="twitter:title" content="About Us – Browser-Based Image Resizer | Resizer Lab" />
-        <meta name="twitter:description" content="The free privacy-first image resizer. All processing happens in your browser – no uploads." />
+        <meta name="twitter:title" content="About – Free Online Image Size Resizer | Resizer Lab" />
+        <meta name="twitter:description" content="Free online image size resizer — custom size, KB, passport, Instagram, reel, banner. All processing in your browser." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

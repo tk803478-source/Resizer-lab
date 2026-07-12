@@ -162,11 +162,12 @@ export default function BackgroundRemover() {
   return (
     <Layout>
       <Helmet>
-        <title>AI Background Remover — Free & Private | Resizer Lab</title>
+        <title>AI Background Remover + Resize Image to Passport, Logo & Custom Size | Resizer Lab</title>
         <meta
           name="description"
-          content="Remove image backgrounds instantly with AI, right in your browser. 100% free, private, and zero uploads. Get transparent PNGs in seconds."
+          content="Remove backgrounds and resize the image size in one flow — transparent PNGs perfect to resize image to passport size, logo size, Instagram size, or any custom size. 100% private, browser-based."
         />
+        <meta name="keywords" content="background remover, remove image background, transparent png, resize image to passport size, resize image to logo size, resize image to instagram size, resize image custom size, image resizer custom size, resize image size without losing quality" />
         <link rel="canonical" href="https://resizerlab.lovable.app/background-remover" />
       </Helmet>
 
