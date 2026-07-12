@@ -149,7 +149,7 @@ export default function Blog() {
             <div className="rounded-xl border border-border bg-card p-6">
               <h3 className="font-semibold mb-4">Popular Topics</h3>
               <div className="flex flex-wrap gap-2">
-                {['Image Resizing', 'Compression', 'WEBP', 'Social Media', 'SEO', 'Web Performance', 'JPEG', 'PNG', 'Optimization', 'E-commerce'].map(tag => (
+                {['Resize Image Size', 'Resize in KB', 'Passport Size', 'Instagram Size', 'Reel Size', 'Banner Size', 'Logo Size', 'Custom Size', 'Letter Size', 'Legal Size', 'Without Losing Quality', 'Batch Resize', 'Image File Size', 'WEBP', 'JPEG', 'PNG', 'SEO', 'Compression', 'E-commerce', 'Social Media'].map(tag => (
                   <span key={tag} className="px-3 py-1 text-sm bg-accent rounded-full text-accent-foreground">
                     {tag}
                   </span>
