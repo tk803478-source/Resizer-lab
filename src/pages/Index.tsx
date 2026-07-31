@@ -723,7 +723,7 @@ export default function Index() {
   return (
     <Layout>
       <Helmet>
-        <title>Free Image Resizer – Resize Image Size Online in KB, Pixels & Custom Sizes | ResizerLab</title>
+        <title>Free Image Resizer – Resize Image Size in KB & Pixels</title>
         <meta name="description" content="Free online image size resizer – resize the image size to any custom size, KB, or preset (passport, Instagram, reel, banner, logo, letter, legal). Resize images without losing quality." />
         <meta name="keywords" content="resize the image size, resize image by size, resize image to size, resize image size in kb, resize image size online, how to resize image size, resize image file size, image file size resizer, resize image to file size, online image size resizer, image resizer custom size, resize image custom size, resize image to passport size, resize image to instagram size, resize image to instagram story size, resize image to reel size, resize image to banner size, resize image to logo size, resize image to letter size, resize image to legal size, resize image to larger size, resize image to smaller size, resize image to exact size, resize image to specific size, batch resize images to specific size, resize image size without losing quality, resize images without losing quality" />
         <link rel="canonical" href="https://resizerlab.lovable.app/" />
