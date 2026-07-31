@@ -784,8 +784,8 @@ export default function Index() {
               </div>
 
               <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-[3.5rem] md:leading-[1.1]">
-                Resize the Image Size Online –{" "}
-                <span className="text-gradient">Custom Size, KB & Preset Image Resizer</span>
+                Resize Image Size in KB & Pixels –{" "}
+                <span className="text-gradient">Free Online Image Resizer</span>
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
