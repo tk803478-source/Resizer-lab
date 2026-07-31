@@ -728,7 +728,7 @@ export default function Index() {
         <meta name="keywords" content="resize the image size, resize image by size, resize image to size, resize image size in kb, resize image size online, how to resize image size, resize image file size, image file size resizer, resize image to file size, online image size resizer, image resizer custom size, resize image custom size, resize image to passport size, resize image to instagram size, resize image to instagram story size, resize image to reel size, resize image to banner size, resize image to logo size, resize image to letter size, resize image to legal size, resize image to larger size, resize image to smaller size, resize image to exact size, resize image to specific size, batch resize images to specific size, resize image size without losing quality, resize images without losing quality" />
         <link rel="canonical" href="https://resizerlab.lovable.app/" />
         <meta property="og:title" content="Free Image Resizer – Resize Image Size in KB & Pixels" />
-        <meta property="og:description" content="Resize the image size online for free – custom size, KB, passport, Instagram, reel, banner, logo. No signup, no uploads, no quality loss." />
+        <meta property="og:description" content="Resize images online free — exact pixels, custom sizes or KB targets. No uploads, no signup, no quality loss. Works right in your browser." />
         <meta property="og:url" content="https://resizerlab.lovable.app/" />
         <script type="application/ld+json">
           {JSON.stringify({
