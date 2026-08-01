@@ -1,18 +1,27 @@
 # Resizer Lab
 
-> Free, browser-based image resizer. Resize, compress, and convert JPG, PNG, and WebP images without uploads — all processing happens locally in your browser for full privacy.
+> Free, browser-based image toolkit. Resize images in KB or pixels, remove backgrounds, and generate AI images — no uploads, no signup. All resizing runs locally in your browser for full privacy.
 
-Resizer Lab is a privacy-first online image tool. There are no accounts, no uploads, and no server-side processing. The site also publishes long-form guides and tutorials on image optimization, formats, and best practices for web, social media, and e-commerce.
+Resizer Lab is a privacy-first online image tool. There are no accounts and no server-side processing for resizing or background removal — images never leave your device. The site also publishes long-form guides and tutorials on image optimization, formats, file-size targets, and platform-specific sizing.
 
 ## Pages
 
-- [Home / Image Resizer](/): Drag-and-drop image resizer with presets, percentage scaling, and JPG/PNG/WebP output.
-- [Interactive Image Resizer](/image-resizer): Visual resize editor with draggable handles, presets, and custom dimensions.
-- [Image Size Presets](/gallery): Quick-pick preset sizes (256, 512, 720, 1080) with use-case guidance.
+- [Home / Image Resizer](/): Drag-and-drop resizer with presets, percentage scaling, KB targets, and JPG/PNG/WebP output.
+- [Interactive Image Resizer](/image-resizer): Visual resize editor with draggable handles, presets, and exact custom dimensions.
+- [Background Remover](/background-remover): In-browser AI background removal — the image is never uploaded.
+- [AI Image Generator](/image-generator): Generate images from a text prompt and download them.
+- [Image Size Presets](/gallery): Quick-pick preset sizes (passport, Instagram, reel, banner, logo, letter, legal).
 - [Guides](/guides): Tutorials and learning paths for image optimization, compression, and platform sizing.
 - [Blog](/blog): Articles on image resizing, compression, formats, SEO, and social media sizing.
 - [About](/about): What Resizer Lab is and how the privacy-first architecture works.
 - [Contact](/contact): Support and feedback.
+
+## Key facts
+
+- Resizing and background removal are 100% client-side (HTML5 Canvas + WebGPU/WASM); nothing is uploaded.
+- Supported formats: JPEG/JPG, PNG, WebP.
+- Free, unlimited, no signup or watermark.
+- Supports exact pixel dimensions, percentage scaling, aspect-ratio lock, and KB file-size targets.
 
 ## Optional
 
