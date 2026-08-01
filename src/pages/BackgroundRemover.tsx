@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { Upload, Download, Eraser, Loader2, X, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 const MAX_DIMENSION = 1024;
 
@@ -170,6 +171,8 @@ export default function BackgroundRemover() {
         <meta name="keywords" content="background remover, remove image background, transparent png, resize image to passport size, resize image to logo size, resize image to instagram size, resize image custom size, image resizer custom size, resize image size without losing quality" />
         <link rel="canonical" href="https://resizerlab.lovable.app/background-remover" />
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Background Remover", path: "/background-remover" }]} />
 
       <section className="bg-gradient-to-b from-accent/50 to-background py-10">
         <div className="container max-w-4xl text-center">

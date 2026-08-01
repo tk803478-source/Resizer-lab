@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DraggableResizeBox } from "@/components/resizer/DraggableResizeBox";
 import { cn } from "@/lib/utils";
 import {
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
   Upload,
   ImageIcon,
   X,
@@ -508,6 +509,8 @@ export default function ImageResizer() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Image Resizer", path: "/image-resizer" }]} />
 
       {/* Hero Header */}
       <section className="bg-gradient-to-b from-accent/50 to-background py-8 md:py-12">

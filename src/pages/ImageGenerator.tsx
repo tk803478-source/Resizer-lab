@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Loader2, Download, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export default function ImageGenerator() {
   const [prompt, setPrompt] = useState("");
@@ -50,6 +51,8 @@ export default function ImageGenerator() {
         <meta name="description" content="Generate stunning AI images from text prompts using Google Gemini. Free, fast, and easy to use." />
         <link rel="canonical" href="https://resizerlab.lovable.app/image-generator" />
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "AI Image Generator", path: "/image-generator" }]} />
 
       <section className="container py-12 max-w-4xl">
         <div className="text-center mb-10">

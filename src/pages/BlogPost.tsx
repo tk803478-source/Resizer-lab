@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { usePublicBlogPost, usePublicBlogPosts } from "@/hooks/usePublicBlogPosts";
 import { Calendar, Clock, ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -65,6 +66,8 @@ export default function BlogPost() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Blog", path: "/blog" }, { name: post.title }]} />
 
       {post.featured_image && (
         <div className="w-full h-64 md:h-96 overflow-hidden">

@@ -17,6 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { usePresetStore } from "@/store/presetStore";
 import {
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
   Sparkles,
   Zap,
   Shield,
@@ -763,6 +764,8 @@ export default function Index() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema />
 
 
       {/* Hero Section */}

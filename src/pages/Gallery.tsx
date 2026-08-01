@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { usePresetStore } from "@/store/presetStore";
 import { Image, MonitorSmartphone, Smartphone, ImageIcon, Monitor, Zap, Shield, Settings, CheckCircle2, ArrowRight } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 const presets = [
   {
@@ -102,6 +103,8 @@ export default function Gallery() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Image Size Presets", path: "/gallery" }]} />
 
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">

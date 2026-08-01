@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { getAllBlogPosts } from "@/data/blogPosts";
 import { Link } from "react-router-dom";
 import { FileText, ArrowRight, Image, BookOpen, Zap, Shield, Target, TrendingUp, CheckCircle2 } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 const categories = [
   {
@@ -119,6 +120,8 @@ export default function Guides() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Guides", path: "/guides" }]} />
 
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">

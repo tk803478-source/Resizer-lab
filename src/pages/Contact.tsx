@@ -9,6 +9,7 @@ import { Mail, MessageSquare, Send, Clock, HelpCircle, Shield, Zap, Image } from
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -66,6 +67,8 @@ export default function Contact() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Contact", path: "/contact" }]} />
 
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">

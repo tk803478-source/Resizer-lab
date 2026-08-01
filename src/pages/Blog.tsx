@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { usePublicBlogPosts } from "@/hooks/usePublicBlogPosts";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight, BookOpen, TrendingUp, Image, Zap, Shield, Loader2 } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export default function Blog() {
   const { data: posts = [], isLoading } = usePublicBlogPosts();
@@ -34,6 +35,8 @@ export default function Blog() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Blog", path: "/blog" }]} />
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center animate-fade-in">
