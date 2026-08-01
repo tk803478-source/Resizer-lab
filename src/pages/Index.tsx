@@ -1185,22 +1185,20 @@ export default function Index() {
               Everything you need to know about using ResizeLab
             </p>
           </div>
-          <Accordion type="single" collapsible className="space-y-3">
+          <div className="space-y-3">
             {faqs.map((faq, i) => (
-              <AccordionItem
+              <details
                 key={i}
-                value={`faq-${i}`}
-                className="rounded-xl border border-border bg-card px-6 data-[state=open]:border-primary/50"
+                open
+                className="group rounded-xl border border-border bg-card px-6 py-4 open:border-primary/50"
               >
-                <AccordionTrigger className="text-left font-semibold hover:no-underline py-4">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-4">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                <summary className="cursor-pointer list-none text-left font-semibold marker:hidden">
+                  <h3 className="inline text-base font-semibold">{faq.question}</h3>
+                </summary>
+                <p className="mt-3 text-muted-foreground">{faq.answer}</p>
+              </details>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
     </Layout>
