@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useState, useCallback, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
@@ -508,6 +509,8 @@ export default function ImageResizer() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Image Resizer", path: "/image-resizer" }]} />
 
       {/* Hero Header */}
       <section className="bg-gradient-to-b from-accent/50 to-background py-8 md:py-12">

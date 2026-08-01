@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 
@@ -119,6 +120,8 @@ export default function Guides() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Guides", path: "/guides" }]} />
 
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">

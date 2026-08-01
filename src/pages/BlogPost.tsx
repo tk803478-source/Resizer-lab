@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useParams, Link, Navigate } from "react-router-dom";
 import DOMPurify from "dompurify";
 import { Layout } from "@/components/layout/Layout";
@@ -65,6 +66,8 @@ export default function BlogPost() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Blog", path: "/blog" }, { name: post.title }]} />
 
       {post.featured_image && (
         <div className="w-full h-64 md:h-96 overflow-hidden">

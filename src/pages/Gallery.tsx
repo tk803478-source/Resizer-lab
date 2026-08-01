@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useNavigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
@@ -102,6 +103,8 @@ export default function Gallery() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Image Size Presets", path: "/gallery" }]} />
 
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">

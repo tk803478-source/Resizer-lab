@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -763,6 +764,8 @@ export default function Index() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema />
 
 
       {/* Hero Section */}

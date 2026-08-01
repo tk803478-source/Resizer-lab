@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
@@ -50,6 +51,8 @@ export default function ImageGenerator() {
         <meta name="description" content="Generate stunning AI images from text prompts using Google Gemini. Free, fast, and easy to use." />
         <link rel="canonical" href="https://resizerlab.lovable.app/image-generator" />
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "AI Image Generator", path: "/image-generator" }]} />
 
       <section className="container py-12 max-w-4xl">
         <div className="text-center mb-10">

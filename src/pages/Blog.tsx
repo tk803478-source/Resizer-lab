@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { usePublicBlogPosts } from "@/hooks/usePublicBlogPosts";
@@ -34,6 +35,8 @@ export default function Blog() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "Blog", path: "/blog" }]} />
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center animate-fade-in">

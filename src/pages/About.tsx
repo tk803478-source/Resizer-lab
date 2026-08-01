@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
@@ -101,6 +102,8 @@ export default function About() {
           })}
         </script>
       </Helmet>
+
+      <BreadcrumbSchema items={[{ name: "About", path: "/about" }]} />
 
       <div className="gradient-hero">
         {/* Hero */}
