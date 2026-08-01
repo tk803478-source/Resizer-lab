@@ -763,6 +763,32 @@ export default function Index() {
             }))
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Resize Image Size in KB & Pixels – Free Online Image Resizer",
+            "description": "Resize image size in KB or pixels online free — custom sizes, presets, no uploads, no signup, no quality loss. Right in your browser.",
+            "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/0UcvCTb89mXNwm4ItJmglp9JY5W2/social-images/social-1777565673702-resizer_lab_logo.webp",
+            "inLanguage": "en-US",
+            "datePublished": "2025-01-01T00:00:00+00:00",
+            "dateModified": new Date().toISOString().split("T")[0],
+            "author": {
+              "@type": "Organization",
+              "name": "Resizer Lab",
+              "url": "https://resizerlab.lovable.app"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Resizer Lab",
+              "url": "https://resizerlab.lovable.app"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://resizerlab.lovable.app/"
+            }
+          })}
+        </script>
       </Helmet>
 
       <BreadcrumbSchema />
