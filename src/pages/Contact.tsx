@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
@@ -9,7 +10,6 @@ import { Mail, MessageSquare, Send, Clock, HelpCircle, Shield, Zap, Image } from
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Link } from "react-router-dom";
-import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export default function Contact() {
   const [formData, setFormData] = useState({

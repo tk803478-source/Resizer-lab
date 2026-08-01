@@ -1,8 +1,8 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { 
-import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
   Shield, 
   Zap, 
   Lock, 

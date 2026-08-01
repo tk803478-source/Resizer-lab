@@ -1,9 +1,9 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useNavigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { usePresetStore } from "@/store/presetStore";
 import { Image, MonitorSmartphone, Smartphone, ImageIcon, Monitor, Zap, Shield, Settings, CheckCircle2, ArrowRight } from "lucide-react";
-import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 const presets = [
   {

@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useCallback, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
@@ -7,7 +8,6 @@ import { Progress } from "@/components/ui/progress";
 import { Upload, Download, Eraser, Loader2, X, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 const MAX_DIMENSION = 1024;
 

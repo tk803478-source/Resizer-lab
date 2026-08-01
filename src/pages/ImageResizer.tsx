@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useState, useCallback, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
@@ -9,7 +10,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DraggableResizeBox } from "@/components/resizer/DraggableResizeBox";
 import { cn } from "@/lib/utils";
 import {
-import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
   Upload,
   ImageIcon,
   X,

@@ -1,10 +1,10 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useParams, Link, Navigate } from "react-router-dom";
 import DOMPurify from "dompurify";
 import { Layout } from "@/components/layout/Layout";
 import { usePublicBlogPost, usePublicBlogPosts } from "@/hooks/usePublicBlogPosts";
 import { Calendar, Clock, ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();

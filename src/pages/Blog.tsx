@@ -1,9 +1,9 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { usePublicBlogPosts } from "@/hooks/usePublicBlogPosts";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight, BookOpen, TrendingUp, Image, Zap, Shield, Loader2 } from "lucide-react";
-import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export default function Blog() {
   const { data: posts = [], isLoading } = usePublicBlogPosts();

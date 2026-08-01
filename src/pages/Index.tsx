@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -17,7 +18,6 @@ import {
 import { cn } from "@/lib/utils";
 import { usePresetStore } from "@/store/presetStore";
 import {
-import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
   Sparkles,
   Zap,
   Shield,
