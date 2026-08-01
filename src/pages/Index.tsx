@@ -815,6 +815,14 @@ export default function Index() {
                 Free online image size resizer. Resize image by size in KB or pixels, to a custom size, or to a preset — passport, Instagram, reel, banner, logo, letter, or legal — without losing quality.
               </p>
 
+              <div className="max-w-xl rounded-xl border border-primary/20 bg-primary/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">Short answer</p>
+                <p className="text-base text-foreground leading-relaxed">
+                  To resize an image size in KB or pixels: upload your photo above, enter the width and height (or pick a preset), choose a target file size or quality, then download. It takes about 10 seconds, is 100% free, needs no signup, and every image is processed in your browser — nothing is ever uploaded to a server.
+                </p>
+              </div>
+
+
               <div className="flex flex-col sm:flex-row gap-4 pt-1">
                 <Button
                   size="xl"
