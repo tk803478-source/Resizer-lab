@@ -760,6 +760,24 @@ export default function Index() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to resize an image size in KB and pixels",
+            "description": "Resize an image to an exact size in pixels or KB for free in your browser, with no uploads and no quality loss.",
+            "totalTime": "PT1M",
+            "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "0" },
+            "tool": [{ "@type": "HowToTool", "name": "Resizer Lab free online image resizer" }],
+            "step": [
+              { "@type": "HowToStep", "position": 1, "name": "Upload your image", "text": "Drag and drop or select a JPG, PNG or WebP image. Processing happens in your browser, so nothing is uploaded to a server." },
+              { "@type": "HowToStep", "position": 2, "name": "Set the size", "text": "Enter the target width and height in pixels, resize by percentage, or pick a preset such as passport, Instagram or banner size. Keep aspect ratio locked to avoid stretching." },
+              { "@type": "HowToStep", "position": 3, "name": "Choose format and quality", "text": "Select JPG, PNG or WebP and adjust the quality slider until the estimated file size fits your KB limit." },
+              { "@type": "HowToStep", "position": 4, "name": "Download", "text": "Download the resized image instantly. It is free, unlimited and requires no signup." }
+            ]
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Resize Image Size in KB & Pixels – Free Online Image Resizer",
             "description": "Resize image size in KB or pixels online free — custom sizes, presets, no uploads, no signup, no quality loss. Right in your browser.",
