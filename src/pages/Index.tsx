@@ -763,7 +763,13 @@ export default function Index() {
             "@type": "Article",
             "headline": "Resize Image Size in KB & Pixels – Free Online Image Resizer",
             "description": "Resize image size in KB or pixels online free — custom sizes, presets, no uploads, no signup, no quality loss. Right in your browser.",
+            "abstract": "Key takeaway: upload your photo, enter width and height (or pick a preset), set a target file size or quality, then download. It takes about 10 seconds, is 100% free, needs no signup, and every image is processed in your browser.",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["#key-takeaway"]
+            },
             "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/0UcvCTb89mXNwm4ItJmglp9JY5W2/social-images/social-1777565673702-resizer_lab_logo.webp",
+
             "inLanguage": "en-US",
             "datePublished": "2025-01-01T00:00:00+00:00",
             "dateModified": new Date().toISOString().split("T")[0],
