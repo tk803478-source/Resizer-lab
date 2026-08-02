@@ -760,6 +760,24 @@ export default function Index() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to resize an image size in KB and pixels",
+            "description": "Resize an image to an exact size in pixels or KB for free in your browser, with no uploads and no quality loss.",
+            "totalTime": "PT1M",
+            "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "0" },
+            "tool": [{ "@type": "HowToTool", "name": "Resizer Lab free online image resizer" }],
+            "step": [
+              { "@type": "HowToStep", "position": 1, "name": "Upload your image", "text": "Drag and drop or select a JPG, PNG or WebP image. Processing happens in your browser, so nothing is uploaded to a server." },
+              { "@type": "HowToStep", "position": 2, "name": "Set the size", "text": "Enter the target width and height in pixels, resize by percentage, or pick a preset such as passport, Instagram or banner size. Keep aspect ratio locked to avoid stretching." },
+              { "@type": "HowToStep", "position": 3, "name": "Choose format and quality", "text": "Select JPG, PNG or WebP and adjust the quality slider until the estimated file size fits your KB limit." },
+              { "@type": "HowToStep", "position": 4, "name": "Download", "text": "Download the resized image instantly. It is free, unlimited and requires no signup." }
+            ]
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Resize Image Size in KB & Pixels – Free Online Image Resizer",
             "description": "Resize image size in KB or pixels online free — custom sizes, presets, no uploads, no signup, no quality loss. Right in your browser.",
@@ -1034,6 +1052,119 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Comparison tables + checklist */}
+      <section className="container py-12 md:py-16">
+        <div className="mx-auto max-w-4xl space-y-12">
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-3">
+              JPG vs PNG vs WebP: Which Format to Resize To
+            </h2>
+            <p className="text-muted-foreground mb-5">
+              Quick comparison of the three output formats supported by our image size resizer.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-sm">
+                <caption className="sr-only">Comparison of JPG, PNG and WebP output formats for resized images</caption>
+                <thead className="bg-secondary/50">
+                  <tr>
+                    <th scope="col" className="p-3 text-left font-semibold">Format</th>
+                    <th scope="col" className="p-3 text-left font-semibold">Best for</th>
+                    <th scope="col" className="p-3 text-left font-semibold">Transparency</th>
+                    <th scope="col" className="p-3 text-left font-semibold">Typical file size</th>
+                    <th scope="col" className="p-3 text-left font-semibold">Quality control</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-border">
+                    <th scope="row" className="p-3 text-left font-medium">JPG</th>
+                    <td className="p-3 text-muted-foreground">Photos, passport photos, uploads with a KB limit</td>
+                    <td className="p-3 text-muted-foreground">No</td>
+                    <td className="p-3 text-muted-foreground">Small</td>
+                    <td className="p-3 text-muted-foreground">Adjustable quality slider</td>
+                  </tr>
+                  <tr className="border-t border-border">
+                    <th scope="row" className="p-3 text-left font-medium">PNG</th>
+                    <td className="p-3 text-muted-foreground">Logos, screenshots, graphics with text</td>
+                    <td className="p-3 text-muted-foreground">Yes</td>
+                    <td className="p-3 text-muted-foreground">Large</td>
+                    <td className="p-3 text-muted-foreground">Lossless, no quality loss</td>
+                  </tr>
+                  <tr className="border-t border-border">
+                    <th scope="row" className="p-3 text-left font-medium">WebP</th>
+                    <td className="p-3 text-muted-foreground">Websites, banners, fastest page loads</td>
+                    <td className="p-3 text-muted-foreground">Yes</td>
+                    <td className="p-3 text-muted-foreground">Smallest</td>
+                    <td className="p-3 text-muted-foreground">Adjustable quality slider</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-3">
+              Common Image Sizes in Pixels
+            </h2>
+            <p className="text-muted-foreground mb-5">
+              Resize image to passport size, Instagram size, reel size, banner size or logo size using these exact dimensions.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-sm">
+                <caption className="sr-only">Common image sizes in pixels for passport, Instagram, reels, banners and logos</caption>
+                <thead className="bg-secondary/50">
+                  <tr>
+                    <th scope="col" className="p-3 text-left font-semibold">Use case</th>
+                    <th scope="col" className="p-3 text-left font-semibold">Size (pixels)</th>
+                    <th scope="col" className="p-3 text-left font-semibold">Aspect ratio</th>
+                    <th scope="col" className="p-3 text-left font-semibold">Recommended format</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Passport photo", "600 × 600", "1:1", "JPG"],
+                    ["Instagram post", "1080 × 1080", "1:1", "JPG"],
+                    ["Instagram story / reel", "1080 × 1920", "9:16", "JPG"],
+                    ["Facebook cover banner", "1200 × 630", "1.91:1", "JPG or WebP"],
+                    ["Website logo", "512 × 512", "1:1", "PNG"],
+                    ["YouTube thumbnail", "1280 × 720", "16:9", "JPG"],
+                  ].map(([use, size, ratio, format]) => (
+                    <tr key={use} className="border-t border-border">
+                      <th scope="row" className="p-3 text-left font-medium">{use}</th>
+                      <td className="p-3 text-muted-foreground">{size}</td>
+                      <td className="p-3 text-muted-foreground">{ratio}</td>
+                      <td className="p-3 text-muted-foreground">{format}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-3">
+              Checklist: Resize an Image to an Exact File Size
+            </h2>
+            <ol className="space-y-3">
+              {[
+                "Upload the photo you want to resize (JPG, PNG or WebP).",
+                "Enter the target width and height in pixels, or choose a preset.",
+                "Keep aspect ratio locked so the image does not stretch.",
+                "Pick the output format — JPG for the smallest KB, PNG for transparency.",
+                "Lower the quality slider until the estimated file size fits your KB limit.",
+                "Download the resized image and check it against the upload requirement.",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
+                  <span className="text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Benefits Section */}
       <section className="container py-12 md:py-16">
