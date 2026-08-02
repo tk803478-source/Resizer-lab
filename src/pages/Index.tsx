@@ -815,12 +815,21 @@ export default function Index() {
                 Free online image size resizer. Resize image by size in KB or pixels, to a custom size, or to a preset — passport, Instagram, reel, banner, logo, letter, or legal — without losing quality.
               </p>
 
-              <div className="max-w-xl rounded-xl border border-primary/20 bg-primary/5 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">Short answer</p>
+              <section aria-labelledby="key-takeaway" className="max-w-xl rounded-xl border border-primary/20 bg-primary/5 p-4">
+                <h2 id="key-takeaway" className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">
+                  Key takeaway (TL;DR)
+                </h2>
                 <p className="text-base text-foreground leading-relaxed">
-                  To resize an image size in KB or pixels: upload your photo above, enter the width and height (or pick a preset), choose a target file size or quality, then download. It takes about 10 seconds, is 100% free, needs no signup, and every image is processed in your browser — nothing is ever uploaded to a server.
+                  <strong>In short:</strong> to resize an image size in KB or pixels, upload your photo, enter the width and height (or pick a preset), set a target file size or quality, then download. The bottom line: it takes about 10 seconds, is 100% free, needs no signup, and every image is processed in your browser — nothing is ever uploaded to a server.
                 </p>
-              </div>
+                <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                  <li><strong className="text-foreground">Cost:</strong> free, unlimited, no signup or watermark.</li>
+                  <li><strong className="text-foreground">Speed:</strong> ~10 seconds per image, instant download.</li>
+                  <li><strong className="text-foreground">Privacy:</strong> 100% browser-based, zero uploads.</li>
+                  <li><strong className="text-foreground">Formats:</strong> JPG, PNG and WebP, resized by pixels, percentage or KB.</li>
+                </ul>
+              </section>
+
 
 
               <div className="flex flex-col sm:flex-row gap-4 pt-1">
