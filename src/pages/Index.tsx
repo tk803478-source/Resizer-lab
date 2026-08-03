@@ -871,6 +871,13 @@ export default function Index() {
                 Free online image size resizer. Resize image by size in KB or pixels, to a custom size, or to a preset — passport, Instagram, reel, banner, logo, letter, or legal — without losing quality.
               </p>
 
+              <p className="text-sm text-muted-foreground">
+                Published <time dateTime="2025-01-01">January 1, 2025</time> · Last updated{" "}
+                <time dateTime={PAGE_LAST_UPDATED}>{PAGE_LAST_UPDATED_LABEL}</time>
+              </p>
+
+
+
               <section aria-labelledby="key-takeaway" className="max-w-xl rounded-xl border border-primary/20 bg-primary/5 p-4">
                 <h2 id="key-takeaway" className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">
                   Key takeaway (TL;DR)
