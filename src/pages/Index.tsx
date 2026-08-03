@@ -797,7 +797,7 @@ export default function Index() {
 
             "inLanguage": "en-US",
             "datePublished": "2025-01-01T00:00:00+00:00",
-            "dateModified": new Date().toISOString().split("T")[0],
+            "dateModified": PAGE_LAST_UPDATED,
             "author": {
               "@type": "Organization",
               "name": "Resizer Lab",
