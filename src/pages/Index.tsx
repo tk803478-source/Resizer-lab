@@ -870,7 +870,42 @@ export default function Index() {
             }
           })}
         </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://resizerlab.lovable.app/#organization",
+            "name": "Resizer Lab",
+            "alternateName": "ResizerLab",
+            "url": "https://resizerlab.lovable.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://resizerlab.lovable.app/favicon.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://resizerlab.lovable.app/favicon.png",
+            "description": "Resizer Lab builds free, privacy-first browser-based image tools, including an image resizer that works entirely on your device with no uploads.",
+            "foundingDate": "2025-01-01",
+            "knowsAbout": [
+              "Image resizing",
+              "Image compression",
+              "JPG, PNG and WebP formats",
+              "Social media image sizes",
+              "Web performance and image SEO"
+            ],
+            "sameAs": ["https://resizerlab.lovable.app/about"],
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "url": "https://resizerlab.lovable.app/contact",
+              "availableLanguage": ["English"]
+            }]
+          })}
+        </script>
       </Helmet>
+
 
 
       <BreadcrumbSchema />
