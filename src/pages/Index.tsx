@@ -808,6 +808,38 @@ export default function Index() {
               "name": "Resizer Lab",
               "url": "https://resizerlab.lovable.app"
             },
+            "citation": [
+              {
+                "@type": "WebPage",
+                "name": "MDN Web Docs – CanvasRenderingContext2D.drawImage()",
+                "publisher": { "@type": "Organization", "name": "Mozilla" },
+                "url": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage"
+              },
+              {
+                "@type": "WebPage",
+                "name": "web.dev – Choose the correct level of compression",
+                "publisher": { "@type": "Organization", "name": "Google" },
+                "url": "https://web.dev/articles/compress-images"
+              },
+              {
+                "@type": "WebPage",
+                "name": "WebP Compression Study",
+                "publisher": { "@type": "Organization", "name": "Google Developers" },
+                "url": "https://developers.google.com/speed/webp/docs/webp_study"
+              },
+              {
+                "@type": "WebPage",
+                "name": "W3C – HTML Canvas 2D Context Specification",
+                "publisher": { "@type": "Organization", "name": "W3C" },
+                "url": "https://www.w3.org/TR/2dcontext/"
+              },
+              {
+                "@type": "WebPage",
+                "name": "U.S. Department of State – Passport Photo Requirements",
+                "publisher": { "@type": "Organization", "name": "U.S. Department of State" },
+                "url": "https://travel.state.gov/content/travel/en/passports/how-apply/photos.html"
+              }
+            ],
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://resizerlab.lovable.app/"
