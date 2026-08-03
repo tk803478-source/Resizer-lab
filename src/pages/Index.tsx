@@ -807,7 +807,32 @@ export default function Index() {
             }
           })}
         </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://resizerlab.lovable.app/#webpage",
+            "url": "https://resizerlab.lovable.app/",
+            "name": "Resize Image Size in KB & Pixels – Free Online Image Resizer",
+            "description": "Resize image size in KB or pixels online free — custom sizes, presets, no uploads, no signup, no quality loss. Right in your browser.",
+            "inLanguage": "en-US",
+            "datePublished": "2025-01-01",
+            "dateModified": PAGE_LAST_UPDATED,
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Resizer Lab",
+              "url": "https://resizerlab.lovable.app/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Resizer Lab",
+              "url": "https://resizerlab.lovable.app"
+            }
+          })}
+        </script>
       </Helmet>
+
 
       <BreadcrumbSchema />
 
