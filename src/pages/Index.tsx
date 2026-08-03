@@ -808,6 +808,38 @@ export default function Index() {
               "name": "Resizer Lab",
               "url": "https://resizerlab.lovable.app"
             },
+            "citation": [
+              {
+                "@type": "WebPage",
+                "name": "MDN Web Docs – CanvasRenderingContext2D.drawImage()",
+                "publisher": { "@type": "Organization", "name": "Mozilla" },
+                "url": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage"
+              },
+              {
+                "@type": "WebPage",
+                "name": "web.dev – Choose the correct level of compression",
+                "publisher": { "@type": "Organization", "name": "Google" },
+                "url": "https://web.dev/articles/compress-images"
+              },
+              {
+                "@type": "WebPage",
+                "name": "WebP Compression Study",
+                "publisher": { "@type": "Organization", "name": "Google Developers" },
+                "url": "https://developers.google.com/speed/webp/docs/webp_study"
+              },
+              {
+                "@type": "WebPage",
+                "name": "W3C – HTML Canvas 2D Context Specification",
+                "publisher": { "@type": "Organization", "name": "W3C" },
+                "url": "https://www.w3.org/TR/2dcontext/"
+              },
+              {
+                "@type": "WebPage",
+                "name": "U.S. Department of State – Passport Photo Requirements",
+                "publisher": { "@type": "Organization", "name": "U.S. Department of State" },
+                "url": "https://travel.state.gov/content/travel/en/passports/how-apply/photos.html"
+              }
+            ],
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://resizerlab.lovable.app/"
@@ -1388,6 +1420,85 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Sources & References */}
+      <section className="container pb-16">
+        <div className="mx-auto max-w-3xl rounded-xl border border-border bg-card p-6">
+          <h2 className="text-xl font-bold tracking-tight">Sources &amp; References</h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            The technical claims on this page about image resizing, compression and format
+            behaviour are based on the following official documentation, specifications and
+            published studies.
+          </p>
+          <ul className="mt-4 space-y-3 text-sm">
+            <li>
+              According to the{" "}
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-primary hover:underline"
+              >
+                MDN Web Docs on <code>CanvasRenderingContext2D.drawImage()</code>
+              </a>{" "}
+              (Mozilla), the HTML Canvas API can scale images entirely on the client — the basis
+              of our in-browser, no-upload resizing.
+            </li>
+            <li>
+              Source:{" "}
+              <a
+                href="https://www.w3.org/TR/2dcontext/"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-primary hover:underline"
+              >
+                W3C HTML Canvas 2D Context specification
+              </a>{" "}
+              — defines <code>imageSmoothingQuality</code>, which our multi-pass downscaling uses
+              to avoid aliasing.
+            </li>
+            <li>
+              Google&apos;s{" "}
+              <a
+                href="https://developers.google.com/speed/webp/docs/webp_study"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-primary hover:underline"
+              >
+                WebP Compression Study
+              </a>{" "}
+              reports WebP files averaging roughly 25–34% smaller than comparable JPEGs at
+              equivalent quality.
+            </li>
+            <li>
+              Per{" "}
+              <a
+                href="https://web.dev/articles/compress-images"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-primary hover:underline"
+              >
+                web.dev — Choose the correct level of compression
+              </a>{" "}
+              (Google), quality settings around 70–85 usually cut file size sharply with little
+              visible loss, which is why our target-KB mode searches that range first.
+            </li>
+            <li>
+              Passport photo dimensions in our presets follow the{" "}
+              <a
+                href="https://travel.state.gov/content/travel/en/passports/how-apply/photos.html"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="text-primary hover:underline"
+              >
+                U.S. Department of State official photo requirements
+              </a>
+              .
+            </li>
+          </ul>
+        </div>
+      </section>
+
     </Layout>
   );
 }
