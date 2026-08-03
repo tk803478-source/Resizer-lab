@@ -694,6 +694,13 @@ function ResizeControls({
 }
 
 // ============= Main Page Component =============
+const PAGE_LAST_UPDATED = "2026-08-03";
+const PAGE_LAST_UPDATED_LABEL = new Date(PAGE_LAST_UPDATED).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
 export default function Index() {
   const {
     originalImage,
@@ -790,7 +797,7 @@ export default function Index() {
 
             "inLanguage": "en-US",
             "datePublished": "2025-01-01T00:00:00+00:00",
-            "dateModified": new Date().toISOString().split("T")[0],
+            "dateModified": PAGE_LAST_UPDATED,
             "author": {
               "@type": "Organization",
               "name": "Resizer Lab",
@@ -807,7 +814,32 @@ export default function Index() {
             }
           })}
         </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://resizerlab.lovable.app/#webpage",
+            "url": "https://resizerlab.lovable.app/",
+            "name": "Resize Image Size in KB & Pixels – Free Online Image Resizer",
+            "description": "Resize image size in KB or pixels online free — custom sizes, presets, no uploads, no signup, no quality loss. Right in your browser.",
+            "inLanguage": "en-US",
+            "datePublished": "2025-01-01",
+            "dateModified": PAGE_LAST_UPDATED,
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Resizer Lab",
+              "url": "https://resizerlab.lovable.app/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Resizer Lab",
+              "url": "https://resizerlab.lovable.app"
+            }
+          })}
+        </script>
       </Helmet>
+
 
       <BreadcrumbSchema />
 
@@ -838,6 +870,13 @@ export default function Index() {
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
                 Free online image size resizer. Resize image by size in KB or pixels, to a custom size, or to a preset — passport, Instagram, reel, banner, logo, letter, or legal — without losing quality.
               </p>
+
+              <p className="text-sm text-muted-foreground">
+                Published <time dateTime="2025-01-01">January 1, 2025</time> · Last updated{" "}
+                <time dateTime={PAGE_LAST_UPDATED}>{PAGE_LAST_UPDATED_LABEL}</time>
+              </p>
+
+
 
               <section aria-labelledby="key-takeaway" className="max-w-xl rounded-xl border border-primary/20 bg-primary/5 p-4">
                 <h2 id="key-takeaway" className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">
