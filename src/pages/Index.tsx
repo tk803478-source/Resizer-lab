@@ -694,6 +694,13 @@ function ResizeControls({
 }
 
 // ============= Main Page Component =============
+const PAGE_LAST_UPDATED = "2026-08-03";
+const PAGE_LAST_UPDATED_LABEL = new Date(PAGE_LAST_UPDATED).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
 export default function Index() {
   const {
     originalImage,
