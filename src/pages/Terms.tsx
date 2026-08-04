@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { FileText, Scale, Shield, AlertCircle, Gavel, Globe, RefreshCw, MessageSquare } from "lucide-react";
@@ -16,6 +17,7 @@ export default function Terms() {
         <meta name="twitter:title" content="Terms of Service – Usage Guidelines | Resizer Lab" />
         <meta name="twitter:description" content="Read the terms and conditions for using Resizer Lab's free online image resizing tool." />
       </Helmet>
+      <BreadcrumbSchema items={[{ name: "Terms of Service", path: "/terms" }]} />
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center animate-fade-in">
