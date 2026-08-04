@@ -14,6 +14,10 @@ export default function NotFound() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Page Not Found (404) | Resizer Lab</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <div className="container flex min-h-[60vh] flex-col items-center justify-center py-16 text-center">
         <div className="animate-fade-in">
           <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-secondary">
