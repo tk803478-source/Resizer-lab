@@ -47,10 +47,32 @@ export default function ImageGenerator() {
   return (
     <Layout>
       <Helmet>
-        <title>AI Image Generator | Resizer Lab</title>
-        <meta name="description" content="Generate stunning AI images from text prompts using Google Gemini. Free, fast, and easy to use." />
+        <title>Free AI Image Generator – Text to Image Online | Resizer Lab</title>
+        <meta name="description" content="Generate AI images from text prompts free online, then resize them to any pixel or KB size in your browser. No signup, instant download." />
+        <meta name="keywords" content="ai image generator, text to image, free ai image generator online, generate and resize images, ai art generator" />
         <link rel="canonical" href="https://resizerlab.lovable.app/image-generator" />
+        <meta property="og:title" content="Free AI Image Generator – Text to Image Online" />
+        <meta property="og:description" content="Generate AI images from text prompts free online, then resize them to any pixel or KB size in your browser." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/image-generator" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Free AI Image Generator – Text to Image Online" />
+        <meta name="twitter:description" content="Generate AI images from text prompts, then resize them to any pixel or KB size — free and browser-based." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Resizer Lab AI Image Generator",
+            "url": "https://resizerlab.lovable.app/image-generator",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Any (web browser)",
+            "isAccessibleForFree": true,
+            "publisher": { "@id": "https://resizerlab.lovable.app/#organization" },
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          })}
+        </script>
       </Helmet>
+
 
       <BreadcrumbSchema items={[{ name: "AI Image Generator", path: "/image-generator" }]} />
 
