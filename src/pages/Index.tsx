@@ -930,7 +930,12 @@ export default function Index() {
               "Social media image sizes",
               "Web performance and image SEO"
             ],
-            "sameAs": ["https://resizerlab.lovable.app/about"],
+            "sameAs": [
+              "https://resizerlab.lovable.app/about",
+              "https://resizerlab.lovable.app/contact",
+              "https://resizerlab.lovable.app/blog"
+            ],
+            "makesOffer": { "@type": "Offer", "itemOffered": { "@id": "https://resizerlab.lovable.app/#software" }, "price": "0", "priceCurrency": "USD" },
             "contactPoint": [{
               "@type": "ContactPoint",
               "contactType": "customer support",
