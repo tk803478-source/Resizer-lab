@@ -170,6 +170,26 @@ export default function BackgroundRemover() {
         />
         <meta name="keywords" content="background remover, remove image background, transparent png, resize image to passport size, resize image to logo size, resize image to instagram size, resize image custom size, image resizer custom size, resize image size without losing quality" />
         <link rel="canonical" href="https://resizerlab.lovable.app/background-remover" />
+        <meta property="og:title" content="AI Background Remover – Free, Private & Browser-Based" />
+        <meta property="og:description" content="Remove image backgrounds free in your browser and resize to passport, logo, or custom size. Nothing is uploaded." />
+        <meta property="og:url" content="https://resizerlab.lovable.app/background-remover" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Background Remover – Free, Private & Browser-Based" />
+        <meta name="twitter:description" content="Remove backgrounds and resize images in one flow — 100% private, browser-based, no signup." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Resizer Lab Background Remover",
+            "url": "https://resizerlab.lovable.app/background-remover",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Any (web browser)",
+            "isAccessibleForFree": true,
+            "publisher": { "@id": "https://resizerlab.lovable.app/#organization" },
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          })}
+        </script>
       </Helmet>
 
       <BreadcrumbSchema items={[{ name: "Background Remover", path: "/background-remover" }]} />
