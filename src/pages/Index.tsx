@@ -735,21 +735,56 @@ export default function Index() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "ResizerLab",
-            "description": "Free online image resizer tool. Resize images without losing quality, directly in your browser.",
-            "url": "https://resizerlab.lovable.app",
+            "@type": ["WebApplication", "SoftwareApplication"],
+            "@id": "https://resizerlab.lovable.app/#software",
+            "name": "Resizer Lab Image Resizer",
+            "alternateName": ["ResizerLab", "Resizer Lab"],
+            "description": "Free online image resizer tool. Resize images by pixels, percentage or KB without losing quality, directly in your browser.",
+            "url": "https://resizerlab.lovable.app/",
+            "image": "https://resizerlab.lovable.app/favicon.png",
             "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Any",
+            "applicationSubCategory": "Image Resizer",
+            "operatingSystem": "Any (web browser)",
+            "softwareVersion": "2.0",
+            "isAccessibleForFree": true,
+            "inLanguage": "en",
+            "publisher": { "@id": "https://resizerlab.lovable.app/#organization" },
+            "provider": { "@id": "https://resizerlab.lovable.app/#organization" },
+            "sameAs": [
+              "https://resizerlab.lovable.app/image-resizer",
+              "https://resizerlab.lovable.app/about",
+              "https://en.wikipedia.org/wiki/Image_scaling",
+              "https://en.wikipedia.org/wiki/Image_editing"
+            ],
             "offers": {
               "@type": "Offer",
               "price": "0",
-              "priceCurrency": "USD"
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
             },
             "featureList": ["Image resizing", "Format conversion", "Quality adjustment", "Browser-based processing"],
             "browserRequirements": "Requires a modern web browser with JavaScript enabled"
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "@id": "https://resizerlab.lovable.app/#service",
+            "name": "Online Image Resizing",
+            "serviceType": "Image resizing and compression",
+            "description": "Free browser-based service to resize image size in KB or pixels, convert between JPG, PNG and WebP, and apply presets such as passport, Instagram and banner sizes.",
+            "url": "https://resizerlab.lovable.app/",
+            "areaServed": "Worldwide",
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://resizerlab.lovable.app/image-resizer"
+            },
+            "provider": { "@id": "https://resizerlab.lovable.app/#organization" },
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          })}
+        </script>
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
