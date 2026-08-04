@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Shield, Lock, Eye, Server, Cookie, UserCheck, Bell, FileText } from "lucide-react";
