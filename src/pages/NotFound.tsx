@@ -1,5 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Home, Search } from "lucide-react";
