@@ -16,6 +16,7 @@ export default function Privacy() {
         <meta name="twitter:title" content="Privacy Policy – Your Data Stays Private | Resizer Lab" />
         <meta name="twitter:description" content="Resizer Lab privacy policy. 100% browser-based processing means your images never leave your device." />
       </Helmet>
+      <BreadcrumbSchema items={[{ name: "Privacy Policy", path: "/privacy" }]} />
       <div className="gradient-hero">
         <section className="container py-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center animate-fade-in">
