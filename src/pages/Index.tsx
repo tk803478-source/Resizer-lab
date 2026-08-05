@@ -963,14 +963,15 @@ export default function Index() {
               </div>
 
               <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-[3.5rem] md:leading-[1.1]">
-                Resize Any Photo to an Exact KB or Pixel Size{" "}
+                Resize Image Size to an Exact KB or Pixel Target{" "}
                 <span className="text-gradient">in Seconds</span>
               </h1>
 
 
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                Free online image size resizer. Resize image by size in KB or pixels, to a custom size, or to a preset — passport, Instagram, reel, banner, logo, letter, or legal — without losing quality.
+                Resizer Lab is a free online image resizer built to resize image size in KB or pixels. Resize an image by size, to a custom size, or to a preset — passport, Instagram, reel, banner, logo, letter, or legal — without losing quality.
               </p>
+
 
               <p className="text-sm text-muted-foreground">
                 Published <time dateTime="2025-01-01">January 1, 2025</time> · Last updated{" "}
