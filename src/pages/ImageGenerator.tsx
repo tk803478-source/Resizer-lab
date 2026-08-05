@@ -19,6 +19,11 @@ export default function ImageGenerator() {
       toast.error("Please enter a prompt");
       return;
     }
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      toast.error("Please sign in to generate AI images");
+      return;
+    }
     setLoading(true);
     setImageUrl(null);
     try {
@@ -35,6 +40,7 @@ export default function ImageGenerator() {
       setLoading(false);
     }
   };
+
 
   const handleDownload = () => {
     if (!imageUrl) return;
