@@ -963,9 +963,10 @@ export default function Index() {
               </div>
 
               <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-[3.5rem] md:leading-[1.1]">
-                Resize Image Size in KB & Pixels –{" "}
-                <span className="text-gradient">Free Online Image Resizer</span>
+                Resize Any Photo to an Exact KB or Pixel Size{" "}
+                <span className="text-gradient">in Seconds</span>
               </h1>
+
 
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
                 Free online image size resizer. Resize image by size in KB or pixels, to a custom size, or to a preset — passport, Instagram, reel, banner, logo, letter, or legal — without losing quality.
