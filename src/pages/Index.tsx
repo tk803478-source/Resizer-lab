@@ -820,7 +820,8 @@ export default function Index() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": ["Article", "BlogPosting"],
+            "@id": "https://resizerlab.lovable.app/#article",
             "headline": "Resize Image Size in KB & Pixels – Free Online Image Resizer",
             "description": "Resize image size in KB or pixels online free — custom sizes, presets, no uploads, no signup, no quality loss. Right in your browser.",
             "abstract": "Key takeaway: upload your photo, enter width and height (or pick a preset), set a target file size or quality, then download. It takes about 10 seconds, is 100% free, needs no signup, and every image is processed in your browser.",
@@ -831,18 +832,14 @@ export default function Index() {
             "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/0UcvCTb89mXNwm4ItJmglp9JY5W2/social-images/social-1777565673702-resizer_lab_logo.webp",
 
             "inLanguage": "en-US",
+            "mainEntityOfPage": { "@type": "WebPage", "@id": "https://resizerlab.lovable.app/" },
+            "isPartOf": { "@id": "https://resizerlab.lovable.app/#organization" },
+            "about": { "@id": "https://resizerlab.lovable.app/#software" },
             "datePublished": "2025-01-01T00:00:00+00:00",
             "dateModified": PAGE_LAST_UPDATED,
-            "author": {
-              "@type": "Organization",
-              "name": "Resizer Lab",
-              "url": "https://resizerlab.lovable.app"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Resizer Lab",
-              "url": "https://resizerlab.lovable.app"
-            },
+            "author": { "@id": "https://resizerlab.lovable.app/#organization" },
+            "creator": { "@id": "https://resizerlab.lovable.app/#organization" },
+            "publisher": { "@id": "https://resizerlab.lovable.app/#organization" },
             "citation": [
               {
                 "@type": "WebPage",
