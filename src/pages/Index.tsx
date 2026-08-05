@@ -871,11 +871,7 @@ export default function Index() {
                 "publisher": { "@type": "Organization", "name": "U.S. Department of State" },
                 "url": "https://travel.state.gov/content/travel/en/passports/how-apply/photos.html"
               }
-            ],
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://resizerlab.lovable.app/"
-            }
+            ]
           })}
         </script>
 
