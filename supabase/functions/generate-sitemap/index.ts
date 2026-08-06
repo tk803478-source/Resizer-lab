@@ -5,6 +5,8 @@ const SITE_URL = "https://resizerlab.lovable.app";
 const staticPages = [
   { loc: "/", changefreq: "weekly", priority: "1.0" },
   { loc: "/image-resizer", changefreq: "monthly", priority: "0.9" },
+  { loc: "/image-generator", changefreq: "monthly", priority: "0.8" },
+  { loc: "/background-remover", changefreq: "monthly", priority: "0.8" },
   { loc: "/gallery", changefreq: "monthly", priority: "0.8" },
   { loc: "/guides", changefreq: "weekly", priority: "0.8" },
   { loc: "/blog", changefreq: "weekly", priority: "0.9" },
