@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
@@ -8,10 +9,12 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
           {/* Brand */}
           <div>
-            <Link to="/" className="font-bold text-lg">
+            <Link to="/" className="flex items-center gap-2 font-bold text-lg">
+              <img src={logo} alt="Resizer Lab logo" className="h-8 w-8 rounded-lg object-contain" />
               <span className="text-gradient">Resizer</span>
               <span className="text-foreground"> Lab</span>
             </Link>
+
             <p className="mt-2 text-sm text-muted-foreground">
               Free online image resizer. Fast, private, and easy to use.
             </p>
