@@ -1506,7 +1506,7 @@ export default function Index() {
               <a
                 href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage"
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
                 MDN Web Docs on <code>CanvasRenderingContext2D.drawImage()</code>
@@ -1519,7 +1519,7 @@ export default function Index() {
               <a
                 href="https://www.w3.org/TR/2dcontext/"
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
                 W3C HTML Canvas 2D Context specification
@@ -1532,7 +1532,7 @@ export default function Index() {
               <a
                 href="https://developers.google.com/speed/webp/docs/webp_study"
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
                 WebP Compression Study
@@ -1545,7 +1545,7 @@ export default function Index() {
               <a
                 href="https://web.dev/articles/compress-images"
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
                 web.dev — Choose the correct level of compression
@@ -1558,7 +1558,7 @@ export default function Index() {
               <a
                 href="https://travel.state.gov/content/travel/en/passports/how-apply/photos.html"
                 target="_blank"
-                rel="noopener noreferrer nofollow"
+                rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
                 U.S. Department of State official photo requirements
