@@ -264,7 +264,7 @@ export default function BackgroundRemover() {
                   <CardTitle className="text-base">Original</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img src={originalUrl} alt="Original" className="w-full rounded-lg" />
+                  <img src={originalUrl} alt="Original uploaded photo before background removal" loading="lazy" className="w-full rounded-lg" />
                 </CardContent>
               </Card>
               <Card>
