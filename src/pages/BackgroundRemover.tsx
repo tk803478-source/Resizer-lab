@@ -264,7 +264,7 @@ export default function BackgroundRemover() {
                   <CardTitle className="text-base">Original</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img src={originalUrl} alt="Original" className="w-full rounded-lg" />
+                  <img src={originalUrl} alt="Original uploaded photo before background removal" loading="lazy" className="w-full rounded-lg" />
                 </CardContent>
               </Card>
               <Card>
@@ -282,7 +282,7 @@ export default function BackgroundRemover() {
                         backgroundPosition: "0 0, 0 10px, 10px -10px, -10px 0",
                       }}
                     >
-                      <img src={resultUrl} alt="Background removed" className="w-full rounded-lg" />
+                      <img src={resultUrl} alt="Photo with the background removed, saved as a transparent PNG" loading="lazy" className="w-full rounded-lg" />
                     </div>
                   ) : (
                     <div className="flex aspect-square items-center justify-center rounded-lg border-2 border-dashed border-border text-muted-foreground text-sm">
