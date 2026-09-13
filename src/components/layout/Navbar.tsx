@@ -24,7 +24,7 @@ export function Navbar() {
           to="/" 
           className="flex items-center gap-2 font-bold text-xl transition-opacity hover:opacity-80"
         >
-          <img src={logo} alt="ResizeLab Logo" className="h-9 w-9 rounded-lg" />
+          <img src={logo} alt="Resizer Lab logo — free online image resizer" className="h-9 w-9 rounded-lg" />
           <span className="hidden sm:inline">
             <span className="text-gradient">Resizer</span>
             <span className="text-foreground"> Lab</span>
